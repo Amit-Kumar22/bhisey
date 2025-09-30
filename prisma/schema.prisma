@@ -1,0 +1,404 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User management and authentication
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  roles        UserRole[]
+  active       Boolean  @default(true)
+  tokenVersion Int      @default(0) // For refresh token invalidation
+  lastLoginAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  blogPosts       BlogPost[]
+  formSubmissions FormSubmission[]
+  auditLogs       AuditLog[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  REVIEWER
+  VIEWER
+
+  @@map("user_roles")
+}
+
+// Content management
+model Page {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  hero        Json? // HeroBlock
+  sections    Json[] // SectionBlock[]
+  seo         Json // SEOMetadata
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("pages")
+}
+
+model Service {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  excerpt      String
+  hero         Json // HeroBlock
+  bodySections Json[] // SectionBlock[]
+  tags         String[]
+  publishedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  caseStudies CaseStudyService[]
+
+  @@map("services")
+}
+
+model Vertical {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  summary      String
+  bodySections Json[] // SectionBlock[]
+  industries   String[]
+  publishedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  caseStudies CaseStudyVertical[]
+
+  @@map("verticals")
+}
+
+model Partner {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  description  String
+  tier         PartnerTier?
+  logos        Json[] // MediaRef[]
+  capabilities String[]
+  publishedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("partners")
+}
+
+enum PartnerTier {
+  PLATINUM
+  GOLD
+  SILVER
+  BRONZE
+
+  @@map("partner_tiers")
+}
+
+model CaseStudy {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  clientName  String
+  industry    String
+  challenge   String
+  solution    String
+  results     Json[] // ResultMetric[]
+  techStack   String[]
+  heroImage   Json // MediaRef
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  services  CaseStudyService[]
+  verticals CaseStudyVertical[]
+
+  @@map("case_studies")
+}
+
+model CaseStudyService {
+  caseStudy   CaseStudy @relation(fields: [caseStudyId], references: [id], onDelete: Cascade)
+  caseStudyId String
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  serviceId   String
+
+  @@id([caseStudyId, serviceId])
+  @@map("case_study_services")
+}
+
+model CaseStudyVertical {
+  caseStudy   CaseStudy @relation(fields: [caseStudyId], references: [id], onDelete: Cascade)
+  caseStudyId String
+  vertical    Vertical  @relation(fields: [verticalId], references: [id], onDelete: Cascade)
+  verticalId  String
+
+  @@id([caseStudyId, verticalId])
+  @@map("case_study_verticals")
+}
+
+model BlogPost {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  title          String
+  excerpt        String
+  body           String // Rich text content
+  tags           String[]
+  readingMinutes Int
+  heroImage      Json? // MediaRef
+  seo            Json // SEOMetadata
+  publishedAt    DateTime
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  @@map("blog_posts")
+}
+
+model NewsItem {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  excerpt     String
+  body        String
+  tags        String[]
+  heroImage   Json? // MediaRef
+  seo         Json // SEOMetadata
+  publishedAt DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("news_items")
+}
+
+model Testimonial {
+  id          String    @id @default(cuid())
+  clientName  String
+  roleTitle   String
+  company     String
+  quote       String
+  logo        Json? // MediaRef
+  order       Int
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("testimonials")
+}
+
+model Award {
+  id        String   @id @default(cuid())
+  name      String
+  issuer    String
+  year      Int
+  logo      Json // MediaRef
+  order     Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("awards")
+}
+
+model ClientLogo {
+  id       String           @id @default(cuid())
+  name     String
+  logo     Json // MediaRef
+  category ClientLogoCategory
+  order    Int
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@map("client_logos")
+}
+
+enum ClientLogoCategory {
+  PARTNER
+  CLIENT
+
+  @@map("client_logo_categories")
+}
+
+model Job {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  title        String
+  department   String
+  location     String
+  remote       Boolean
+  description  String
+  requirements String[]
+  benefits     String[]
+  status       JobStatus @default(OPEN)
+  postedAt     DateTime
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  applications FormSubmission[]
+
+  @@map("jobs")
+}
+
+enum JobStatus {
+  OPEN
+  CLOSED
+
+  @@map("job_statuses")
+}
+
+// Form submissions and interactions
+model FormSubmission {
+  id        String           @id @default(cuid())
+  formType  FormType
+  payload   Json // Dynamic form data
+  status    SubmissionStatus @default(NEW)
+  notes     String?
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  // Metadata
+  meta Json // { ipHash, userAgent, etc. }
+
+  // Relations
+  job      Job?    @relation(fields: [jobId], references: [id])
+  jobId    String?
+  reviewer User?   @relation(fields: [reviewerId], references: [id])
+  reviewerId String?
+
+  @@map("form_submissions")
+}
+
+enum FormType {
+  CONTACT
+  APPLICATION
+  NEWSLETTER
+  CONSENT
+
+  @@map("form_types")
+}
+
+enum SubmissionStatus {
+  NEW
+  REVIEWED
+  ARCHIVED
+
+  @@map("submission_statuses")
+}
+
+// Media and file management
+model Media {
+  id       String   @id @default(cuid())
+  filename String
+  originalName String
+  mimeType String
+  size     Int
+  url      String
+  altText  String
+  title    String?
+  tags     String[]
+  width    Int?
+  height   Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("media")
+}
+
+// Navigation management
+model Navigation {
+  id        String   @id @default(cuid())
+  type      NavType
+  items     Json // NavItem[] or NavItemGroup[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([type])
+  @@map("navigation")
+}
+
+enum NavType {
+  PRIMARY
+  FOOTER
+
+  @@map("nav_types")
+}
+
+// Audit logging
+model AuditLog {
+  id         String   @id @default(cuid())
+  action     String
+  entityType String
+  entityId   String
+  before     Json?
+  after      Json?
+  ipHash     String
+  createdAt  DateTime @default(now())
+
+  // Relations
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  @@map("audit_logs")
+}
+
+// Rate limiting and security
+model RateLimit {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  count     Int      @default(1)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("rate_limits")
+}
+
+// Background job queue
+model BackgroundJob {
+  id          String    @id @default(cuid())
+  type        String
+  payload     Json
+  status      JobQueueStatus @default(PENDING)
+  attempts    Int       @default(0)
+  maxAttempts Int       @default(3)
+  error       String?
+  scheduledAt DateTime?
+  startedAt   DateTime?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("background_jobs")
+}
+
+enum JobQueueStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+
+  @@map("job_queue_statuses")
+}
