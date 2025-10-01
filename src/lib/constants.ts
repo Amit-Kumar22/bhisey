@@ -189,7 +189,7 @@ export const navigation = {
     {
       label: 'Partners',
       href: '/partners',
-      hasDropdown: false,
+      hasDropdown: true,
       children: [
         { label: 'AWS', href: '/partners/aws-development-services-solutions' },
         { label: 'Google Cloud', href: '/partners/google-cloud-platform-services-solutions' },
@@ -199,11 +199,11 @@ export const navigation = {
     {
       label: 'Resources',
       href: '/resources',
-      hasDropdown: false,
+      hasDropdown: true,
       children: [
-        { label: 'News', href: '/news' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'News', href: '/resources/news' },
+        { label: 'Blog', href: '/resources/blog' },
+        { label: 'Case Studies', href: '/resources/case-studies' },
       ],
     },
     {

@@ -77,6 +77,10 @@ const config: Config = {
         'slide-in': 'slideIn 0.5s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
         'marquee': 'marquee 28s linear infinite',
+        'marquee-slow': 'marquee 40s linear infinite',
+        'marquee-medium': 'marquee 28s linear infinite',
+        'marquee-fast': 'marquee 16s linear infinite',
+        'paused': 'none',
       },
       keyframes: {
         fadeIn: {
