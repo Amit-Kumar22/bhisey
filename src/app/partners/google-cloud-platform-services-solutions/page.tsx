@@ -49,7 +49,7 @@ export default function GoogleCloudServicesPage() {
               </p>
               <div className="mb-8">
                 <p className="text-base leading-relaxed mb-4 opacity-90">
-                  One-size-fits-all software can't deliver the competitive advantage you need in today's digital landscape. But building custom solutions often means struggling to find the right talent, fast enough. Partner with Kanda to unlock full digital potential.
+                  One-size-fits-all software can&apos;t deliver the competitive advantage you need in today&apos;s digital landscape. But building custom solutions often means struggling to find the right talent, fast enough. Partner with Kanda to unlock full digital potential.
                 </p>
                 <p className="text-base leading-relaxed opacity-90">
                   As a trusted GCP partner, we will help you leverage the latest cloud-native tools to get you up and running quickly, so you can focus on what matters most: winning in the digital marketplace.
@@ -324,10 +324,10 @@ export default function GoogleCloudServicesPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Is GCP's serverless approach right for you?
+              Is GCP&apos;s serverless approach right for you?
             </h2>
             <p className="text-lg leading-relaxed max-w-4xl mx-auto opacity-90">
-              Google Cloud is an innovation enabler for your business with powerful data analytics options, ML/AI pipelines, future-proof infrastructure and state-of-the-art security capabilities. If you're considering modernizing your applications or building new ones, a GCP serverless approach can be a strategic decision for achieving cost savings, scalability, faster development cycles, and improved operational efficiency.
+              Google Cloud is an innovation enabler for your business with powerful data analytics options, ML/AI pipelines, future-proof infrastructure and state-of-the-art security capabilities. If you&apos;re considering modernizing your applications or building new ones, a GCP serverless approach can be a strategic decision for achieving cost savings, scalability, faster development cycles, and improved operational efficiency.
             </p>
             <p className="text-base leading-relaxed max-w-4xl mx-auto mt-4 opacity-90">
               A serverless approach offers several benefits for businesses, making it an attractive option for many applications. The key advantages include:
@@ -342,7 +342,7 @@ export default function GoogleCloudServicesPage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Cost-Effectiveness</h3>
               <p className="text-sm leading-relaxed opacity-90">
-                You only pay for the resources you use. Since serverless eliminates the need to provision and manage servers, you're not charged for idle resources. This is especially beneficial for applications with fluctuating workloads.
+                You only pay for the resources you use. Since serverless eliminates the need to provision and manage servers, you&apos;re not charged for idle resources. This is especially beneficial for applications with fluctuating workloads.
               </p>
             </div>
 
@@ -364,7 +364,7 @@ export default function GoogleCloudServicesPage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Increased Agility</h3>
               <p className="text-sm leading-relaxed opacity-90">
-                Serverless allows for quicker iteration and easier updates to your application. This agility is crucial in today's fast-paced business environment where you need to adapt to changing market demands.
+                Serverless allows for quicker iteration and easier updates to your application. This agility is crucial in today&apos;s fast-paced business environment where you need to adapt to changing market demands.
               </p>
             </div>
 
@@ -375,7 +375,7 @@ export default function GoogleCloudServicesPage() {
               </div>
               <h3 className="text-xl font-semibold mb-4">Faster Development and Deployment</h3>
               <p className="text-sm leading-relaxed opacity-90">
-                With serverless, you don't need to worry about server management from your IT team, freeing up developers to focus on core application logic.
+                With serverless, you don&apos;t need to worry about server management from your IT team, freeing up developers to focus on core application logic.
               </p>
             </div>
 

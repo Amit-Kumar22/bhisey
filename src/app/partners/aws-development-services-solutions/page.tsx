@@ -82,7 +82,7 @@ export default function AWSServicesPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-              Unlock Cloud Agility and Security with Kanda's Expertise
+              Unlock Cloud Agility and Security with Kanda&apos;s Expertise
             </h2>
           </div>
           
@@ -109,7 +109,7 @@ export default function AWSServicesPage() {
                 Scale Seamlessly
               </h3>
               <p className="text-charcoal-light leading-relaxed">
-                Leverage the power of AWS to "scale up" and "scale down" your resources effortlessly, ensuring your applications are always available and meet demand.
+                Leverage the power of AWS to &quot;scale up&quot; and &quot;scale down&quot; your resources effortlessly, ensuring your applications are always available and meet demand.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ export default function AWSServicesPage() {
                 Optimize Your Costs
               </h3>
               <p className="text-charcoal-light leading-relaxed">
-                We'll modernize your infrastructure and solutions using the most cost-effective methods available, without compromising performance or security.
+                We&apos;ll modernize your infrastructure and solutions using the most cost-effective methods available, without compromising performance or security.
               </p>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function AWSServicesPage() {
 
           <div className="text-center">
             <button className="inline-flex items-center px-8 py-4 bg-accent-600 text-white font-semibold rounded-lg hover:bg-accent-700 transition-colors">
-              Let's Discuss Your Project
+              Let&apos;s Discuss Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>

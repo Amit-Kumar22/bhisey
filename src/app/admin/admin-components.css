@@ -1,0 +1,559 @@
+/**
+ * ADMIN UI COMPONENTS - MODERN PROFESSIONAL DESIGN SYSTEM
+ * Clean, minimal, business-ready component styles
+ * WCAG 2.1 AA Compliant
+ */
+
+/* ============================================ */
+/* BUTTONS */
+/* ============================================ */
+
+.btn-admin-primary {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply px-6 py-3 rounded-lg;
+  @apply text-sm font-semibold text-white;
+  @apply bg-accent-500 hover:bg-accent-600 active:bg-accent-700;
+  @apply shadow-sm hover:shadow-base;
+  @apply transition-all duration-200 ease-out;
+  @apply hover:-translate-y-0.5 active:translate-y-0;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+}
+
+.btn-admin-secondary {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply px-6 py-3 rounded-lg;
+  @apply text-sm font-semibold text-neutral-700;
+  @apply bg-transparent hover:bg-neutral-50 active:bg-neutral-100;
+  @apply border border-neutral-300 hover:border-neutral-400;
+  @apply transition-colors duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-admin-danger {
+  @apply inline-flex items-center justify-center gap-2;
+  @apply px-6 py-3 rounded-lg;
+  @apply text-sm font-semibold text-white;
+  @apply bg-red-500 hover:bg-red-600 active:bg-red-700;
+  @apply shadow-sm hover:shadow-base;
+  @apply transition-all duration-200 ease-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+}
+
+.btn-admin-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.btn-admin-icon {
+  @apply p-2 rounded-lg;
+  @apply text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100;
+  @apply transition-colors duration-150;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1;
+}
+
+/* ============================================ */
+/* CARDS */
+/* ============================================ */
+
+.admin-card {
+  @apply bg-white rounded-lg border border-neutral-200;
+  @apply shadow-xs hover:shadow-base;
+  @apply transition-shadow duration-200;
+}
+
+.admin-card-elevated {
+  @apply bg-white rounded-lg;
+  @apply shadow-base hover:shadow-lg;
+  @apply transition-shadow duration-200;
+}
+
+.admin-stat-card {
+  @apply admin-card p-6;
+}
+
+.admin-stat-icon {
+  @apply w-12 h-12 rounded-lg bg-accent-50;
+  @apply flex items-center justify-center;
+}
+
+.admin-stat-icon svg {
+  @apply w-6 h-6 text-accent-500;
+}
+
+.admin-stat-label {
+  @apply text-sm font-medium text-neutral-600;
+}
+
+.admin-stat-value {
+  @apply text-3xl font-bold text-neutral-800 mt-1;
+}
+
+.admin-stat-meta {
+  @apply text-xs text-neutral-500 mt-1;
+}
+
+/* ============================================ */
+/* FORMS */
+/* ============================================ */
+
+.admin-label {
+  @apply block text-sm font-medium text-neutral-700 mb-1.5;
+}
+
+.admin-label-required::after {
+  @apply text-red-500 ml-1;
+  content: '*';
+}
+
+.admin-input {
+  @apply w-full px-4 py-3 rounded-lg;
+  @apply text-base text-neutral-700;
+  @apply bg-white border border-neutral-300;
+  @apply transition-colors duration-150;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500;
+  @apply placeholder:text-neutral-400;
+  @apply disabled:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed;
+}
+
+.admin-input-error {
+  @apply border-red-500 bg-red-50;
+  @apply focus:ring-red-500 focus:border-red-500;
+}
+
+.admin-textarea {
+  @apply admin-input min-h-32 resize-vertical;
+  @apply font-mono text-sm;
+}
+
+.admin-select {
+  @apply admin-input pr-10;
+  @apply appearance-none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.admin-helper-text {
+  @apply text-xs text-neutral-500 mt-1.5;
+}
+
+.admin-error-message {
+  @apply flex items-center gap-1.5 text-xs text-red-600 mt-1.5;
+}
+
+.admin-checkbox {
+  @apply w-4 h-4 rounded border-neutral-300;
+  @apply text-accent-500 focus:ring-2 focus:ring-accent-500 focus:ring-offset-0;
+  @apply transition-colors duration-150;
+}
+
+.admin-radio {
+  @apply admin-checkbox rounded-full;
+}
+
+/* ============================================ */
+/* TABLES */
+/* ============================================ */
+
+.admin-table {
+  @apply w-full border-collapse;
+}
+
+.admin-table-wrapper {
+  @apply overflow-x-auto rounded-lg border border-neutral-200;
+}
+
+.admin-table thead {
+  @apply bg-neutral-50 border-b-2 border-neutral-300;
+}
+
+.admin-table th {
+  @apply px-4 py-3 text-left;
+  @apply text-xs font-semibold text-neutral-700 uppercase tracking-wider;
+}
+
+.admin-table tbody tr {
+  @apply border-b border-neutral-200;
+  @apply transition-colors duration-150;
+  @apply hover:bg-neutral-50;
+}
+
+.admin-table td {
+  @apply px-4 py-4 text-sm text-neutral-600;
+}
+
+.admin-table-actions {
+  @apply flex items-center gap-2;
+}
+
+.admin-table-action-edit {
+  @apply text-accent-600 hover:text-accent-700 font-medium;
+  @apply px-3 py-1.5 rounded-md hover:bg-accent-50;
+  @apply transition-colors duration-150;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1;
+}
+
+.admin-table-action-delete {
+  @apply text-red-600 hover:text-red-700 font-medium;
+  @apply px-3 py-1.5 rounded-md hover:bg-red-50;
+  @apply transition-colors duration-150;
+  @apply focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1;
+}
+
+.admin-table-action-confirm {
+  @apply bg-red-100 text-red-700 font-semibold;
+  @apply px-3 py-1.5 rounded-md;
+}
+
+/* ============================================ */
+/* NAVIGATION */
+/* ============================================ */
+
+.admin-nav-link {
+  @apply flex items-center gap-2 px-4 py-2.5 rounded-lg;
+  @apply text-sm font-medium text-neutral-600;
+  @apply transition-colors duration-150;
+  @apply hover:bg-neutral-100 hover:text-neutral-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-1;
+}
+
+.admin-nav-link-active {
+  @apply bg-accent-50 text-accent-700;
+  @apply border-l-4 border-accent-500;
+  @apply pl-[calc(1rem-4px)];
+}
+
+.admin-nav-link svg {
+  @apply w-4 h-4;
+}
+
+/* ============================================ */
+/* PAGE HEADERS */
+/* ============================================ */
+
+.admin-page-header {
+  @apply flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8;
+}
+
+.admin-page-title {
+  @apply text-3xl font-bold text-neutral-800;
+}
+
+.admin-page-subtitle {
+  @apply text-sm text-neutral-600 mt-1;
+}
+
+.admin-section-title {
+  @apply text-xl font-semibold text-neutral-800 mb-4;
+}
+
+/* ============================================ */
+/* LOADING STATES */
+/* ============================================ */
+
+.admin-spinner {
+  @apply inline-block w-5 h-5 border-2 border-accent-500 border-t-transparent rounded-full;
+  animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-skeleton {
+  @apply bg-neutral-100 rounded;
+  background: linear-gradient(
+    90deg,
+    var(--neutral-100) 0%,
+    var(--neutral-200) 50%,
+    var(--neutral-100) 100%
+  );
+  background-size: 200% 100%;
+  animation: admin-shimmer 2s infinite;
+}
+
+@keyframes admin-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.admin-skeleton-text {
+  @apply admin-skeleton h-4 w-full;
+}
+
+.admin-skeleton-title {
+  @apply admin-skeleton h-8 w-3/4;
+}
+
+.admin-skeleton-button {
+  @apply admin-skeleton h-10 w-24;
+}
+
+/* ============================================ */
+/* EMPTY STATES */
+/* ============================================ */
+
+.admin-empty-state {
+  @apply flex flex-col items-center justify-center text-center py-16 px-4;
+}
+
+.admin-empty-icon {
+  @apply w-16 h-16 text-neutral-300 mb-4;
+}
+
+.admin-empty-title {
+  @apply text-lg font-semibold text-neutral-700 mb-2;
+}
+
+.admin-empty-description {
+  @apply text-sm text-neutral-500 mb-6 max-w-md;
+}
+
+/* ============================================ */
+/* BADGES & PILLS */
+/* ============================================ */
+
+.admin-badge {
+  @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full;
+  @apply text-xs font-medium;
+}
+
+.admin-badge-success {
+  @apply bg-green-50 text-green-700;
+}
+
+.admin-badge-error {
+  @apply bg-red-50 text-red-700;
+}
+
+.admin-badge-warning {
+  @apply bg-yellow-50 text-yellow-700;
+}
+
+.admin-badge-info {
+  @apply bg-blue-50 text-blue-700;
+}
+
+.admin-badge-neutral {
+  @apply bg-neutral-100 text-neutral-700;
+}
+
+/* ============================================ */
+/* ALERTS & NOTIFICATIONS */
+/* ============================================ */
+
+.admin-alert {
+  @apply flex items-start gap-3 p-4 rounded-lg;
+}
+
+.admin-alert-success {
+  @apply admin-alert bg-green-50 border border-green-200;
+}
+
+.admin-alert-error {
+  @apply admin-alert bg-red-50 border border-red-200;
+}
+
+.admin-alert-warning {
+  @apply admin-alert bg-yellow-50 border border-yellow-200;
+}
+
+.admin-alert-info {
+  @apply admin-alert bg-blue-50 border border-blue-200;
+}
+
+.admin-alert-icon {
+  @apply w-5 h-5 flex-shrink-0;
+}
+
+.admin-alert-success .admin-alert-icon {
+  @apply text-green-600;
+}
+
+.admin-alert-error .admin-alert-icon {
+  @apply text-red-600;
+}
+
+.admin-alert-warning .admin-alert-icon {
+  @apply text-yellow-600;
+}
+
+.admin-alert-info .admin-alert-icon {
+  @apply text-blue-600;
+}
+
+.admin-alert-content {
+  @apply flex-1;
+}
+
+.admin-alert-title {
+  @apply text-sm font-semibold mb-1;
+}
+
+.admin-alert-message {
+  @apply text-sm;
+}
+
+/* ============================================ */
+/* BREADCRUMBS */
+/* ============================================ */
+
+.admin-breadcrumbs {
+  @apply flex items-center gap-2 text-sm mb-6;
+}
+
+.admin-breadcrumb-item {
+  @apply text-neutral-600 hover:text-accent-600 transition-colors;
+}
+
+.admin-breadcrumb-separator {
+  @apply text-neutral-400;
+}
+
+.admin-breadcrumb-current {
+  @apply text-neutral-900 font-medium;
+}
+
+/* ============================================ */
+/* MODALS & OVERLAYS */
+/* ============================================ */
+
+.admin-modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50;
+  @apply flex items-center justify-center p-4;
+  @apply backdrop-blur-sm;
+}
+
+.admin-modal {
+  @apply bg-white rounded-xl shadow-2xl;
+  @apply max-w-lg w-full max-h-[90vh] overflow-y-auto;
+  @apply p-6;
+}
+
+.admin-modal-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.admin-modal-title {
+  @apply text-xl font-semibold text-neutral-800;
+}
+
+.admin-modal-close {
+  @apply btn-admin-icon;
+}
+
+.admin-modal-body {
+  @apply text-sm text-neutral-600 mb-6;
+}
+
+.admin-modal-footer {
+  @apply flex items-center justify-end gap-3;
+}
+
+/* ============================================ */
+/* TOOLTIPS */
+/* ============================================ */
+
+.admin-tooltip {
+  @apply absolute z-50 px-3 py-2 text-xs font-medium text-white;
+  @apply bg-neutral-900 rounded-lg shadow-lg;
+  @apply pointer-events-none;
+}
+
+/* ============================================ */
+/* UTILITY CLASSES */
+/* ============================================ */
+
+.admin-divider {
+  @apply border-t border-neutral-200 my-6;
+}
+
+.admin-focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+}
+
+.admin-truncate-2 {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.admin-truncate-3 {
+  @apply overflow-hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* ============================================ */
+/* RESPONSIVE UTILITIES */
+/* ============================================ */
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .admin-page-header {
+    @apply flex-col items-start;
+  }
+  
+  .admin-table-wrapper {
+    @apply overflow-x-scroll;
+  }
+  
+  .admin-table {
+    @apply min-w-[640px];
+  }
+  
+  .btn-admin-primary,
+  .btn-admin-secondary {
+    @apply w-full justify-center;
+  }
+}
+
+/* ============================================ */
+/* ACCESSIBILITY ENHANCEMENTS */
+/* ============================================ */
+
+/* Skip link */
+.admin-skip-link {
+  @apply absolute left-0 top-0 z-[100];
+  @apply bg-accent-500 text-white px-4 py-2 rounded-br-lg;
+  @apply transform -translate-y-full;
+  @apply focus:translate-y-0 transition-transform;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .admin-card,
+  .admin-input,
+  .admin-table-wrapper {
+    @apply border-2;
+  }
+  
+  .admin-nav-link-active {
+    @apply border-l-4;
+  }
+}
+
+/* Print styles */
+@media print {
+  .admin-nav-link,
+  .btn-admin-primary,
+  .btn-admin-secondary,
+  .admin-table-action-edit,
+  .admin-table-action-delete {
+    @apply shadow-none;
+  }
+}

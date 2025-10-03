@@ -1,0 +1,316 @@
+openapi: 3.0.3
+info:
+  title: Bhesi Content API
+  version: 1.0.0
+  description: REST API for admin authentication, blogs, and case studies.
+servers:
+  - url: http://localhost:4000
+paths:
+  /api/auth/login:
+    post:
+      summary: Login admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string, minLength: 6 }
+      responses:
+        '200':
+          description: Authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/auth/refresh:
+    post:
+      summary: Refresh access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refreshToken]
+              properties:
+                refreshToken: { type: string }
+      responses:
+        '200':
+          description: New tokens
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean }
+                  data:
+                    type: object
+                    properties:
+                      token: { type: string }
+                      refreshToken: { type: string }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/auth/logout:
+    post:
+      summary: Logout
+      responses:
+        '200': { $ref: '#/components/responses/OkMessage' }
+  /api/auth/me:
+    get:
+      security: [ bearerAuth: [] ]
+      summary: Current authenticated admin
+      responses:
+        '200':
+          description: Current user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success: { type: boolean }
+                  data: { $ref: '#/components/schemas/AdminUser' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/blogs:
+    get:
+      summary: List blogs
+      responses:
+        '200': { $ref: '#/components/responses/BlogList' }
+    post:
+      security: [ bearerAuth: [] ]
+      summary: Create blog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BlogCreate' }
+      responses:
+        '201': { $ref: '#/components/responses/BlogItem' }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/blogs/{slug}:
+    get:
+      summary: Get blog by slug
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { $ref: '#/components/responses/BlogItem' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/blogs/{id}:
+    put:
+      security: [ bearerAuth: [] ]
+      summary: Update blog
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string, format: uuid }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BlogUpdate' }
+      responses:
+        '200': { $ref: '#/components/responses/BlogItem' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+    delete:
+      security: [ bearerAuth: [] ]
+      summary: Delete blog
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        '204': { description: Deleted }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/case-studies:
+    get:
+      summary: List case studies
+      responses:
+        '200': { $ref: '#/components/responses/CaseStudyList' }
+    post:
+      security: [ bearerAuth: [] ]
+      summary: Create case study
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CaseStudyCreate' }
+      responses:
+        '201': { $ref: '#/components/responses/CaseStudyItem' }
+        '400': { $ref: '#/components/responses/ValidationError' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/case-studies/{slug}:
+    get:
+      summary: Get case study by slug
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { $ref: '#/components/responses/CaseStudyItem' }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /api/case-studies/{id}:
+    put:
+      security: [ bearerAuth: [] ]
+      summary: Update case study
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string, format: uuid }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/CaseStudyUpdate' }
+      responses:
+        '200': { $ref: '#/components/responses/CaseStudyItem' }
+        '404': { $ref: '#/components/responses/NotFound' }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+    delete:
+      security: [ bearerAuth: [] ]
+      summary: Delete case study
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        '204': { description: Deleted }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    AdminUser:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        email: { type: string, format: email }
+    Blog:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        title: { type: string }
+        slug: { type: string }
+        content: { type: string }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+    BlogCreate:
+      type: object
+      required: [title, slug, content]
+      properties:
+        title: { type: string, minLength: 3 }
+        slug: { type: string }
+        content: { type: string, minLength: 10 }
+    BlogUpdate:
+      type: object
+      properties:
+        title: { type: string }
+        slug: { type: string }
+        content: { type: string }
+    CaseStudy:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        title: { type: string }
+        slug: { type: string }
+        content: { type: string }
+        created_at: { type: string, format: date-time }
+        updated_at: { type: string, format: date-time }
+    CaseStudyCreate:
+      type: object
+      required: [title, slug, content]
+      properties:
+        title: { type: string, minLength: 3 }
+        slug: { type: string }
+        content: { type: string, minLength: 10 }
+    CaseStudyUpdate:
+      type: object
+      properties:
+        title: { type: string }
+        slug: { type: string }
+        content: { type: string }
+    AuthResponse:
+      type: object
+      properties:
+        success: { type: boolean }
+        data:
+          type: object
+          properties:
+            token: { type: string }
+            refreshToken: { type: string }
+            user: { $ref: '#/components/schemas/AdminUser' }
+  responses:
+    Unauthorized:
+      description: Unauthorized
+    NotFound:
+      description: Resource not found
+    ValidationError:
+      description: Validation error
+    BlogItem:
+      description: Single blog
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: { type: boolean }
+              data: { $ref: '#/components/schemas/Blog' }
+    BlogList:
+      description: Blog list
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: { type: boolean }
+              data:
+                type: array
+                items: { $ref: '#/components/schemas/Blog' }
+    CaseStudyItem:
+      description: Single case study
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: { type: boolean }
+              data: { $ref: '#/components/schemas/CaseStudy' }
+    CaseStudyList:
+      description: Case study list
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: { type: boolean }
+              data:
+                type: array
+                items: { $ref: '#/components/schemas/CaseStudy' }
+    OkMessage:
+      description: Generic OK message
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: { type: boolean }
+              data:
+                type: object
+                properties:
+                  message: { type: string }

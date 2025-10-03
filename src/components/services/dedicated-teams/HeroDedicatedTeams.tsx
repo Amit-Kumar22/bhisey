@@ -31,7 +31,7 @@ const HeroDedicatedTeams: React.FC = () => {
           <h2 className="mb-8 text-lg font-medium text-[#163748] md:text-2xl">On-Demand Engineering Firepower. Seamless Team Extension.</h2>
           <p className="mx-auto max-w-4xl text-sm leading-relaxed text-[#1E4F63] md:text-base lg:text-lg">
             At Kanda Software, we understand the urgency and precision that modern software development demands. Whether
-            you're scaling your product roadmap, accelerating time-to-market, or tackling a specialized challenge – our Dedicated
+            you&apos;re scaling your product roadmap, accelerating time-to-market, or tackling a specialized challenge – our Dedicated
             Development Teams provide the velocity, expertise, and flexibility to help you deliver at pace without compromising
             quality.
           </p>

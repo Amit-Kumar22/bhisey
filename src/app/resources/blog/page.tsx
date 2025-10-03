@@ -1,135 +1,98 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/layout/Section';
-import { ContactSection } from '@/components/reusable/ContactSection';
-
-// Blog data structure
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: string;
-  image: string;
-  featured?: boolean;
-}
-
-// Mock blog data - matching the screenshots
-const blogPosts: BlogPost[] = [
-  {
-    id: '1',
-    title: 'Predictive Analytics in Commercial Real Estate: Forecasting Occupancy, Rent, and Maintenance Needs',
-    excerpt: 'The commercial real estate (CRE) industry is dealing with a lot of change right now. The economy is shifting, tenants want different things, and there\'s constant pressure to get more value out of properties. In this climate, the old way of making decisions, which was often based on...',
-    date: 'September 25, 2025',
-    category: 'Real Estate',
-    image: '/api/placeholder/600/400',
-    featured: true
-  },
-  {
-    id: '2',
-    title: 'Cloud Migration for Hospitals Is No Longer Optional: How to Do It Right',
-    excerpt: '',
-    date: 'September 18, 2025',
-    category: 'Healthcare',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '3',
-    title: 'IRS Modernization and Taxpayer Expectations: Is Your Firm\'s Software Ready?',
-    excerpt: '',
-    date: 'September 11, 2025',
-    category: 'Finance and Banking',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '4',
-    title: 'From Bricks to Bots: Exploring Generative AI in Commercial Real Estate',
-    excerpt: '',
-    date: 'September 04, 2025',
-    category: 'Real Estate',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '5',
-    title: 'The Future of Drug Development Runs on Omics Data Platforms',
-    excerpt: '',
-    date: 'August 27, 2025',
-    category: 'Life Sciences',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '6',
-    title: 'How to Improve Patient Engagement with Digital Health Tools',
-    excerpt: '',
-    date: 'August 21, 2025',
-    category: 'Healthcare',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '7',
-    title: 'Machine Learning for Fraud Detection: Evolving Strategies for a Digital World',
-    excerpt: '',
-    date: 'August 14, 2025',
-    category: 'CyberSecurity',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '8',
-    title: 'Software Development Life Cycle (SDLC): Helping You Understand Simply and Completely',
-    excerpt: '',
-    date: 'August 08, 2025',
-    category: 'General',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '9',
-    title: 'Navigating Big Data Governance: Essential Roles and Frameworks',
-    excerpt: '',
-    date: 'June 18, 2025',
-    category: 'General',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '10',
-    title: 'Data Lake vs. Data Mesh: Which Architecture Best Solves Your Enterprise Silos?',
-    excerpt: '',
-    date: 'June 12, 2025',
-    category: 'General',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '11',
-    title: 'Computational Neuroscience Simulations: Combining Science and Technology',
-    excerpt: '',
-    date: 'June 05, 2025',
-    category: 'Healthcare',
-    image: '/api/placeholder/300/200'
-  },
-  {
-    id: '12',
-    title: 'Applications of Computer Simulation Software in Medicine and Pharmaceuticals',
-    excerpt: '',
-    date: 'May 29, 2025',
-    category: 'Healthcare',
-    image: '/api/placeholder/300/200'
-  }
-];
-
-const categories = ['All Industries', 'Healthcare', 'Real Estate', 'Finance and Banking', 'Life Sciences', 'CyberSecurity', 'General'];
-const tags = ['All Tags', 'Cloud Migration', 'Predictive Analytics', 'AI', 'Machine Learning', 'Data Governance'];
+import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
+import { fetchBlogs } from '@/store/slices/blogsSlice';
 
 export default function BlogPage() {
+  const dispatch = useAppDispatch();
+  const { items: blogs, status, error } = useAppSelector((state) => state.blogs);
+  
   const [selectedCategory, setSelectedCategory] = useState('All Industries');
   const [selectedTag, setSelectedTag] = useState('All Tags');
 
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = blogPosts.filter(post => !post.featured);
+  useEffect(() => {
+    dispatch(fetchBlogs());
+  }, [dispatch]);
+
+  // Extract unique categories and tags from backend data
+  const categories = useMemo(() => {
+    const uniqueCategories = new Set<string>();
+    blogs.forEach(blog => {
+      if (blog.tags && Array.isArray(blog.tags)) {
+        blog.tags.forEach(tag => {
+          // Check if tag looks like a category (capitalize first letter)
+          if (tag && tag.length > 0) {
+            uniqueCategories.add(tag);
+          }
+        });
+      }
+    });
+    return ['All Industries', ...Array.from(uniqueCategories).sort()];
+  }, [blogs]);
+
+  const tags = useMemo(() => {
+    const uniqueTags = new Set<string>();
+    blogs.forEach(blog => {
+      if (blog.tags && Array.isArray(blog.tags)) {
+        blog.tags.forEach(tag => {
+          if (tag && tag.length > 0) {
+            uniqueTags.add(tag);
+          }
+        });
+      }
+    });
+    return ['All Tags', ...Array.from(uniqueTags).sort()];
+  }, [blogs]);
+
+  // Filter blogs based on selected category and tag
+  const filteredBlogs = useMemo(() => {
+    return blogs.filter(blog => {
+      const categoryMatch = selectedCategory === 'All Industries' || 
+        (blog.tags && blog.tags.includes(selectedCategory));
+      const tagMatch = selectedTag === 'All Tags' || 
+        (blog.tags && blog.tags.includes(selectedTag));
+      return categoryMatch && tagMatch;
+    });
+  }, [blogs, selectedCategory, selectedTag]);
+
+  // Format date helper
+  const formatDate = (dateString: string | undefined) => {
+    if (!dateString) return 'No date';
+    try {
+      return new Date(dateString).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch {
+      return 'Invalid date';
+    }
+  };
+
+  // Get category from tags (first tag)
+  const getCategory = (tags: string[] | undefined) => {
+    if (!tags || tags.length === 0) return 'General';
+    return tags[0];
+  };
+
+  // Get image URL helper
+  const getImageUrl = (heroImage: any) => {
+    if (!heroImage) return '/api/placeholder/600/400';
+    if (typeof heroImage === 'string') return heroImage;
+    if (heroImage.url) return heroImage.url;
+    return '/api/placeholder/600/400';
+  };
+
+  const featuredPost = filteredBlogs.length > 0 ? filteredBlogs[0] : null;
+  const regularPosts = filteredBlogs.slice(1);
 
   return (
     <div className="min-h-screen bg-white">
-
       {/* Main Content */}
       <Section className="py-16" spacing="none">
         <Container>
@@ -139,12 +102,15 @@ export default function BlogPage() {
               Discover Latest Insights
             </h1>
           </div>
+
+          {/* Dropdown Filters - Dynamic from Backend */}
           <div className="mb-12 flex flex-col sm:flex-row gap-4 justify-start">
             <div className="relative">
               <select 
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-3 pr-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 min-w-[180px]"
+                disabled={status === 'loading'}
               >
                 {categories.map(category => (
                   <option key={category} value={category}>{category}</option>
@@ -162,6 +128,7 @@ export default function BlogPage() {
                 value={selectedTag}
                 onChange={(e) => setSelectedTag(e.target.value)}
                 className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-3 pr-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 min-w-[150px]"
+                disabled={status === 'loading'}
               >
                 {tags.map(tag => (
                   <option key={tag} value={tag}>{tag}</option>
@@ -175,120 +142,152 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* Blog Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Featured Article - Left Side */}
-            {featuredPost && (
-              <div className="lg:col-span-2">
-                <article className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div className="aspect-video bg-gray-100 relative">
-                    <img 
-                      src={featuredPost.image} 
-                      alt={featuredPost.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm text-gray-600">{featuredPost.date}</span>
-                      <span className="px-3 py-1 bg-accent-100 text-accent-600 text-sm rounded-full font-medium">
-                        {featuredPost.category}
-                      </span>
-                    </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-gray-600 text-base leading-relaxed mb-6">
-                      {featuredPost.excerpt}
-                    </p>
-                    <a 
-                      href="#" 
-                      className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
-                    >
-                      Learn More 
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </article>
-              </div>
-            )}
+          {/* Loading State */}
+          {status === 'loading' && (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600"></div>
+              <p className="mt-4 text-gray-600">Loading blogs...</p>
+            </div>
+          )}
 
-            {/* Article List - Right Side */}
-            <div className="space-y-6">
-              {regularPosts.slice(0, 5).map((post) => (
-                <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div className="flex">
-                    <div className="w-24 h-20 bg-gray-100 flex-shrink-0">
-                      <img 
-                        src={post.image} 
-                        alt={post.title}
-                        className="w-full h-full object-cover"
+          {/* Error State */}
+          {status === 'error' && (
+            <div className="text-center py-12">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
+                <p className="text-red-600 font-semibold mb-2">Error loading blogs</p>
+                <p className="text-red-500 text-sm">{error || 'Something went wrong'}</p>
+              </div>
+            </div>
+          )}
+
+          {/* No Results */}
+          {status === 'idle' && filteredBlogs.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No blogs found matching your filters.</p>
+            </div>
+          )}
+
+          {/* Blog Grid - Backend Data */}
+          {status === 'idle' && filteredBlogs.length > 0 && (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Featured Article - Left Side */}
+              {featuredPost && (
+                <div className="lg:col-span-2">
+                  <article className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="aspect-video bg-gray-100 relative">
+                      <Image 
+                        src={getImageUrl(featuredPost.heroImage)} 
+                        alt={featuredPost.title}
+                        fill
+                        className="object-cover"
                       />
                     </div>
-                    <div className="flex-1 p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs text-gray-600">{post.date}</span>
-                        <span className="px-2 py-1 bg-accent-100 text-accent-600 text-xs rounded-full font-medium">
-                          {post.category}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-sm text-gray-600">{formatDate(featuredPost.publishedAt)}</span>
+                        <span className="px-3 py-1 bg-accent-100 text-accent-600 text-sm rounded-full font-medium">
+                          {getCategory(featuredPost.tags)}
                         </span>
                       </div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-2 leading-tight line-clamp-2">
-                        {post.title}
-                      </h3>
-                      <a 
-                        href="#" 
-                        className="inline-flex items-center text-accent-600 text-xs font-semibold hover:text-accent-700 transition-colors"
+                      <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                        {featuredPost.title}
+                      </h2>
+                      <p className="text-gray-600 text-base leading-relaxed mb-6">
+                        {featuredPost.excerpt || 'Read more to discover insights...'}
+                      </p>
+                      <Link 
+                        href={`/resource/blog/${featuredPost.slug}`}
+                        className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
                       >
                         Learn More 
-                        <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </a>
+                      </Link>
                     </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+                  </article>
+                </div>
+              )}
 
-          {/* Additional Articles Grid */}
-          <div className="mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularPosts.slice(5).map((post) => (
-                <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <div className="aspect-video bg-gray-100">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-gray-600">{post.date}</span>
-                      <span className="px-3 py-1 bg-accent-100 text-accent-600 text-sm rounded-full font-medium">
-                        {post.category}
-                      </span>
+              {/* Article List - Right Side */}
+              <div className="space-y-6">
+                {regularPosts.slice(0, 5).map((post) => (
+                  <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="flex">
+                      <div className="w-24 h-20 bg-gray-100 flex-shrink-0 relative">
+                        <Image 
+                          src={getImageUrl(post.heroImage)} 
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 p-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-xs text-gray-600">{formatDate(post.publishedAt)}</span>
+                          <span className="px-2 py-1 bg-accent-100 text-accent-600 text-xs rounded-full font-medium">
+                            {getCategory(post.tags)}
+                          </span>
+                        </div>
+                        <h3 className="text-sm font-semibold text-gray-900 mb-2 leading-tight line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <Link 
+                          href={`/resource/blog/${post.slug}`}
+                          className="inline-flex items-center text-accent-600 text-xs font-semibold hover:text-accent-700 transition-colors"
+                        >
+                          Learn More 
+                          <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4 leading-tight">
-                      {post.title}
-                    </h3>
-                    <a 
-                      href="#" 
-                      className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
-                    >
-                      Learn More 
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Additional Articles Grid - Backend Data */}
+          {status === 'idle' && regularPosts.length > 5 && (
+            <div className="mt-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {regularPosts.slice(5).map((post) => (
+                  <article key={post.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <div className="aspect-video bg-gray-100 relative">
+                      <Image 
+                        src={getImageUrl(post.heroImage)} 
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm text-gray-600">{formatDate(post.publishedAt)}</span>
+                        <span className="px-3 py-1 bg-accent-100 text-accent-600 text-sm rounded-full font-medium">
+                          {getCategory(post.tags)}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-4 leading-tight">
+                        {post.title}
+                      </h3>
+                      <Link 
+                        href={`/resource/blog/${post.slug}`}
+                        className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
+                      >
+                        Learn More 
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
         </Container>
       </Section>
 

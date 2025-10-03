@@ -386,11 +386,11 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
                   <p className="text-charcoal-light">{testimonial.title}, {testimonial.company}</p>
                 </div>
                 
-                <div className="text-orange-600 text-2xl mb-4">"</div>
+                <div className="text-orange-600 text-2xl mb-4">&ldquo;</div>
                 <blockquote className="text-charcoal leading-relaxed mb-6">
                   {testimonial.quote}
                 </blockquote>
-                <div className="text-orange-600 text-2xl text-right">"</div>
+                <div className="text-orange-600 text-2xl text-right">&rdquo;</div>
               </div>
             ))}
           </div>

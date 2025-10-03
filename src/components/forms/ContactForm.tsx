@@ -263,7 +263,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-2">
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
             Name *
           </label>
           <input
@@ -272,7 +272,7 @@ export function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+            className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
               fieldErrors.name ? 'border-red-300' : 'border-gray-300'
             }`}
             placeholder="Your full name"
@@ -285,7 +285,7 @@ export function ContactForm() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
             Email *
           </label>
           <input
@@ -294,7 +294,7 @@ export function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+            className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
               fieldErrors.email ? 'border-red-300' : 'border-gray-300'
             }`}
             placeholder="your.email@company.com"
@@ -309,7 +309,7 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-charcoal mb-2">
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
             Phone Number
           </label>
           <input
@@ -318,14 +318,14 @@ export function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
             placeholder="+1 (555) 123-4567"
           />
         </div>
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-2">
+          <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
             Company
           </label>
           <input
@@ -334,7 +334,7 @@ export function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
             placeholder="Your company name"
           />
         </div>
@@ -342,7 +342,7 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
           How can we help? *
         </label>
         <textarea
@@ -351,7 +351,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleInputChange}
           rows={6}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+          className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
             fieldErrors.message ? 'border-red-300' : 'border-gray-300'
           }`}
           placeholder="Please describe your project, requirements, timeline, and any specific questions you have..."
@@ -367,7 +367,7 @@ export function ContactForm() {
 
       {/* File Upload */}
       <div>
-        <label htmlFor="attachment" className="block text-sm font-semibold text-charcoal mb-2">
+        <label htmlFor="attachment" className="block text-sm font-semibold text-gray-900 mb-2">
           Upload your RFP or other relevant files (Optional)
         </label>
         <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-accent-500 transition-colors">
@@ -381,7 +381,7 @@ export function ContactForm() {
           />
           <label
             htmlFor="attachment"
-            className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-100 text-charcoal rounded-lg hover:bg-gray-200 transition-colors"
+            className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clipRule="evenodd" />
@@ -389,7 +389,7 @@ export function ContactForm() {
             Choose File
           </label>
           {formData.attachment && (
-            <p className="text-sm text-charcoal-light mt-2">
+            <p className="text-sm text-gray-600 mt-2">
               Selected: {formData.attachment.name}
             </p>
           )}
@@ -418,7 +418,7 @@ export function ContactForm() {
             }`}
             required
           />
-          <span className="text-sm text-charcoal-light">
+          <span className="text-sm text-gray-600">
             I agree to receive communications from Bhisey Software *
           </span>
         </label>

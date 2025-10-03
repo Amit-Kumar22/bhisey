@@ -217,7 +217,7 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
             
             <p className="text-xl md:text-2xl leading-relaxed mb-10 text-orange-100">
               Accurately translating Scientific Processes into robust algorithms demands expertise in 
-              both Life Sciences and Software Development. Whether you're grappling with complex 
+              both Life Sciences and Software Development. Whether you&apos;re grappling with complex 
               omics data sets, translating scientific ideas into algorithms, optimizing manufacturing 
               processes, or navigating regulatory landscapes, Kanda is your partner in transforming 
               challenges into opportunities. Let us help you harness the power of software to 

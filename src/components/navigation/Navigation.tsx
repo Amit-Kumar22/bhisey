@@ -4,11 +4,13 @@
  * Navigation Component - Sticky top navigation with scroll behavior and mega menus
  */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { cn } from '../../lib/utils';
 import { navigation } from '../../lib/constants';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useAppSelector, useAppDispatch } from '@/hooks/useStore';
+import { logout } from '@/store/slices/authSlice';
 
 interface NavigationProps {
   className?: string;
@@ -25,6 +27,8 @@ export default function Navigation({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { user } = useAppSelector(s => s.auth);
+  const dispatch = useAppDispatch();
 
   // Handle scroll behavior for transparent navigation
   useEffect(() => {
@@ -128,6 +132,16 @@ export default function Navigation({
     return cn(...baseClasses);
   };
 
+  const handleLogout = useCallback(async () => {
+    try {
+      await dispatch(logout()).unwrap();
+      // Hard redirect to ensure state cleared
+      window.location.href = '/';
+    } catch (e) {
+      console.error('Logout failed', e);
+    }
+  }, [dispatch]);
+
   return (
     <nav className={getNavClasses()} role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,6 +223,33 @@ export default function Navigation({
                 {item.label}
               </Link>
             ))}
+
+            {/* Auth Links (Desktop) */}
+            {!user && (
+              <Link
+                href="/admin/login"
+                className={getLinkClasses(false)}
+              >
+                Login
+              </Link>
+            )}
+            {user && (
+              <>
+                <Link
+                  href="/admin"
+                  className={getLinkClasses(false)}
+                >
+                  Admin
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className={cn(getLinkClasses(false), 'text-sm')}
+                  type="button"
+                >
+                  Logout
+                </button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -308,6 +349,45 @@ export default function Navigation({
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Auth Links (Mobile) */}
+                {!user && (
+                  <Link
+                    href="/admin/login"
+                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-accent-500"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      onMenuToggle?.(false);
+                    }}
+                  >
+                    Login
+                  </Link>
+                )}
+                {user && (
+                  <>
+                    <Link
+                      href="/admin"
+                      className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-accent-500"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        onMenuToggle?.(false);
+                      }}
+                    >
+                      Admin
+                    </Link>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setIsMobileMenuOpen(false);
+                        onMenuToggle?.(false);
+                      }}
+                      className="block w-full text-left px-3 py-2 text-base font-medium text-gray-900 hover:text-accent-500"
+                      type="button"
+                    >
+                      Logout
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>

@@ -38,10 +38,10 @@ const HeroSection = () => {
           
           <div className="mb-12">
             <p className="text-lg text-blue-100 mb-6 leading-relaxed">
-              Kanda's UX and UI team builds beautiful interfaces that deliver results. We don't just design applications that look good, we design them to achieve your goals.
+              Kanda&apos;s UX and UI team builds beautiful interfaces that deliver results. We don&apos;t just design applications that look good, we design them to achieve your goals.
             </p>
             <p className="text-lg text-blue-100 leading-relaxed">
-              Our UX/UI process prioritizes user needs and aligns perfectly with your business objectives. Every element we create contributes to your success and resonates with your target audience. From the initial wireframes to the final polished interfaces, we ensure your users can effortlessly navigate and enjoy the digital experience you've envisioned.
+              Our UX/UI process prioritizes user needs and aligns perfectly with your business objectives. Every element we create contributes to your success and resonates with your target audience. From the initial wireframes to the final polished interfaces, we ensure your users can effortlessly navigate and enjoy the digital experience you&apos;ve envisioned.
             </p>
           </div>
           
@@ -241,7 +241,7 @@ const DesignProcessSection = () => {
         
         <div className="max-w-6xl mx-auto">
           <p className="text-lg text-gray-600 text-center mb-8 max-w-4xl mx-auto leading-relaxed">
-            For over three decades, we've honed a design process that delivers exceptional UI and UX experiences. Our expert UX & UI designers don't just prioritize aesthetics; they leverage a user-centric approach, ensuring every element resonates with your target audience and contributes to your business goals. This translates into beautiful interfaces that not only look great but also deliver tangible results.
+            For over three decades, we&apos;ve honed a design process that delivers exceptional UI and UX experiences. Our expert UX & UI designers don&apos;t just prioritize aesthetics; they leverage a user-centric approach, ensuring every element resonates with your target audience and contributes to your business goals. This translates into beautiful interfaces that not only look great but also deliver tangible results.
           </p>
           
           <p className="text-lg text-gray-600 text-center mb-16 max-w-4xl mx-auto leading-relaxed">
@@ -283,7 +283,7 @@ const ClickablePrototypeSection = () => {
         
         <div className="max-w-4xl mx-auto">
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Unique to Kanda is our "Clickable Prototype" — developing a sampling of the foreseen screens with transitions, but without any underlying technical implementation. In our experience, when clients see the user flow, interactions, and how pages are transformed, they are much more likely to understand and provide constructive feedback on the product. Alternatively, dry verbal descriptions, or even wireframes embedded in Word documents, have proven to be a less effective way to assess the solution's UX flow and application usability.
+            Unique to Kanda is our &ldquo;Clickable Prototype&rdquo; — developing a sampling of the foreseen screens with transitions, but without any underlying technical implementation. In our experience, when clients see the user flow, interactions, and how pages are transformed, they are much more likely to understand and provide constructive feedback on the product. Alternatively, dry verbal descriptions, or even wireframes embedded in Word documents, have proven to be a less effective way to assess the solution&apos;s UX flow and application usability.
           </p>
           
           <p className="text-lg text-gray-700 leading-relaxed">

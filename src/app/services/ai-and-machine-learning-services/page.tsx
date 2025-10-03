@@ -129,7 +129,7 @@ export default function AIAndMachineLearningServicesPage() {
       <Section className="bg-gray-50" spacing="xl">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Don't Get Left Behind</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">Don&apos;t Get Left Behind</h2>
             <p className="text-lg text-charcoal-light max-w-4xl mx-auto leading-relaxed">
               AI is rapidly transforming every industry, creating opportunities for businesses that stay at the forefront of 
               technology to leap ahead of the competition.
@@ -314,8 +314,8 @@ export default function AIAndMachineLearningServicesPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-              AI solutions for today's needs<br />
-              and tomorrow's vision
+              AI solutions for today&apos;s needs<br />
+              and tomorrow&apos;s vision
             </h2>
             <p className="text-lg text-charcoal-light max-w-4xl mx-auto leading-relaxed">
               Each project we undertake is anchored in our five pillars of success, providing a strong foundation for an AI 
@@ -441,7 +441,7 @@ export default function AIAndMachineLearningServicesPage() {
           <div className="mt-12 text-center max-w-4xl mx-auto">
             <p className="text-lg text-charcoal-light leading-relaxed">
               While our teams bring together AI and Machine Learning experts from all over the world, they are all fluent in the language of 
-              Agile. Whether you have a preferred methodology for us to follow or need a hand establishing one, we'll put our extensive 
+              Agile. Whether you have a preferred methodology for us to follow or need a hand establishing one, we&apos;ll put our extensive 
               Agile experience to work for you.
             </p>
           </div>

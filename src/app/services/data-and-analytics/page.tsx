@@ -221,7 +221,7 @@ export default function DataAndAnalyticsPage() {
               We are here to find the best solution to your data challenges
             </p>
             <Link href="#contact" className="inline-flex items-center rounded-md bg-orange-700 hover:bg-orange-800 px-8 py-4 text-base font-semibold text-white shadow transition focus:outline-none focus:ring-2 focus:ring-orange-300">
-              Let's Talk →
+              Let&apos;s Talk →
             </Link>
           </div>
         </Container>
@@ -232,7 +232,7 @@ export default function DataAndAnalyticsPage() {
         <Container>
           <h2 className="mb-8 text-center text-3xl md:text-4xl font-bold text-orange-600">Tech spotlight</h2>
           <p className="text-center text-base md:text-lg text-charcoal-light mb-12 max-w-4xl mx-auto">
-            As your technology partner, we leverage state-of-the-art technology to ensure reliability and longevity of your custom data solutions. Being cloud and platform-agnostic and customer-focused, we carefully consider our clients' needs to choose the best tools and frameworks aligned with their long-term objectives.
+            As your technology partner, we leverage state-of-the-art technology to ensure reliability and longevity of your custom data solutions. Being cloud and platform-agnostic and customer-focused, we carefully consider our clients&apos; needs to choose the best tools and frameworks aligned with their long-term objectives.
           </p>
           
           <div className="space-y-4">
@@ -264,7 +264,7 @@ export default function DataAndAnalyticsPage() {
           <div className="mx-auto mb-12 max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold text-orange-600 md:text-4xl">Ready to Discuss Your Data and Analytics Needs?</h2>
             <p className="text-base leading-relaxed text-charcoal-light md:text-lg">
-              Let's reimagine the way you think about your data. Send us a message describing your goals, and let's explore how our data engineering services can drive your success.
+              Let&apos;s reimagine the way you think about your data. Send us a message describing your goals, and let&apos;s explore how our data engineering services can drive your success.
             </p>
           </div>
 

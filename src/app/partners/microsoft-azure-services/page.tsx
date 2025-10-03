@@ -49,7 +49,7 @@ export default function MicrosoftAzureServicesPage() {
               </p>
               <div className="mb-8">
                 <p className="text-base leading-relaxed mb-4 opacity-90">
-                  Kanda is a certified Microsoft Azure partner specializing in application and platform engineering, optimization, and deployment. We leverage our extensive expertise to develop, manage, and deploy scalable and compliant cloud solutions on Microsoft's Azure platform.
+                  Kanda is a certified Microsoft Azure partner specializing in application and platform engineering, optimization, and deployment. We leverage our extensive expertise to develop, manage, and deploy scalable and compliant cloud solutions on Microsoft&apos;s Azure platform.
                 </p>
                 <p className="text-base leading-relaxed opacity-90">
                   We empower Clients to accelerate the time-to-market of their critical software development projects by maximizing the advantages of Azure, regardless of their goals — migrating existing applications, modernizing legacy systems, or building cloud-native solutions.
@@ -374,7 +374,7 @@ export default function MicrosoftAzureServicesPage() {
 
           <div className="text-center">
             <button className="inline-flex items-center px-8 py-4 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors">
-              Let's Discuss Your Project
+              Let&apos;s Discuss Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>

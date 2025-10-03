@@ -1,586 +1,623 @@
-import { HeroBanner } from '@/components/reusable/HeroBanner';
-import { ClientLogoMarquee } from '@/components/reusable/ClientLogoMarquee';
-import { TestimonialSlider } from '@/components/reusable/TestimonialSlider';
-import { AwardsStrip } from '@/components/reusable/AwardsStrip';
-import { CTASection } from '@/components/reusable/CTASection';
-import Container from '@/components/layout/Container';
-import Section from '@/components/layout/Section';
+import Image from "next/image";
+import Link from "next/link";
+import ContactSection from "@/components/reusable/ContactSection";
+import TestimonialsVideoWall from "@/components/reusable/TestimonialsVideoWall";
 
-// Main page component sections
-const BhiseyDifference = () => (
-  <Section className="py-16 bg-white">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          The Bhisey Difference
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          We&apos;re not just another software development company. We&apos;re your technology partner, 
-          committed to your success from concept to launch and beyond.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">Partner by Design</h3>
-          <p className="text-charcoal-light">
-            We work closely with you to understand your business goals and deliver solutions that drive results.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">Product-Driven Engagement</h3>
-          <p className="text-charcoal-light">
-            Every project is managed with a product mindset, ensuring quality and user-centric solutions.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">People You Can Count On</h3>
-          <p className="text-charcoal-light">
-            Our experienced team brings deep expertise and commitment to every project we undertake.
-          </p>
-        </div>
-      </div>
-    </Container>
-  </Section>
-);
-
-const ServicesGrid = () => (
-  <Section className="py-16 bg-background-light">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          You Think it. We Build it.
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          From initial concept to full-scale deployment, we deliver custom software solutions 
-          that solve real business problems and drive growth.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            title: "Custom Software Development",
-            description: "Tailored solutions built to your exact specifications and business requirements.",
-            icon: "💻"
-          },
-          {
-            title: "Mobile App Development",
-            description: "Native and cross-platform mobile applications for iOS and Android.",
-            icon: "📱"
-          },
-          {
-            title: "Cloud Solutions",
-            description: "Scalable cloud architecture and migration services on AWS, Azure, and GCP.",
-            icon: "☁️"
-          },
-          {
-            title: "Digital Health",
-            description: "HIPAA-compliant healthcare technology solutions and telemedicine platforms.",
-            icon: "🏥"
-          },
-          {
-            title: "SaaS Platforms",
-            description: "Multi-tenant software-as-a-service platforms with enterprise-grade security.",
-            icon: "🚀"
-          },
-          {
-            title: "AI & Machine Learning",
-            description: "Intelligent solutions leveraging the latest in artificial intelligence technology.",
-            icon: "🤖"
-          }
-        ].map((service, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-3xl mb-4">{service.icon}</div>
-            <h3 className="text-xl font-bold text-charcoal mb-3">{service.title}</h3>
-            <p className="text-charcoal-light mb-4">{service.description}</p>
-            <a href="/services" className="text-accent-500 font-semibold hover:text-accent-600 transition-colors">
-              Learn More →
-            </a>
-          </div>
-        ))}
-      </div>
-    </Container>
-  </Section>
-);
-
-const Statistics = () => (
-  <Section className="py-16 bg-accent-500">
-    <Container>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-        <div>
-          <div className="text-4xl font-bold mb-2">500+</div>
-          <div className="text-accent-100">Projects Delivered</div>
-        </div>
-        <div>
-          <div className="text-4xl font-bold mb-2">15+</div>
-          <div className="text-accent-100">Years Experience</div>
-        </div>
-        <div>
-          <div className="text-4xl font-bold mb-2">98%</div>
-          <div className="text-accent-100">Client Satisfaction</div>
-        </div>
-        <div>
-          <div className="text-4xl font-bold mb-2">24/7</div>
-          <div className="text-accent-100">Support Available</div>
-        </div>
-      </div>
-    </Container>
-  </Section>
-);
-
-const CaseStudies = () => (
-  <Section className="py-16 bg-white">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          Success Stories
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          See how we&apos;ve helped companies transform their business with innovative technology solutions.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-background-light p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-charcoal mb-4">Healthcare Platform Transformation</h3>
-          <p className="text-charcoal-light mb-6">
-            Built a comprehensive telemedicine platform that increased patient engagement by 300% 
-            and reduced operational costs by 40% for a major healthcare provider.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-accent-500 font-semibold">Healthcare</span>
-            <a href="/case-studies" className="text-accent-500 hover:text-accent-600 transition-colors">
-              Read Case Study →
-            </a>
-          </div>
-        </div>
-        
-        <div className="bg-background-light p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-charcoal mb-4">SaaS Platform Scaling</h3>
-          <p className="text-charcoal-light mb-6">
-            Helped a startup scale their SaaS platform to handle 10M+ users with 99.9% uptime 
-            and lightning-fast performance across global markets.
-          </p>
-          <div className="flex items-center justify-between">
-            <span className="text-accent-500 font-semibold">SaaS</span>
-            <a href="/case-studies" className="text-accent-500 hover:text-accent-600 transition-colors">
-              Read Case Study →
-            </a>
-          </div>
-        </div>
-      </div>
-    </Container>
-  </Section>
-);
-
-const IndustryExpertise = () => (
-  <Section className="py-16 bg-background-light">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          Industry Expertise
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          We bring deep domain knowledge and industry-specific solutions to help you navigate 
-          complex regulatory requirements and business challenges.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center">
-          <div className="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-2xl">🏥</span>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">Digital Health</h3>
-          <p className="text-charcoal-light">
-            HIPAA-compliant solutions, EHR integrations, telemedicine platforms, and healthcare analytics.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-2xl">💼</span>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">SaaS & Enterprise</h3>
-          <p className="text-charcoal-light">
-            Multi-tenant architectures, enterprise integrations, scalable platforms, and B2B solutions.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-2xl">🏦</span>
-          </div>
-          <h3 className="text-xl font-bold text-charcoal mb-3">FinTech</h3>
-          <p className="text-charcoal-light">
-            Secure payment processing, compliance frameworks, risk management, and financial analytics.
-          </p>
-        </div>
-      </div>
-    </Container>
-  </Section>
-);
-
-const YoutubeTestimonials = () => (
-  <Section className="py-16 bg-white">
-    <Container>
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          See what people have to say about Bhisey
-        </h2>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Left side - Main Large Video (3 columns) */}
-        <div className="lg:col-span-3">
-          <div className="relative w-full h-0 pb-[40%] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-              title="Bhisey Software Client Testimonial - Main Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          {/* <div className="mt-4">
-            <h3 className="text-lg font-bold text-charcoal mb-2">
-              Client Success Story: Digital Transformation
-            </h3>
-            <p className="text-charcoal-light text-sm">
-              Watch how Bhisey helped transform a Fortune 500 company&apos;s entire technology infrastructure, 
-              resulting in 40% efficiency improvement and millions in cost savings.
-            </p>
-          </div> */}
-        </div>
-        
-        {/* Right side - 3 Small Videos stacked (1 column) */}
-        <div className="lg:col-span-1 space-y-2">
-          {/* First Small Video */}
-          <div>
-            <div className="relative w-full h-0 pb-[40%] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/JkK8g6FMEXE?rel=0&modestbranding=1"
-                title="Bhisey Software Client Testimonial - Healthcare"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
-          {/* Second Small Video */}
-          <div>
-            <div className="relative w-full h-0 pb-[40%] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/QB7ACr7pUuE?rel=0&modestbranding=1"
-                title="Bhisey Software Client Testimonial - SaaS Platform"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
-          {/* Third Small Video */}
-          <div>
-            <div className="relative w-full h-0 pb-[40%] bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/Ks-_Mh1QhMc?rel=0&modestbranding=1"
-                title="Bhisey Software Client Testimonial - Mobile App"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-            {/* <div className="mt-1">
-              <h4 className="text-xs font-bold text-charcoal mb-1">
-                Mobile App
-              </h4>
-              <p className="text-charcoal-light text-xs">
-                Cross-platform
-              </p>
-            </div> */}
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonial Cards below videos */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <div className="bg-background-light p-6 rounded-lg shadow-sm">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">JS</span>
-            </div>
-            <div>
-              <p className="font-bold text-charcoal">John Smith</p>
-              <p className="text-charcoal-light text-sm">CTO, HealthTech Inc</p>
-            </div>
-          </div>
-          <p className="text-charcoal-light text-sm italic">
-            &quot;Bhisey&apos;s expertise in healthcare technology is unmatched. They delivered our platform ahead of schedule.&quot;
-          </p>
-        </div>
-        
-        <div className="bg-background-light p-6 rounded-lg shadow-sm">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">MJ</span>
-            </div>
-            <div>
-              <p className="font-bold text-charcoal">Maria Johnson</p>
-              <p className="text-charcoal-light text-sm">VP Engineering, SaaS Pro</p>
-            </div>
-          </div>
-          <p className="text-charcoal-light text-sm italic">
-            &quot;Best development partner we&apos;ve ever worked with. Highly recommend Bhisey for any serious project.&quot;
-          </p>
-        </div>
-
-        <div className="bg-background-light p-6 rounded-lg shadow-sm">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">DR</span>
-            </div>
-            <div>
-              <p className="font-bold text-charcoal">David Rodriguez</p>
-              <p className="text-charcoal-light text-sm">Founder, TechFlow</p>
-            </div>
-          </div>
-          <p className="text-charcoal-light text-sm italic">
-            &quot;They transformed our vision into reality. Outstanding technical expertise and project management.&quot;
-          </p>
-        </div>
-      </div>
-    </Container>
-  </Section>
-);
-
-const TechnicalExpertise = () => (
-  <Section className="py-16 bg-background-light">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          Technical Expertise
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          Our team masters the latest technologies and frameworks to deliver cutting-edge solutions.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {[
-          { name: "React", logo: "⚛️" },
-          { name: "Node.js", logo: "🟢" },
-          { name: "Python", logo: "🐍" },
-          { name: "AWS", logo: "☁️" },
-          { name: "Docker", logo: "🐳" },
-          { name: "Kubernetes", logo: "⚙️" }
-        ].map((tech, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg text-center shadow-sm hover:shadow-md transition-shadow">
-            <div className="text-3xl mb-2">{tech.logo}</div>
-            <div className="text-sm font-semibold text-charcoal">{tech.name}</div>
-          </div>
-        ))}
-      </div>
-    </Container>
-  </Section>
-);
-
-const LatestNews = () => (
-  <Section className="py-16 bg-white">
-    <Container>
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-          Latest News & Insights
-        </h2>
-        <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
-          Stay updated with our latest thoughts on technology trends and industry insights.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          {
-            title: "The Future of AI in Healthcare",
-            excerpt: "Exploring how artificial intelligence is revolutionizing patient care and medical diagnostics.",
-            date: "Sep 15, 2025",
-            category: "AI & Healthcare"
-          },
-          {
-            title: "Cloud Migration Best Practices",
-            excerpt: "A comprehensive guide to successfully migrating your enterprise applications to the cloud.",
-            date: "Sep 10, 2025", 
-            category: "Cloud Computing"
-          },
-          {
-            title: "Building Scalable SaaS Platforms",
-            excerpt: "Key architectural decisions and patterns for creating multi-tenant software platforms.",
-            date: "Sep 5, 2025",
-            category: "SaaS Development"
-          }
-        ].map((article, index) => (
-          <article key={index} className="bg-background-light p-6 rounded-lg">
-            <div className="text-sm text-accent-500 font-semibold mb-2">{article.category}</div>
-            <h3 className="text-xl font-bold text-charcoal mb-3">{article.title}</h3>
-            <p className="text-charcoal-light mb-4">{article.excerpt}</p>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-charcoal-light">{article.date}</span>
-              <a href="/news" className="text-accent-500 hover:text-accent-600 transition-colors font-semibold">
-                Read More →
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </Container>
-  </Section>
-);
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <HeroBanner 
-        title="Product Promises. Delivered"
-        subtitle="We build custom software solutions that solve real business problems and drive measurable results. From concept to launch, we're your trusted technology partner."
-        primaryCta={{
-          text: "Start Your Project",
-          href: "/contact-us"
+      <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <svg className="absolute right-0 top-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            {[...Array(12)].map((_, i) => (
+              <path
+                key={i}
+                d={`M ${1200 + i * 20} ${100 + i * 10} Q ${600 + i * 30} ${200 + i * 15}, ${i * 20} ${150 + i * 10}`}
+                fill="none"
+                stroke="#ff6b35"
+                strokeWidth="2"
+                opacity={0.3 - i * 0.02}
+              />
+            ))}
+          </svg>
+        </div>
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <span className="text-orange-500">Product Promises.</span>{" "}
+            <span className="text-gray-800">Delivered</span>
+          </h1>
+          <p className="text-2xl md:text-3xl text-gray-600 mb-12">
+            You Think it. We Build it.
+          </p>
+          <Link
+            href="/contact-us"
+            className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Contact Us
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+
+        {/* Client Logos Carousel */}
+        <div className="mt-16 max-w-7xl mx-auto">
+          <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap opacity-60">
+            <div className="text-gray-400 text-sm font-medium">NEO GENOMICS</div>
+            <div className="text-gray-400 text-sm font-medium">LIONBRIDGE</div>
+            <div className="text-gray-400 text-sm font-medium">JOHNSON & JOHNSON</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Challenges Section */}
+      <section className="py-16 px-4 bg-orange-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-6">
+            Product challenges? We take them head-on.
+          </h2>
+          <p className="text-2xl md:text-3xl text-gray-700 font-semibold">
+            Can&apos;t-miss deadlines and Impossibly tight budgets?
+          </p>
+        </div>
+      </section>
+
+      {/* The Kanda Difference Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            <span className="text-gray-800">The </span>
+            <span className="text-orange-500">Kanda</span>
+            <span className="text-gray-800"> Difference</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Partner by Design</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Our US-based delivery managers are joined at the hip with your product owners – waking up every morning to ensure your product is delivered on time, on budget, and with the quality you expect.
+              </p>
+              <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Product Driven Engagement</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Our teams can rapidly scale up and down, adjusting the mix of resources and skills to optimize product deliverables, timeliness, and cost throughout the development lifecycle.
+              </p>
+              <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">People You Can Count On</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We have the breadth and depth to deliver the right skills, scale, and speed. Yet we are nimble enough to bring hard-to-find expertise (e.g. AI/ML, DevOps) and domain knowledge into your project when needed, while keeping your overhead and costs down.
+              </p>
+              <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Proven Success</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                We have a track record of delivering products that secure a competitive advantage, generate revenues, and increase operational efficiency – all while religiously protecting your intellectual property.
+              </p>
+              <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                Learn More
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Need Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            What You Need. When You Need It
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-orange-50 rounded-2xl p-12">
+              <p className="text-gray-700 leading-relaxed text-lg">
+                We have the breadth and depth to deliver the right skills, scale, and speed. Yet we are nimble enough to bring hard-to-find expertise (e.g. AI/ML, DevOps) and domain knowledge into your project when needed, while keeping your overhead and costs down.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-10 h-10 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <div className="text-orange-500 font-bold text-xl mb-1">Lookout</div>
+                </div>
+              </div>
+              
+              <div className="mb-4">
+                <div className="font-bold text-gray-800 text-lg">John Scano</div>
+                <div className="text-gray-600">Chief Development Officer, Lookout</div>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6 relative">
+                <svg className="w-8 h-8 text-orange-500 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-gray-700 leading-relaxed">
+                  I am very likely to recommend Kanda Software because of their strong commitment to make their customers successful. Examples that come to mind include: my ability to call directly into Kanda leadership when needed, adaptability to the changes in my business, access to top shelf engineering and technical talent.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* We Earn Your Business Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            We Earn Your Business Every Day
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16">
+                  <svg viewBox="0 0 120 40" className="w-full h-full">
+                    <text x="10" y="30" fontSize="24" fill="#ff6b35" fontWeight="bold">trapelo</text>
+                  </svg>
+                </div>
+              </div>
+              
+              <div className="mb-4">
+                <div className="font-bold text-gray-800 text-lg">Clynt Taylor</div>
+                <div className="text-gray-600">CEO, Trapelo</div>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6">
+                <svg className="w-8 h-8 text-orange-500 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-gray-700 leading-relaxed">
+                  I have had a very positive experience working with Kanda over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-orange-50 rounded-2xl p-12">
+              <p className="text-gray-700 leading-relaxed text-lg mb-8">
+                Our customer-friendly policies ensure that we must continuously earn your business. Every month. Every week. Every day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-start gap-8 mb-12">
+            <div className="w-3 h-3 bg-orange-500 rounded-full mt-3 flex-shrink-0"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Services</h2>
+          </div>
+
+          <div className="bg-white rounded-2xl p-10 shadow-lg border border-gray-200">
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">Custom Software Development</h3>
+            <p className="text-gray-600 leading-relaxed text-lg mb-8">
+              Kanda is a premier full-service Custom Software Development, Cloud Engineering, QA and DevOps company, specializing in the development of time-sensitive and innovative solutions. To every project, Kanda brings a combination of domain expertise, exceptional engineering talent, rigorous Agile development processes, commitment to protection of client&apos;s IP and accountability of a US company with over two decades of impeccable reputation.
+            </p>
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300"
+            >
+              Learn More
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            Awards and Recognition
+          </h2>
+
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
+            <div className="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+              <div className="text-center">
+                <div className="text-xs font-bold">2024</div>
+                <div className="text-xs">EXCELLENCE</div>
+              </div>
+            </div>
+            <div className="w-32 h-32 flex items-center justify-center">
+              <div className="text-center text-orange-500 font-bold">
+                <div className="text-sm">IAOP</div>
+                <div className="text-xs">OUTSOURCING 100</div>
+              </div>
+            </div>
+            <div className="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center shadow-lg">
+              <div className="text-white text-center">
+                <div className="font-bold text-lg">Inc.</div>
+                <div className="text-xs">5000</div>
+              </div>
+            </div>
+            <div className="w-32 h-32 border-4 border-purple-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="text-center">
+                <div className="text-xs font-bold text-purple-600">WINNER</div>
+                <div className="text-xs">HEALTH TECH</div>
+              </div>
+            </div>
+            <div className="w-32 h-32 bg-red-900 rounded-full flex items-center justify-center shadow-lg">
+              <div className="text-white text-center">
+                <div className="text-xs">BizTechMag 19</div>
+                <div className="font-bold">BEST</div>
+                <div className="text-xs">of Show</div>
+              </div>
+            </div>
+            <div className="w-32 h-32 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-orange-500 text-2xl mb-1">☁️</div>
+                <div className="text-xs font-bold">Google Cloud</div>
+                <div className="text-xs">Partner</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Expertise Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            Industry Expertise
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "❤️", title: "Healthcare" },
+              { icon: "🧪", title: "Life Sciences" },
+              { icon: "🏠", title: "Real Estate" },
+              { icon: "🎯", title: "Marketing\nand Advertising" },
+              { icon: "🛍️", title: "Retail\nand eCommerce" },
+              { icon: "💰", title: "Finance\nand Banking" },
+              { icon: "📚", title: "Education\nand E-Learning" },
+              { icon: "✈️", title: "Travel\nand Hospitality" },
+              { icon: "🔧", title: "Technology" },
+              { icon: "🚚", title: "Logistics" },
+              { icon: "🏭", title: "Manufacturing" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 text-center"
+              >
+                <div className="text-4xl text-orange-500 mb-4">{item.icon}</div>
+                <h3 className="text-gray-800 font-semibold whitespace-pre-line">{item.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Video Section */}
+      <TestimonialsVideoWall
+        heading="See what people have to say about Kanda"
+        main={{
+          id: "dQw4w9WgXcQ",
+          title: "Testimonial of Rob Feldman, CEO of College Interactive. Mobile Application Development",
         }}
-        secondaryCta={{
-          text: "View Our Work", 
-          href: "/case-studies"
-        }}
-        backgroundImage="/home1.png"
-        variant="full-width"
-        layout="centered"
-        overlay="gradient"
-      />
-      
-      {/* Client Logos */}
-      <ClientLogoMarquee 
-        logos={[
-          { name: "Google", src: "/logo1.png", alt: "Google" },
-          { name: "Microsoft", src: "/logo2.png", alt: "Microsoft" },
-          { name: "Amazon", src: "/logo3.png", alt: "Amazon" },
-          { name: "Netflix", src: "/logo4.png", alt: "Netflix" },
-          { name: "Spotify", src: "/logo5.png", alt: "Spotify" },
-          { name: "Airbnb", src: "/logo6.png", alt: "Airbnb" }
-        ]}
-        title="Trusted by industry leaders"
-        speed="slow"
-        direction="left"
-        pauseOnHover={true}
-      />
-      
-      {/* Statistics */}
-      {/* <Statistics /> */}
-      
-      {/* The Bhisey Difference */}
-      <BhiseyDifference />
-      
-      {/* Services Grid */}
-      <ServicesGrid />
-      
-      {/* Client Testimonials */}
-      <TestimonialSlider 
-        testimonials={[
+        side={[
           {
-            quote: "Bhisey transformed our healthcare platform and delivered results beyond our expectations. Their expertise in HIPAA compliance and scalable architecture was exactly what we needed.",
-            author: "Sarah Johnson",
-            title: "CTO",
-            company: "HealthTech Solutions",
-            avatar: "/testimonial1.jpg"
+            id: "dQw4w9WgXcQ",
+            thumbTitle: "Scott Blodgett, CIO, Lookout",
           },
           {
-            quote: "Working with Bhisey was a game-changer for our SaaS platform. They helped us scale to handle millions of users while maintaining 99.9% uptime.",
-            author: "Michael Chen",
-            title: "Founder & CEO",
-            company: "CloudFlow Inc",
-            avatar: "/testimonial2.jpg"
+            id: "dQw4w9WgXcQ",
+            thumbTitle: "Goran Skorput, Chief Technology Officer",
           },
           {
-            quote: "The team at Bhisey doesn't just write code - they understand business. They helped us build a solution that truly drives ROI.",
-            author: "Emily Rodriguez",
-            title: "VP of Technology",
-            company: "FinanceForward",
-            avatar: "/testimonial3.jpg"
-          }
+            id: "dQw4w9WgXcQ",
+            thumbTitle: "Rob Feldman, Founder & CEO of College Interactive",
+          },
         ]}
-        autoplay={true}
-        showDots={true}
-        showArrows={true}
-        variant="cards"
       />
-      
-      {/* Awards & Certifications */}
-      <AwardsStrip 
-        awards={[
-          { name: "Google Cloud Partner", src: "/home1.png", alt: "Google Cloud Partner" },
-          { name: "AWS Advanced Consulting Partner", src: "/home2.png", alt: "AWS Partner" },
-          { name: "Microsoft Gold Partner", src: "/home3.png", alt: "Microsoft Partner" },
-          { name: "ISO 27001 Certified", src: "/home4.png", alt: "ISO Certified" },
-          { name: "Clutch IT Services", src: "/home5.png", alt: "Clutch Award" },
-          { name: "Inc 5000", src: "/home6.png", alt: "Inc 5000" }
-        ]}
-        variant="standard"
-        layout="horizontal"
-        backgroundColor="light"
-        showTitle={true}
-      />
-      
-      {/* Industry Expertise */}
-      <IndustryExpertise />
-      
-      {/* YouTube Testimonials */}
-      <YoutubeTestimonials />
-      
-      {/* Technical Expertise */}
-      <TechnicalExpertise />
-      
-      {/* Case Studies */}
-      <CaseStudies />
-      
-      {/* Latest News */}
-      <LatestNews />
-      
-      {/* Final CTA */}
-      <CTASection 
-        title="Ready to build something amazing?"
-        subtitle="Let's discuss your project and see how we can help bring your vision to life."
-        primaryCta={{
-          text: "Start Your Project",
-          href: "/contact-us"
-        }}
-        secondaryCta={{
-          text: "View Our Services",
-          href: "/services"
-        }}
-        backgroundColor="accent"
-        layout="centered"
-      />
-    </>
+
+      {/* Technical Expertise Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">
+            Breadth and depth of technical expertise at your fingertips
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-6 text-gray-600 text-sm md:text-base">
+            {[
+              ".NET Core Web API", "AWS", ".NET", ".NET Core", "ADO.NET", "Adobe Flex",
+              "Ajax", "Firebase", "GCP", "HTML", "C#", "Data Studio", "DataFlow", "DataPrep"
+            ].map((tech, index) => (
+              <span key={index} className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all duration-300">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            Case Studies
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  A HIPAA Compliant Cloud Strategy. Choosing a Cloud Service Provider
+                </h3>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  A leading exclusive invitation-only Online Retailer
+                </h3>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  Astellas: Business-Critical Ethics and Compliance Platform Development
+                </h3>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Healthcare Software Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-orange-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                Healthcare Software Development
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
+                While you build trust and credibility as a Digital Health company, Kanda will back you up with reliability and agility on the technical side, reducing time to market and associated risks. We will help you transform your product roadmap into a HIPAA compliant, interoperable and secure state-of-the-art solution without draining your budget yet preserving quality. We have the engineering talent that has helped dozens of Digital Health and Life Sciences companies solve their most complex technology puzzles, and are trusted by companies like Janssen, Imprivata, CTCA and industry disruptors like Intervention Insights, Lifepod, Epion Health and others to achieve their complex technical objectives and meet their development milestones.
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+
+            <div className="relative">
+              <div className="absolute top-8 right-8 bg-white px-4 py-2 rounded-lg shadow-lg z-10">
+                <div className="flex items-center gap-2">
+                  <div className="text-orange-500 font-bold">✓</div>
+                  <div className="text-sm font-semibold">HIPAA COMPLIANT</div>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/11.png"
+                  alt="Healthcare Software Development - HIPAA Compliant Solutions"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SaaS Software Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 md:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/12.png"
+                  alt="SaaS Software Development Solutions"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                SaaS Software Development
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
+                Kanda is a premier custom software development and quality assurance company delivering complex world-class software solutions on a variety of technology platforms to clients ranging from Fortune 500 companies to dynamic startups. Our impeccable track record spans two decades and includes helping develop well over a thousand successful software initiatives that generated hundreds of millions of dollars for our clients
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300"
+              >
+                Learn More
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest News Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
+            Latest News
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+            {/* News Card 1 */}
+            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <div className="text-white text-center text-xs md:text-sm font-bold px-2">ISO/IEC 27001:2022</div>
+                </div>
+              </div>
+              <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
+                  Kanda Upgrades to ISO/IEC 27001:2022 Certification for Enhanced Information Security
+                </h3>
+                <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
+                  Kanda Software is proud to announce that we have successfully obtained the ISO/IEC 27001:2022 certification for information security management systems. This achievement...
+                </p>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* News Card 2 */}
+            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
+                <div className="text-white text-center font-bold text-xl md:text-2xl">TOP 100</div>
+              </div>
+              <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
+                  Kanda Software Named Among Top 100 Medical Software Development Companies of 2025
+                </h3>
+                <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
+                  We at Kanda Software are honored to announce our inclusion in the Top 100 Medical Software Development Companies for 2025, an achievement highlighted by the reputable...
+                </p>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* News Card 3 */}
+            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
+                <div className="text-white text-center font-bold text-lg md:text-xl">AWS Healthcare</div>
+              </div>
+              <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
+                  Kanda Software Achieves AWS Healthcare Services Competency
+                </h3>
+                <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
+                  Kanda Software has achieved the AWS Healthcare Services Competency designation. This accomplishment highlights more than a year of focused effort and teamwork. Awarded...
+                </p>
+                <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 border-2 border-orange-500 text-orange-500 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm md:text-base"
+            >
+              Read All News
+              <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section - Using existing component */}
+      <ContactSection />
+    </div>
   );
 }

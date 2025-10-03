@@ -1,83 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import Container from '@/components/layout/Container';
 import Section from '@/components/layout/Section';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Case Study data structure
-interface CaseStudy {
-  id: string;
-  title: string;
-  excerpt?: string;
-  image: string;
-  industry: string;
-  contentType: string;
-}
-
-// Industry and content type options
-const industries = ['All Industries', 'Healthcare', 'Life Sciences', 'AdTech', 'Transportation', 'Environmental'];
-const contentTypes = ['All Content Types', 'Case Study', 'Success Story', 'Client Spotlight'];
-
-// Case studies data - matching the content from the screenshots
-const caseStudies: CaseStudy[] = [
-  {
-    id: '1',
-    title: 'From Bottleneck to Business Driver: How a Smarter LIMS Unlocks Test Flexibility and Rapid Turnaround Time',
-    image: '/images/case-studies/lims-bottleneck.jpg',
-    industry: 'Life Sciences',
-    contentType: 'Case Study'
-  },
-  {
-    id: '2',
-    title: 'Advancing News Transparency with AI: How MediaPedia is Challenging Media Bias',
-    image: '/images/case-studies/mediapedia-ai.jpg',
-    industry: 'AdTech',
-    contentType: 'Success Story'
-  },
-  {
-    id: '3',
-    title: 'Modernizing Traditional Senior Home Care: Kanda Delivers Custom Scheduling Software and Scalable Solutions',
-    image: '/images/case-studies/senior-home-care.jpg',
-    industry: 'Healthcare',
-    contentType: 'Case Study'
-  },
-  {
-    id: '4',
-    title: 'Modernizing Legacy Systems: Positioning a Tax Consultancy into a Scalable SaaS Platform',
-    image: '/images/case-studies/tax-consultancy.jpg',
-    industry: 'Life Sciences',
-    contentType: 'Client Spotlight'
-  },
-  {
-    id: '5',
-    title: 'Native Plant Trust: Conserving and Promoting New England Native Rare Plants to Ensure Healthy Biologically Diverse Landscapes',
-    image: '/images/case-studies/native-plant-trust.jpg',
-    industry: 'Environmental',
-    contentType: 'Success Story'
-  },
-  {
-    id: '6',
-    title: 'Enhancing Data Management and Application Efficiency for a Leading Fleet Solutions Provider',
-    image: '/images/case-studies/fleet-solutions.jpg',
-    industry: 'Transportation',
-    contentType: 'Case Study'
-  },
-  {
-    id: '7',
-    title: 'Kanda supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance',
-    image: '/images/case-studies/trapelo-aws.jpg',
-    industry: 'Healthcare',
-    contentType: 'Success Story'
-  },
-  {
-    id: '8',
-    title: 'SafeTherapeutics: Improving Patient Outcomes by Reducing Adverse Drug Reactions',
-    image: '/images/case-studies/safetherapeutics.jpg',
-    industry: 'Life Sciences',
-    contentType: 'Case Study'
-  }
-];
+import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
+import { fetchCaseStudies } from '@/store/slices/caseStudiesSlice';
 
 // Testimonials data
 const testimonials = [
@@ -144,9 +73,39 @@ const whyKandaFeatures = [
 ];
 
 export default function CaseStudiesPage() {
+  const dispatch = useAppDispatch();
+  const { items: caseStudies, status, error } = useAppSelector((state) => state.caseStudies);
+  
   const [selectedIndustry, setSelectedIndustry] = useState('All Industries');
   const [selectedContentType, setSelectedContentType] = useState('All Content Types');
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    dispatch(fetchCaseStudies());
+  }, [dispatch]);
+
+  // Extract unique industries from backend data
+  const industries = useMemo(() => {
+    const uniqueIndustries = new Set<string>();
+    caseStudies.forEach(study => {
+      if (study.industry) {
+        uniqueIndustries.add(study.industry);
+      }
+    });
+    return ['All Industries', ...Array.from(uniqueIndustries).sort()];
+  }, [caseStudies]);
+
+  // Content types based on tags or default categories
+  const contentTypes = useMemo(() => {
+    const uniqueTypes = new Set<string>();
+    caseStudies.forEach(study => {
+      // You can add a contentType field or derive from tags
+      if (study.techStack && Array.isArray(study.techStack)) {
+        study.techStack.forEach(tech => uniqueTypes.add(tech));
+      }
+    });
+    return ['All Content Types', ...Array.from(uniqueTypes).sort()].slice(0, 10); // Limit to 10
+  }, [caseStudies]);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -156,12 +115,23 @@ export default function CaseStudiesPage() {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Filter case studies based on selected filters
-  const filteredCaseStudies = caseStudies.filter(study => {
-    const industryMatch = selectedIndustry === 'All Industries' || study.industry === selectedIndustry;
-    const contentTypeMatch = selectedContentType === 'All Content Types' || study.contentType === selectedContentType;
-    return industryMatch && contentTypeMatch;
-  });
+  // Filter case studies based on selected filters from backend data
+  const filteredCaseStudies = useMemo(() => {
+    return caseStudies.filter(study => {
+      const industryMatch = selectedIndustry === 'All Industries' || study.industry === selectedIndustry;
+      const contentTypeMatch = selectedContentType === 'All Content Types' || 
+        (study.techStack && study.techStack.includes(selectedContentType));
+      return industryMatch && contentTypeMatch;
+    });
+  }, [caseStudies, selectedIndustry, selectedContentType]);
+
+  // Get image URL helper
+  const getImageUrl = (heroImage: any) => {
+    if (!heroImage) return '/api/placeholder/600/400';
+    if (typeof heroImage === 'string') return heroImage;
+    if (heroImage.url) return heroImage.url;
+    return '/api/placeholder/600/400';
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -179,7 +149,7 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      {/* Filters Section */}
+      {/* Filters Section - Dynamic from Backend */}
       <Section className="py-8 bg-white border-b border-gray-200" spacing="none">
         <Container>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -189,6 +159,7 @@ export default function CaseStudiesPage() {
                 value={selectedIndustry}
                 onChange={(e) => setSelectedIndustry(e.target.value)}
                 className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-3 pr-10 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 min-w-[200px]"
+                disabled={status === 'loading'}
               >
                 {industries.map(industry => (
                   <option key={industry} value={industry}>{industry}</option>
@@ -203,6 +174,7 @@ export default function CaseStudiesPage() {
                 value={selectedContentType}
                 onChange={(e) => setSelectedContentType(e.target.value)}
                 className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-3 pr-10 text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-accent-500 min-w-[200px]"
+                disabled={status === 'loading'}
               >
                 {contentTypes.map(type => (
                   <option key={type} value={type}>{type}</option>
@@ -214,45 +186,89 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      {/* Case Studies Grid */}
+      {/* Case Studies Grid - Backend Data */}
       <Section className="py-16" spacing="none">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredCaseStudies.map((study) => (
-              <article key={study.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="aspect-video bg-gradient-to-br from-accent-300 to-accent-600 relative">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
-                      <svg className="w-10 h-10 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight line-clamp-3">
-                    {study.title}
-                  </h3>
-                  <a 
-                    href="#" 
-                    className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
-                  >
-                    Learn More 
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+          {/* Loading State */}
+          {status === 'loading' && (
+            <div className="text-center py-12">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600"></div>
+              <p className="mt-4 text-gray-600">Loading case studies...</p>
+            </div>
+          )}
 
-          {/* Load More Button */}
-          <div className="text-center mt-12">
-            <button className="bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-accent-700 transition-colors duration-200">
-              Load More
-            </button>
-          </div>
+          {/* Error State */}
+          {status === 'error' && (
+            <div className="text-center py-12">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
+                <p className="text-red-600 font-semibold mb-2">Error loading case studies</p>
+                <p className="text-red-500 text-sm">{error || 'Something went wrong'}</p>
+              </div>
+            </div>
+          )}
+
+          {/* No Results */}
+          {status === 'idle' && filteredCaseStudies.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No case studies found matching your filters.</p>
+            </div>
+          )}
+
+          {/* Case Studies Grid */}
+          {status === 'idle' && filteredCaseStudies.length > 0 && (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {filteredCaseStudies.map((study) => (
+                  <article key={study.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="aspect-video bg-gradient-to-br from-accent-300 to-accent-600 relative">
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+                          <svg className="w-10 h-10 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      {study.industry && (
+                        <div className="mb-2">
+                          <span className="inline-block px-3 py-1 bg-accent-100 text-accent-600 text-sm rounded-full font-medium">
+                            {study.industry}
+                          </span>
+                        </div>
+                      )}
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight line-clamp-3">
+                        {study.title}
+                      </h3>
+                      {study.clientName && (
+                        <p className="text-gray-600 text-sm mb-4">
+                          Client: <span className="font-semibold">{study.clientName}</span>
+                        </p>
+                      )}
+                      <Link 
+                        href={`/resource/case-study/${study.slug}`}
+                        className="inline-flex items-center text-accent-600 font-semibold hover:text-accent-700 transition-colors"
+                      >
+                        Learn More 
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* Load More Button - Only show if there are more than 10 items */}
+              {filteredCaseStudies.length > 10 && (
+                <div className="text-center mt-12">
+                  <button className="bg-accent-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-accent-700 transition-colors duration-200">
+                    Load More
+                  </button>
+                </div>
+              )}
+            </>
+          )}
         </Container>
       </Section>
 
@@ -295,7 +311,7 @@ export default function CaseStudiesPage() {
 
                   {index === currentTestimonial && (
                     <blockquote className="text-gray-700 leading-relaxed">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </blockquote>
                   )}
                 </div>

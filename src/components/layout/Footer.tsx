@@ -39,9 +39,9 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
 
   if (variant === 'minimal') {
     return (
-      <footer className={cn('bg-accent-600 text-white py-8', className)} role="contentinfo">
+      <footer className={cn('bg-accent-600 !text-white py-6', className)} role="contentinfo">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Logo and Copyright */}
             <div className="flex items-center space-x-4">
               <Link 
@@ -51,7 +51,7 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
               >
                 Bhisey
               </Link>
-              <span className="text-gray-400 text-sm">
+              <span className="text-gray-100 text-sm">
                 © {currentYear} Bhisey Software. All rights reserved.
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
             <UtilityNavigation 
               variant="horizontal" 
               iconSize="sm"
-              className="text-gray-400"
+              className="text-white"
             />
           </div>
         </div>
@@ -71,39 +71,39 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
   return (
     <footer className={cn('bg-accent-500 text-white', className)} role="contentinfo">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link 
               href="/" 
-              className="inline-block text-2xl font-bold text-white hover:text-accent-300 transition-colors duration-200 mb-4"
+              className="inline-block text-2xl font-bold text-white hover:text-accent-300 transition-colors duration-200 mb-3"
               aria-label="Bhisey Software - Home"
             >
               Bhisey
             </Link>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-gray-100 mb-4 max-w-md text-sm leading-relaxed">
               Empowering businesses through innovative software solutions. 
               Partner with us to transform your digital vision into reality.
             </p>
             
             {/* Contact Information */}
-            <div className="space-y-2 mb-6">
-              <div className="flex items-center text-gray-400">
+            <div className="space-y-1.5 mb-4">
+              <div className="flex items-center text-gray-100">
                 <span className="text-sm">
                   Email: <a 
                     href="mailto:hello@Bhisey.com" 
-                    className="text-white hover:text-accent-300 transition-colors duration-200"
+                    className="text-white hover:text-accent-300 transition-colors duration-200 underline-offset-2 hover:underline"
                   >
                     hello@Bhisey.com
                   </a>
                 </span>
               </div>
-              <div className="flex items-center text-gray-400">
+              <div className="flex items-center text-gray-100">
                 <span className="text-sm">
                   Phone: <a 
                     href="tel:+1234567890" 
-                    className="text-white hover:text-accent-300 transition-colors duration-200"
+                    className="text-white hover:text-accent-300 transition-colors duration-200 underline-offset-2 hover:underline"
                   >
                     +1 (234) 567-890
                   </a>
@@ -113,28 +113,28 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
 
             {/* Social Links */}
             <div>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
                 Follow Us
               </h3>
               <UtilityNavigation 
                 variant="horizontal" 
                 iconSize="md"
-                className="text-gray-400 space-x-4"
+                className="text-white space-x-4"
               />
             </div>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
               Company
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-gray-100 hover:text-white transition-colors duration-200 text-sm inline-block"
                   >
                     {link.label}
                   </Link>
@@ -145,24 +145,24 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
 
           {/* Services Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
               Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-gray-100 hover:text-white transition-colors duration-200 text-sm inline-block"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="pt-1">
                 <Link
                   href="/services"
-                  className="text-accent-300 hover:text-accent-400 transition-colors duration-200 text-sm font-medium"
+                  className="text-accent-300 hover:text-accent-200 transition-colors duration-200 text-sm font-medium inline-flex items-center gap-1"
                 >
                   View All Services →
                 </Link>
@@ -172,15 +172,15 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
 
           {/* Resources Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
               Resources
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-gray-100 hover:text-white transition-colors duration-200 text-sm inline-block"
                   >
                     {link.label}
                   </Link>
@@ -192,21 +192,21 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Copyright */}
-            <div className="text-gray-400 text-sm">
+            <div className="text-gray-100 text-sm">
               © {currentYear} Bhisey Software. All rights reserved.
             </div>
 
             {/* Legal Links */}
-            <nav className="flex flex-wrap justify-center md:justify-end space-x-6" aria-label="Legal navigation">
-              {footerLinks.legal.map((link, index) => (
+            <nav className="flex flex-wrap justify-center md:justify-end gap-x-5 gap-y-2" aria-label="Legal navigation">
+              {footerLinks.legal.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  className="text-gray-100 hover:text-white transition-colors duration-200 text-sm"
                 >
                   {link.label}
                 </Link>

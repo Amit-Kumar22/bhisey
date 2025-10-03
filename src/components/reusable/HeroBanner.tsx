@@ -69,7 +69,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
       aria-label={ariaLabel || 'Hero banner'}
       {...props}
     >
-      {backgroundImage && (
+      {/* {backgroundImage && (
         <>
           <Image
             src={backgroundImage}
@@ -81,7 +81,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
           />
           {overlay !== 'none' && <div className={overlayClasses} />}
         </>
-      )}
+      )} */}
       
       <Container className={contentClasses}>
         <h1 className={titleClasses}>

@@ -43,7 +43,7 @@ export default function DevOpsServicesPage() {
               
               <p className="text-base md:text-lg leading-relaxed mb-8 text-white/90 max-w-3xl">
                 Achieve greater business agility, shorten time to market, ensure regulatory compliance, boost analytical capabilities while 
-                reducing costs and decreasing technical debt. Kanda's DevOps Experts will help you integrate DevOps into your business, 
+                reducing costs and decreasing technical debt. Kanda&apos;s DevOps Experts will help you integrate DevOps into your business, 
                 implement DevOps best practices including CI/CD, GitOps, DevSecOps, AI/ML, and containerization.
               </p>
               
@@ -415,7 +415,7 @@ export default function DevOpsServicesPage() {
               href="#contact-us"
               className="inline-flex items-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-md transition-colors duration-200"
             >
-              Let's Discuss your Project →
+              Let&apos;s Discuss your Project →
             </Link>
           </div>
         </Container>
@@ -432,8 +432,8 @@ export default function DevOpsServicesPage() {
           
           <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed">
             <p>
-              In today's threat-laden landscape, securing your software at every stage of development is no longer an option, it's a 
-              necessity. Kanda's DevSecOps offering seamlessly integrates security best practices within your DevOps pipeline, enabling 
+              In today&apos;s threat-laden landscape, securing your software at every stage of development is no longer an option, it&apos;s a 
+              necessity. Kanda&apos;s DevSecOps offering seamlessly integrates security best practices within your DevOps pipeline, enabling 
               you to deliver high-quality, secure software at rapid velocity.
             </p>
             

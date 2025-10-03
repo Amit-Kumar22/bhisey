@@ -9,54 +9,61 @@ export const metadata = {
   description: 'End-to-end software product development services accelerating delivery, quality and innovation.'
 };
 
+function Hero() {
+  return (
+    <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <svg className="absolute right-0 top-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+          {[...Array(12)].map((_, i) => (
+            <path
+              key={i}
+              d={`M ${1200 + i * 20} ${100 + i * 10} Q ${600 + i * 30} ${200 + i * 15}, ${i * 20} ${150 + i * 10}`}
+              fill="none"
+              stroke="#ff6b35"
+              strokeWidth="2"
+              opacity={0.3 - i * 0.02}
+            />
+          ))}
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <span className="text-orange-500">Product Engineering.</span>{" "}
+          {/* <span className="text-gray-800">Delivered</span> */}
+        </h1>
+        <p className="text-2xl md:text-3xl text-gray-600 mb-12">
+          Tap into our 30-year track record of building great products that create a competitive advantage, grow revenues, and increase operational efficiency
+        </p>
+        <Link
+          href="/contact-us"
+          className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Talk to an Expert
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+
+      {/* Client Logos Carousel */}
+      <div className="mt-16 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap opacity-60">
+          <div className="text-gray-400 text-sm font-medium">NEO GENOMICS</div>
+          <div className="text-gray-400 text-sm font-medium">LIONBRIDGE</div>
+          <div className="text-gray-400 text-sm font-medium">JOHNSON & JOHNSON</div>
+        </div>
+      </div>
+    </section>
+  );
+}
 // NOTE: This page is an implementation scaffold; adjust copy and imagery to exactly match design screenshots.
 export default function SoftwareProductDevelopmentPage() {
   return (
     <main className="flex flex-col">
       {/* Hero */}
-      <HeroBanner
-        alignment="left"
-        overlay="gradient"
-        variant="compact"
-        title="Product Engineering"
-        subtitle="Tap into our 30-year track record of building great products that create a competitive advantage, grow revenues, and increase operational efficiency"
-        primaryCta={{ href: '#contact-product', text: 'Talk to an Expert' }}
-        className="bg-gradient-to-b from-accent-800 via-accent-700 to-accent-600 text-white"
-      />
-
-      {/* Bullet value props under hero (two column list on md+) */}
-      <Section className="bg-gradient-to-b from-accent-700 via-accent-600 to-white pt-0" spacing="lg">
-        <Container>
-          <div className="grid gap-8 text-white/90 md:grid-cols-2 text-sm md:text-base leading-relaxed">
-            <ul className="space-y-3 list-disc list-inside">
-              <li>Modernize the customer experience</li>
-              <li>Empower users with data and insights</li>
-            </ul>
-            <ul className="space-y-3 list-disc list-inside">
-              <li>Streamline and automate processes</li>
-              <li>Accelerate business agility and innovation</li>
-            </ul>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Client Spotlight + CTA Panel */}
-      <Section className="bg-white" spacing="xl">
-        <Container>
-          <div className="mb-14 text-center">
-            <h2 className="text-3xl font-bold text-charcoal md:text-4xl mb-2">Client Spotlight</h2>
-            <p className="text-sm md:text-base text-charcoal-light">Trusted by 350+ Clients Worldwide</p>
-          </div>
-          <ClientLogoMarquee speed="fast" pauseOnHover className="mb-12 bg-accent-50/60 rounded-md" logos={[] as any} showTitle={false} />
-          <div className="rounded-xl bg-gradient-to-br from-accent-600 via-accent-500 to-accent-600 p-10 md:p-16 text-center text-white shadow-md">
-            <h3 className="mb-4 text-xl md:text-2xl font-semibold tracking-tight">Product Challenges? Solved.</h3>
-            <p className="mb-8 text-sm md:text-base text-white/90">Can’t-miss deadlines and impossibly tight budget?</p>
-            <Link href="#contact-product" className="inline-flex items-center rounded-md bg-white/95 px-6 py-3 text-sm font-semibold text-accent-600 shadow hover:bg-white transition focus:outline-none focus:ring-2 focus:ring-accent-300">
-              Talk to our Product Engineering Experts →
-            </Link>
-          </div>
-        </Container>
-      </Section>
+      <Hero />
+      
 
       {/* The Kanda Difference Section (variant heading) */}
       <KandaDifferenceGrid

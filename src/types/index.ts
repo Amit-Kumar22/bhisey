@@ -5,7 +5,7 @@
 import { ReactNode } from 'react';
 
 // Re-export API validation types
-export * from '../lib/validation';
+export * from '../lib/api/validation';
 
 // Base component props
 export interface BaseComponentProps {

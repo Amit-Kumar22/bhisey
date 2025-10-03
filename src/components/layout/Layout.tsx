@@ -1,9 +1,11 @@
+"use client";
 /**
  * Layout Component - Core layout wrapper for different page types
  * Provides semantic HTML structure with ARIA landmarks and responsive design
  */
 
-import { ReactNode } from 'react';
+import { ReactNode, useMemo } from 'react';
+import { usePathname } from 'next/navigation';
 import { cn } from '../../lib/utils';
 import { LayoutProps } from '../../types';
 import Navigation from '../navigation/Navigation';
@@ -51,6 +53,9 @@ export default function Layout({
     }
   };
 
+  const pathname = usePathname();
+  const showFooter = useMemo(() => !pathname.startsWith('/admin'), [pathname]);
+
   return (
     <div className={cn('min-h-screen flex flex-col', className)} {...props}>
       {/* Skip to main content link */}
@@ -74,7 +79,7 @@ export default function Layout({
           >
             {children}
           </main>
-          <Footer />
+          {showFooter && <Footer />}
         </>
       )}
 
@@ -105,7 +110,7 @@ export default function Layout({
               {/* Sidebar content will be passed as a prop or context */}
             </aside>
           </main>
-          <Footer />
+          {showFooter && <Footer />}
         </>
       )}
 
@@ -129,7 +134,7 @@ export default function Layout({
               {children}
             </div>
           </main>
-          <Footer />
+          {showFooter && <Footer />}
         </>
       )}
 
@@ -151,7 +156,7 @@ export default function Layout({
               {children}
             </div>
           </main>
-          <Footer />
+          {showFooter && <Footer />}
         </>
       )}
 
@@ -174,7 +179,7 @@ export default function Layout({
               {children}
             </article>
           </main>
-          <Footer />
+          {showFooter && <Footer />}
         </>
       )}
     </div>

@@ -168,7 +168,7 @@ export default function NonprofitSoftwareDevelopmentPage() {
             <p className="text-xl md:text-2xl leading-relaxed mb-10 text-orange-100 max-w-5xl mx-auto">
               Whether you are looking to Grow, Inspire or Scale your nonprofit organization Kanda is 
               here to help. We are humbled to be a part of a mission and journeys of many nonprofits 
-              working on a technical side to help scale charitable projects, improve children's 
+              working on a technical side to help scale charitable projects, improve children&apos;s 
               well-being, foster lifelong learning, and preserve native plants. Our expertise lies in 
               developing, customizing, and enhancing the technology solutions that drive your impact.
             </p>

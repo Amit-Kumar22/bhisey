@@ -1,0 +1,6 @@
+# Ignore actual CA/private certs placed here locally.
+# Provide instructions in README or env comments on how to obtain.
+*
+
+# But keep this placeholder file tracked.
+!.gitignore
