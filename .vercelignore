@@ -1,0 +1,32 @@
+# Ignore backend standalone server files
+backend/dist
+backend/node_modules
+
+# Ignore test files
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+tests/
+__tests__/
+
+# Ignore local development files
+.env.local
+.env.development
+.env.test
+
+# Ignore scripts not needed in production
+scripts/test-*.ts
+scripts/check-*.ts
+
+# Ignore documentation
+*.md
+!README.md
+
+# Ignore development configs
+nodemon.json
+jest.config.*
+jest.setup.js
+
+# Ignore development certificates
+backend/certs/

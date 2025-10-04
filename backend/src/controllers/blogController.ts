@@ -3,22 +3,22 @@ import { BlogModel } from '../models/BlogModel';
 import { createError } from '../middleware/errorHandler';
 import { sanitizeContent } from '../utils/sanitize';
 
-export async function listBlogs(_req: Request, res: Response, next: NextFunction) {
+export async function listBlogs(_req: Request, res: Response, next?: NextFunction) {
   try {
     const blogs = await BlogModel.all();
     res.json({ success: true, data: blogs });
-  } catch (e) { next(e); }
+  } catch (e) { if (next) next(e); else throw e; }
 }
 
-export async function getBlog(req: Request, res: Response, next: NextFunction) {
+export async function getBlog(req: Request, res: Response, next?: NextFunction) {
   try {
     const blog = await BlogModel.findBySlug(req.params.slug);
-    if (!blog) return next(createError(404, 'Blog not found', 'not_found'));
+    if (!blog) return next?.(createError(404, 'Blog not found', 'not_found'));
     res.json({ success: true, data: blog });
-  } catch (e) { next(e); }
+  } catch (e) { if (next) next(e); else throw e; }
 }
 
-export async function createBlog(req: Request, res: Response, next: NextFunction) {
+export async function createBlog(req: Request, res: Response, next?: NextFunction) {
   try {
     // Build payload with only allowed fields
     const payload: any = {
@@ -39,10 +39,10 @@ export async function createBlog(req: Request, res: Response, next: NextFunction
     
     const blog = await BlogModel.create(payload);
     res.status(201).json({ success: true, data: blog });
-  } catch (e) { next(e); }
+  } catch (e) { if (next) next(e); else throw e; }
 }
 
-export async function updateBlog(req: Request, res: Response, next: NextFunction) {
+export async function updateBlog(req: Request, res: Response, next?: NextFunction) {
   try {
     // Build payload with only allowed fields
     const payload: any = {};
@@ -67,14 +67,25 @@ export async function updateBlog(req: Request, res: Response, next: NextFunction
     }
     
     const blog = await BlogModel.update(req.params.id, payload);
-    if (!blog) return next(createError(404, 'Blog not found', 'not_found'));
+    if (!blog) return next?.(createError(404, 'Blog not found', 'not_found'));
     res.json({ success: true, data: blog });
-  } catch (e) { next(e); }
+  } catch (e) { if (next) next(e); else throw e; }
 }
 
-export async function deleteBlog(req: Request, res: Response, next: NextFunction) {
+export async function deleteBlog(req: Request, res: Response, next?: NextFunction) {
   try {
     await BlogModel.delete(req.params.id);
     res.status(204).send();
-  } catch (e) { next(e); }
+  } catch (e) { 
+    if (next) next(e);
+    else throw e;
+  }
 }
+
+export const blogController = {
+  getAll: listBlogs,
+  getOne: getBlog,
+  create: createBlog,
+  update: updateBlog,
+  delete: deleteBlog
+};

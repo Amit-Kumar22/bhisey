@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
@@ -17,7 +17,9 @@
     "seed:admin": "ts-node --transpile-only scripts/seed-admin-backend.ts --email admin@example.com --password ChangeMe123!",
     "gen:hash": "node scripts/gen-hash.js",
     "dev:full": "concurrently \"npm:backend:dev\" \"next dev --turbopack\"",
-    "ensure:admin": "ts-node --transpile-only scripts/ensure-admin.ts --email admin@bhesi.com --password ChangeMe123!"
+    "ensure:admin": "ts-node --transpile-only scripts/ensure-admin.ts --email admin@bhesi.com --password ChangeMe123!",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "prisma-fix": {
     "ensure:users": "ts-node --transpile-only scripts/ensure-users-table.ts --email admin@bhesi.com --password ChangeMe123!"
@@ -34,6 +36,7 @@
     "@types/lodash": "^4.17.20",
     "@types/uuid": "^11.0.0",
     "@types/validator": "^13.15.3",
+    "@vercel/node": "^3.2.29",
     "axios": "^1.7.7",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",

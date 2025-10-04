@@ -20,8 +20,9 @@ async function getBlog(slug: string): Promise<Blog | null> {
   }
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
-  const blog = await getBlog(params.slug);
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
   if (!blog) {
     return <div className="prose mx-auto p-8"><h1>Not Found</h1><p>This blog post does not exist.</p></div>;
   }

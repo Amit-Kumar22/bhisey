@@ -20,8 +20,9 @@ async function getCaseStudy(slug: string): Promise<CaseStudy | null> {
   }
 }
 
-export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const item = await getCaseStudy(params.slug);
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const item = await getCaseStudy(slug);
   if (!item) {
     return <div className="prose mx-auto p-8"><h1>Not Found</h1><p>This case study does not exist.</p></div>;
   }

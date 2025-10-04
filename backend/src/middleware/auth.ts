@@ -20,3 +20,6 @@ export function requireAuth(req: AuthRequest, _res: Response, next: NextFunction
     return next(createError(401, 'Invalid or expired token', 'unauthorized'));
   }
 }
+
+// Export as authenticate for compatibility
+export const authenticate = requireAuth;
