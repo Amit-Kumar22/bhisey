@@ -66,7 +66,7 @@ function LoginForm() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-11 pr-3 text-sm placeholder-gray-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  className="text-black block w-full rounded-md border border-gray-300 bg-white py-2 pl-11 pr-3 text-sm placeholder-gray-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
                   placeholder="admin@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -87,7 +87,7 @@ function LoginForm() {
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-11 pr-11 text-sm placeholder-gray-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  className="text-black block w-full rounded-md border border-gray-300 bg-white py-2 pl-11 pr-11 text-sm placeholder-gray-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
