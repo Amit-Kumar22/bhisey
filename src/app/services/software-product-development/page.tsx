@@ -1,11 +1,11 @@
 import React from 'react';
-import { HeroBanner, ClientLogoMarquee, KandaDifferenceGrid, TestimonialsVideoWall, CostSavingsTable, ServiceContactSection } from '@/components/reusable';
+import { HeroBanner, ClientLogoMarquee, BhiseyDifferenceGrid, TestimonialsVideoWall, CostSavingsTable, ServiceContactSection } from '@/components/reusable';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Software Product Development | Kanda',
+  title: 'Software Product Development | Bhisey',
   description: 'End-to-end software product development services accelerating delivery, quality and innovation.'
 };
 
@@ -65,9 +65,9 @@ export default function SoftwareProductDevelopmentPage() {
       <Hero />
       
 
-      {/* The Kanda Difference Section (variant heading) */}
-      <KandaDifferenceGrid
-        title="The Kanda Difference: Designed to Build"
+      {/* The Bhisey Difference Section (variant heading) */}
+      <BhiseyDifferenceGrid
+        title="The Bhisey Difference: Designed to Build"
         className="bg-white"
         items={[
           { title: 'US-based Project Leadership', description: 'Senior delivery leadership acts as an extension of your product team.' },
@@ -117,11 +117,11 @@ export default function SoftwareProductDevelopmentPage() {
         </Container>
       </Section>
 
-      {/* Why Kanda Comparison Tabs placeholder */}
+      {/* Why Bhisey Comparison Tabs placeholder */}
       <Section className="bg-white" spacing="xl">
         <Container>
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal text-center mb-10">Why Kanda?</h2>
-          <div className="rounded-lg border border-accent-100 bg-white p-8 text-sm text-charcoal-light">[Tabbed comparison component placeholder – Hire Team vs Offshore Talent vs Kanda Product Engineering]</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal text-center mb-10">Why Bhisey?</h2>
+          <div className="rounded-lg border border-accent-100 bg-white p-8 text-sm text-charcoal-light">[Tabbed comparison component placeholder – Hire Team vs Offshore Talent vs Bhisey Product Engineering]</div>
         </Container>
       </Section>
 
@@ -160,7 +160,7 @@ export default function SoftwareProductDevelopmentPage() {
             </div>
             <div className="rounded-lg border border-accent-100 bg-white p-6 shadow-sm">
               <h3 className="mb-3 text-sm font-semibold text-charcoal">Justin Bingham - CTO, Appex</h3>
-              <div className="rounded-md bg-emerald-50/80 p-4 text-xs leading-relaxed text-charcoal">The entire Kanda team slipped seamlessly into our Agile framework. We have product releases every other week, which allows us to continuously deliver value and adapt to user feedback.</div>
+              <div className="rounded-md bg-emerald-50/80 p-4 text-xs leading-relaxed text-charcoal">The entire Bhisey team slipped seamlessly into our Agile framework. We have product releases every other week, which allows us to continuously deliver value and adapt to user feedback.</div>
             </div>
           </div>
         </Container>

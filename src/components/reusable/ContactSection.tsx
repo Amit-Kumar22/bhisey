@@ -59,7 +59,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   showAttachmentNote = true,
   contactItems = [
     { icon: <PhoneIcon />, label: 'Call us', value: '617-340-3850' },
-    { icon: <EmailIcon />, label: 'Email us', value: 'contact@kandasoft.com' },
+    { icon: <EmailIcon />, label: 'Email us', value: 'contact@Bhiseysoft.com' },
     { icon: <LocationIcon />, label: 'Visit us', value: 'Boston, MA, USA' },
   ],
   socialItems = [

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Kanda Software | Custom Software Development & Technology Solutions",
+  title: "Bhisey Software | Custom Software Development & Technology Solutions",
   description: "Empowering businesses through innovative software solutions. Custom development, mobile apps, cloud solutions, and digital transformation services.",
 };
 

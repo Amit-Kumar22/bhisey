@@ -10,14 +10,14 @@ import Image from 'next/image';
 export default function AWSServicesPage() {
   const testimonials = [
     {
-      quote: "On the product and technology side of our business, Kanda is our most valuable and trusted partner. Their team members have become invaluable, long-term members of our Development, QA, and Product teams. At Appex, we've standardized on AWS, and Kanda has been instrumental in our buildout and ongoing AWS cloud operations across our portfolio.",
+      quote: "On the product and technology side of our business, Bhisey is our most valuable and trusted partner. Their team members have become invaluable, long-term members of our Development, QA, and Product teams. At Appex, we've standardized on AWS, and Bhisey has been instrumental in our buildout and ongoing AWS cloud operations across our portfolio.",
       author: "Justin Bingham",
       title: "CTO, Appex",
       company: "",
       image: "/testimonials/justin-bingham.jpg"
     },
     {
-      quote: "Kanda Software has been our go-to partner for AWS-built cloud solutions from basic application development to complex data analytics. Kanda took on the challenges with our startup team and brought the necessary technical expertise and rigorous processes to help transform ideas into an innovative end-to-end managed service, from initial platform architecture thinking to the final launch of our service. Kanda employees are always professional and courteous; their team always comes up with thoughtful, elegant technical solutions to difficult problems.",
+      quote: "Bhisey Software has been our go-to partner for AWS-built cloud solutions from basic application development to complex data analytics. Bhisey took on the challenges with our startup team and brought the necessary technical expertise and rigorous processes to help transform ideas into an innovative end-to-end managed service, from initial platform architecture thinking to the final launch of our service. Bhisey employees are always professional and courteous; their team always comes up with thoughtful, elegant technical solutions to difficult problems.",
       author: "Alan Bugos",
       title: "Head of Technology, LifePod Solutions, Inc.",
       company: "",
@@ -49,10 +49,10 @@ export default function AWSServicesPage() {
               </p>
               <div className="mb-8">
                 <p className="text-base leading-relaxed mb-4">
-                  Kanda is a reliable non-reseller cloud agnostic Advanced Tier Services partner in AWS development, management, optimization, automation, and deployment. We help clients to develop custom applications on AWS tailored to their unique business requirements and budget. From innovative startups to large enterprises, we leverage our thorough expertise to deliver, manage, and deploy scalable cloud solutions.
+                  Bhisey is a reliable non-reseller cloud agnostic Advanced Tier Services partner in AWS development, management, optimization, automation, and deployment. We help clients to develop custom applications on AWS tailored to their unique business requirements and budget. From innovative startups to large enterprises, we leverage our thorough expertise to deliver, manage, and deploy scalable cloud solutions.
                 </p>
                 <p className="text-base leading-relaxed">
-                  With over eight years as an AWS trusted services provider, Kanda reduces time to the market and ensures that client cloud initiatives adhere to the best practices set by AWS.
+                  With over eight years as an AWS trusted services provider, Bhisey reduces time to the market and ensures that client cloud initiatives adhere to the best practices set by AWS.
                 </p>
               </div>
               <button className="inline-flex items-center px-6 py-3 bg-accent-600 text-white font-semibold rounded-lg hover:bg-accent-700 transition-colors">
@@ -82,7 +82,7 @@ export default function AWSServicesPage() {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-              Unlock Cloud Agility and Security with Kanda&apos;s Expertise
+              Unlock Cloud Agility and Security with Bhisey&apos;s Expertise
             </h2>
           </div>
           
@@ -96,7 +96,7 @@ export default function AWSServicesPage() {
                 Supercharge Your Innovation
               </h3>
               <p className="text-charcoal-light leading-relaxed">
-                Get your new features and app updates to market faster. The Kanda team will also improve your service level agreements (SLAs) and minimize downtime with reduced Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs)
+                Get your new features and app updates to market faster. The Bhisey team will also improve your service level agreements (SLAs) and minimize downtime with reduced Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs)
               </p>
             </div>
 
@@ -122,7 +122,7 @@ export default function AWSServicesPage() {
                 Uncompromising Security
               </h3>
               <p className="text-charcoal-light leading-relaxed">
-                Rest assured your data is always protected with our end-to-end privacy and security solutions. Kanda adheres to the strictest industry standards and ensures IP protection, the integrity and confidentiality of your information.
+                Rest assured your data is always protected with our end-to-end privacy and security solutions. Bhisey adheres to the strictest industry standards and ensures IP protection, the integrity and confidentiality of your information.
               </p>
             </div>
           </div>
@@ -354,12 +354,12 @@ export default function AWSServicesPage() {
       {/* Technical Expertise */}
       <TechnicalExpertiseSection />
 
-      {/* Why Kanda */}
+      {/* Why Bhisey */}
       <Section className="bg-accent-500 text-white py-20">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-accent-300">
-              Why Kanda?
+              Why Bhisey?
             </h2>
           </div>
 
@@ -478,7 +478,7 @@ function TechnicalExpertiseSection() {
 function CaseStudiesSection() {
   const caseStudies = [
     {
-      title: "Kanda supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance",
+      title: "Bhisey supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance",
       image: "/case-studies/trapelo-lab.jpg",
       link: "#"
     },

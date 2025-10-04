@@ -12,7 +12,7 @@ import {
 } from '@/components/reusable';
 
 export const metadata = {
-  title: 'Proven Success | Kanda Software',
+  title: 'Proven Success | Bhisey Software',
   description: 'Track record of helping clients gain competitive advantage, revenue, and efficiency.'
 };
 

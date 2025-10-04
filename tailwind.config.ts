@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Kanda Brand Colors - Orange Theme
+        // Bhisey Brand Colors - Orange Theme
         accent: {
           50: '#FFFAF5',
           100: '#FFF4E6',

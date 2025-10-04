@@ -25,7 +25,7 @@ const DifferenceHighlights: React.FC = () => {
           ))}
         </div>
         <div className="mx-auto mb-12 max-w-4xl text-center">
-          <h3 className="mb-10 text-3xl font-bold text-accent-600 md:text-4xl">The Kanda Difference</h3>
+          <h3 className="mb-10 text-3xl font-bold text-accent-600 md:text-4xl">The Bhisey Difference</h3>
         </div>
         <div className="grid gap-6 md:grid-cols-4">
           {data.map(item => (

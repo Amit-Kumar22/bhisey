@@ -153,7 +153,7 @@ export default function ContactCompact() {
             onChange={onChange}
             className="mt-1"
           />
-          <span className="text-sm text-charcoal">I agree to receive communications from Kanda Software</span>
+          <span className="text-sm text-charcoal">I agree to receive communications from Bhisey Software</span>
         </label>
         {errors.consent && <p className="mt-1 text-sm text-red-600">{errors.consent}</p>}
       </div>

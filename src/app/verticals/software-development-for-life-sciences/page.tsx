@@ -26,14 +26,14 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "To build a prototype on time and on budget, that doesn't happen. For Kanda to actually do that is a pretty big accomplishment. Kanda Life Sciences team is very competent in building cloud-based applications in tight time requirements.",
+      quote: "To build a prototype on time and on budget, that doesn't happen. For Bhisey to actually do that is a pretty big accomplishment. Bhisey Life Sciences team is very competent in building cloud-based applications in tight time requirements.",
       author: "Chris McCready",
       title: "Principal Research Scientist, Sartorius",
       company: "Sartorius",
       image: "/images/testimonials/chris-mccready.jpg"
     },
     {
-      quote: "Kanda Software proved to be top-notch in terms of their technical skills and high-quality deliverables. The detail-oriented team communicated seamlessly and managed the project well, despite a time zone difference. Their industry knowledge and technology insights added value to the partnership.",
+      quote: "Bhisey Software proved to be top-notch in terms of their technical skills and high-quality deliverables. The detail-oriented team communicated seamlessly and managed the project well, despite a time zone difference. Their industry knowledge and technology insights added value to the partnership.",
       author: "John Gurman",
       title: "SVP Technology, Sermo",
       company: "Sermo",
@@ -70,8 +70,8 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
     }
   ];
 
-  // Kanda bridges features
-  const kandaBridgeFeatures = [
+  // Bhisey bridges features
+  const BhiseyBridgeFeatures = [
     {
       text: "Dedicated Life Sciences Experts with Engineering skills effectively bridge the gap between scientific vision and development objectives",
       icon: "🧬"
@@ -219,7 +219,7 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
               Accurately translating Scientific Processes into robust algorithms demands expertise in 
               both Life Sciences and Software Development. Whether you&apos;re grappling with complex 
               omics data sets, translating scientific ideas into algorithms, optimizing manufacturing 
-              processes, or navigating regulatory landscapes, Kanda is your partner in transforming 
+              processes, or navigating regulatory landscapes, Bhisey is your partner in transforming 
               challenges into opportunities. Let us help you harness the power of software to 
               accelerate scientific progress and bring your life-changing innovations to the world.
             </p>
@@ -287,12 +287,12 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
         </Container>
       </Section>
 
-      {/* Kanda Bridges the Gap Section */}
+      {/* Bhisey Bridges the Gap Section */}
       <Section className="py-20 bg-gradient-to-br from-orange-800 to-orange-900 text-white">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Kanda Bridges the Gap
+              Bhisey Bridges the Gap
             </h2>
             <p className="text-xl text-orange-100">
               We Effectively Integrate Diverse Skill sets to Achieve Faster Time to Market
@@ -300,7 +300,7 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
           </div>
           
           <div className="space-y-6">
-            {kandaBridgeFeatures.map((feature, index) => (
+            {BhiseyBridgeFeatures.map((feature, index) => (
               <div key={index} className="flex items-center space-x-4 p-6 bg-white/10 rounded-lg backdrop-blur-sm">
                 <div className="text-2xl">{feature.icon}</div>
                 <p className="text-lg">{feature.text}</p>
@@ -310,12 +310,12 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
         </Container>
       </Section>
 
-      {/* The Kanda Difference Section */}
+      {/* The Bhisey Difference Section */}
       <Section className="py-20 bg-white">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-orange-600 mb-6">
-              The Kanda Difference
+              The Bhisey Difference
             </h2>
           </div>
           
@@ -325,25 +325,25 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
                 title: 'Partner by Design',
                 icon: '🤝',
                 linkText: 'Learn More',
-                href: '/why-kanda/partner-by-design'
+                href: '/why-Bhisey/partner-by-design'
               },
               {
                 title: 'Product Driven Engagement',
                 icon: '⚡',
                 linkText: 'Learn More',
-                href: '/why-kanda/product-driven-engagement'
+                href: '/why-Bhisey/product-driven-engagement'
               },
               {
                 title: 'People You Can Count On',
                 icon: '👥',
                 linkText: 'Learn More',
-                href: '/why-kanda/people-you-can-count-on'
+                href: '/why-Bhisey/people-you-can-count-on'
               },
               {
                 title: 'Proven Success',
                 icon: '✅',
                 linkText: 'Proven Success',
-                href: '/why-kanda/proven-success'
+                href: '/why-Bhisey/proven-success'
               }
             ].map((item, index) => (
               <div key={index} className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
@@ -471,7 +471,7 @@ export default function SoftwareDevelopmentForLifeSciencesPage() {
               AI for Life Sciences
             </h2>
             <p className="text-lg text-charcoal-light max-w-4xl mx-auto">
-              Kanda Expertise spans from the discovery of biological mechanisms to early disease diagnostics, 
+              Bhisey Expertise spans from the discovery of biological mechanisms to early disease diagnostics, 
               drug discovery, care personalization and management
             </p>
           </div>

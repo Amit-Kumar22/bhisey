@@ -146,14 +146,14 @@ export const sizes = {
 export const navigation = {
   primary: [
     {
-      label: 'Why Kanda',
-      href: '/why-kanda',
+      label: 'Why Bhisey',
+      href: '/why-Bhisey',
       hasDropdown: true,
       children: [
-        { label: 'Partner by Design', href: '/why-kanda/partner-by-design' },
-        { label: 'Product Driven Engagement', href: '/why-kanda/product-driven-engagement' },
-        { label: 'People You Can Count On', href: '/why-kanda/people-you-can-count-on' },
-        { label: 'Proven Success', href: '/why-kanda/proven-success' },
+        { label: 'Partner by Design', href: '/why-Bhisey/partner-by-design' },
+        { label: 'Product Driven Engagement', href: '/why-Bhisey/product-driven-engagement' },
+        { label: 'People You Can Count On', href: '/why-Bhisey/people-you-can-count-on' },
+        { label: 'Proven Success', href: '/why-Bhisey/proven-success' },
       ],
     },
     {

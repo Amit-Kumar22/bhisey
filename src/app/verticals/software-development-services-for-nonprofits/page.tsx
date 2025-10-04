@@ -84,7 +84,7 @@ export default function NonprofitSoftwareDevelopmentPage() {
     },
     {
       title: 'SOLUTIONS TAILORED TO YOUR BUSINESS',
-      description: 'Kanda engineering teams understand the software development lifecycle and business drivers of our customers\' products and possess the expertise to help them get their development done right...and fast',
+      description: 'Bhisey engineering teams understand the software development lifecycle and business drivers of our customers\' products and possess the expertise to help them get their development done right...and fast',
       icon: '🎯',
       bgColor: 'bg-teal-600'
     },
@@ -96,7 +96,7 @@ export default function NonprofitSoftwareDevelopmentPage() {
     },
     {
       title: '<3% FLEXIBLE AND COST-EFFECTIVE SOLUTIONS',
-      description: 'Kanda has perfected a clean, economical approach for entering and exiting your custom software development, maintenance and quality assurance processes at the right time, using the right resources',
+      description: 'Bhisey has perfected a clean, economical approach for entering and exiting your custom software development, maintenance and quality assurance processes at the right time, using the right resources',
       icon: '⚖️',
       bgColor: 'bg-teal-700'
     }
@@ -166,7 +166,7 @@ export default function NonprofitSoftwareDevelopmentPage() {
             </h1>
             
             <p className="text-xl md:text-2xl leading-relaxed mb-10 text-orange-100 max-w-5xl mx-auto">
-              Whether you are looking to Grow, Inspire or Scale your nonprofit organization Kanda is 
+              Whether you are looking to Grow, Inspire or Scale your nonprofit organization Bhisey is 
               here to help. We are humbled to be a part of a mission and journeys of many nonprofits 
               working on a technical side to help scale charitable projects, improve children&apos;s 
               well-being, foster lifelong learning, and preserve native plants. Our expertise lies in 
@@ -258,12 +258,12 @@ export default function NonprofitSoftwareDevelopmentPage() {
         </Container>
       </Section>
 
-      {/* The Kanda Difference Section */}
+      {/* The Bhisey Difference Section */}
       <Section className="py-20 bg-white">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-600 mb-6">
-              The Kanda Difference
+              The Bhisey Difference
             </h2>
           </div>
           
@@ -273,25 +273,25 @@ export default function NonprofitSoftwareDevelopmentPage() {
                 title: 'Partner by Design',
                 icon: '🤝',
                 linkText: 'Learn More',
-                href: '/why-kanda/partner-by-design'
+                href: '/why-Bhisey/partner-by-design'
               },
               {
                 title: 'Product Driven Engagement',
                 icon: '⚡',
                 linkText: 'Learn More',
-                href: '/why-kanda/product-driven-engagement'
+                href: '/why-Bhisey/product-driven-engagement'
               },
               {
                 title: 'People You Can Count On',
                 icon: '👥',
                 linkText: 'Learn More',
-                href: '/why-kanda/people-you-can-count-on'
+                href: '/why-Bhisey/people-you-can-count-on'
               },
               {
                 title: 'Proven Success',
                 icon: '✅',
                 linkText: 'Learn More',
-                href: '/why-kanda/proven-success'
+                href: '/why-Bhisey/proven-success'
               }
             ].map((item, index) => (
               <div key={index} className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">

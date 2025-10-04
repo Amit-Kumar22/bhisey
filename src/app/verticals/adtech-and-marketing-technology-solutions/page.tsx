@@ -29,13 +29,13 @@ export default function AdTechMarTechSolutionsPage() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "Kanda was HuddleUp's software design and development partner for several years, helping to bring HuddleUp to the market. The team at Kanda Software is excellent to work with, responsive, strategic, and attentive. Their technical knowledge is excellent as well as attention to detail and quick response to arising needs and changing priorities. The well-managed team boosted transparency and strong organizational skills.",
+      quote: "Bhisey was HuddleUp's software design and development partner for several years, helping to bring HuddleUp to the market. The team at Bhisey Software is excellent to work with, responsive, strategic, and attentive. Their technical knowledge is excellent as well as attention to detail and quick response to arising needs and changing priorities. The well-managed team boosted transparency and strong organizational skills.",
       author: "Goran Skorput",
       title: "CTO",
       company: "HuddleUp"
     },
     {
-      quote: "Kanda put together an excellent team of business analysts, project managers, and technical resources who are seasoned, professional, and reliable with milestones. The team developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery's machine learning functionality for optimization, and dashboards in Data Studio for the reporting.",
+      quote: "Bhisey put together an excellent team of business analysts, project managers, and technical resources who are seasoned, professional, and reliable with milestones. The team developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery's machine learning functionality for optimization, and dashboards in Data Studio for the reporting.",
       author: "Krishna Boppana",
       title: "Head of Technology",
       company: "Havas"
@@ -66,7 +66,7 @@ export default function AdTechMarTechSolutionsPage() {
             </h1>
             
             <p className="text-xl md:text-2xl leading-relaxed mb-10 text-accent-100">
-              Are you looking to improve ad inventory efficiency, gain deeper insights into your target audience, or increase ROI of your marketing campaigns? As a full-service AdTech and MarTech software development partner, Kanda has the necessary expertise and tech skills to help disruptive startups and leading advertising and media enterprises succeed in the evolving digital landscape. From programmatic ad solutions to data management platforms to marketing automation software, we work closely with our clients to deliver secure, reliable and scalable solutions that drive them towards their goals.
+              Are you looking to improve ad inventory efficiency, gain deeper insights into your target audience, or increase ROI of your marketing campaigns? As a full-service AdTech and MarTech software development partner, Bhisey has the necessary expertise and tech skills to help disruptive startups and leading advertising and media enterprises succeed in the evolving digital landscape. From programmatic ad solutions to data management platforms to marketing automation software, we work closely with our clients to deliver secure, reliable and scalable solutions that drive them towards their goals.
             </p>
             
             <Link
@@ -101,12 +101,12 @@ export default function AdTechMarTechSolutionsPage() {
         </Container>
       </Section>
 
-      {/* The Kanda Difference Section */}
+      {/* The Bhisey Difference Section */}
       <Section className="py-20 bg-white">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-500 mb-6">
-              The Kanda Difference
+              The Bhisey Difference
             </h2>
           </div>
           
@@ -116,25 +116,25 @@ export default function AdTechMarTechSolutionsPage() {
                 title: 'Partner by Design',
                 icon: '🔗',
                 linkText: 'Learn More',
-                href: '/why-kanda/partner-by-design'
+                href: '/why-Bhisey/partner-by-design'
               },
               {
                 title: 'Product Driven Engagement',
                 icon: '⚡',
                 linkText: 'Learn More',
-                href: '/why-kanda/product-driven-engagement'
+                href: '/why-Bhisey/product-driven-engagement'
               },
               {
                 title: 'People You Can Count On',
                 icon: '👥',
                 linkText: 'Learn More',
-                href: '/why-kanda/people-you-can-count-on'
+                href: '/why-Bhisey/people-you-can-count-on'
               },
               {
                 title: 'Proven Success',
                 icon: '📊',
                 linkText: 'Learn More',
-                href: '/why-kanda/proven-success'
+                href: '/why-Bhisey/proven-success'
               }
             ].map((item, index) => (
               <div key={index} className="text-center p-6 border border-accent-200 rounded-lg hover:shadow-lg transition-shadow">
@@ -397,7 +397,7 @@ export default function AdTechMarTechSolutionsPage() {
               Explore the added value
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-accent-100 mb-6">
-              of partnering with Kanda
+              of partnering with Bhisey
             </h3>
             <h4 className="text-2xl md:text-3xl font-bold text-accent-100">
               for MarTech and AdTech Software Development
@@ -414,7 +414,7 @@ export default function AdTechMarTechSolutionsPage() {
               {
                 title: 'Data Excellence',
                 icon: '📊',
-                description: 'Kanda\'s Data Scientists and Data Engineers are experts in turning raw big data into actionable intelligence. Through optimal integration model, we aggregate, retrieve, clean, process, and visualize your data, presenting it in intuitive dashboards. Whether you are analyzing marketing performance or optimizing ad sales, we are here to maximize your data potential.'
+                description: 'Bhisey\'s Data Scientists and Data Engineers are experts in turning raw big data into actionable intelligence. Through optimal integration model, we aggregate, retrieve, clean, process, and visualize your data, presenting it in intuitive dashboards. Whether you are analyzing marketing performance or optimizing ad sales, we are here to maximize your data potential.'
               },
               {
                 title: 'Third-party Integrations',

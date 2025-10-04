@@ -15,7 +15,7 @@ const InnovationRetainControl: React.FC = () => {
       <Container size="xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-charcoal md:text-4xl">Accelerate Innovation. Retain Control.</h2>
-          <p className="mt-4 text-base text-charcoal-light md:text-lg">Kanda’s Dedicated Teams are designed to scale your impact.</p>
+          <p className="mt-4 text-base text-charcoal-light md:text-lg">Bhisey’s Dedicated Teams are designed to scale your impact.</p>
         </div>
         <div className="space-y-6">
           {items.map(i => (

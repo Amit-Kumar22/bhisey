@@ -32,13 +32,13 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "I have had a very positive experience working with Kanda over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value.",
+      quote: "I have had a very positive experience working with Bhisey over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value.",
       author: "Clynt Taylor",
       title: "CEO",
       company: "Trapelo"
     },
     {
-      quote: "Kanda Software acts as a core member of our team, and they have been involved in all of our major projects. They helped us build a mobile-first website, as well as a lot of features and functions on several of our products. Kanda has performed really well. Their team has really helped to bring our numbers up.",
+      quote: "Bhisey Software acts as a core member of our team, and they have been involved in all of our major projects. They helped us build a mobile-first website, as well as a lot of features and functions on several of our products. Bhisey has performed really well. Their team has really helped to bring our numbers up.",
       author: "Matt Racki",
       title: "CTO", 
       company: "Epion Health"
@@ -113,7 +113,7 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
     },
     {
       title: 'Data Warehousing',
-      description: 'Take advantage of Kanda\'s excellence in building robust and reliable databases, warehouses, and data lakes that serve as a central',
+      description: 'Take advantage of Bhisey\'s excellence in building robust and reliable databases, warehouses, and data lakes that serve as a central',
       icon: '🏬'
     }
   ];
@@ -253,12 +253,12 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
         </Container>
       </Section>
 
-      {/* The Kanda Difference Section */}
+      {/* The Bhisey Difference Section */}
       <Section className="py-20 bg-white">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-              The Kanda Difference
+              The Bhisey Difference
             </h2>
           </div>
           
@@ -268,25 +268,25 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
                 title: 'Partner by Design',
                 icon: '🤝',
                 linkText: 'Learn More',
-                href: '/why-kanda/partner-by-design'
+                href: '/why-Bhisey/partner-by-design'
               },
               {
                 title: 'Product Driven Engagement',
                 icon: '⚡',
                 linkText: 'Learn More',
-                href: '/why-kanda/product-driven-engagement'
+                href: '/why-Bhisey/product-driven-engagement'
               },
               {
                 title: 'People You Can Count On',
                 icon: '👥',
                 linkText: 'Learn More',
-                href: '/why-kanda/people-you-can-count-on'
+                href: '/why-Bhisey/people-you-can-count-on'
               },
               {
                 title: 'Proven Success',
                 icon: '✅',
                 linkText: 'Learn More',
-                href: '/why-kanda/proven-success'
+                href: '/why-Bhisey/proven-success'
               }
             ].map((item, index) => (
               <div key={index} className="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
@@ -534,8 +534,8 @@ export default function DigitalHealthSoftwareDevelopmentPage() {
                 href: '/case-studies/full-platform-development-for-a-healthcare-solutions-provider'
               },
               {
-                title: 'Kanda supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance',
-                href: '/case-studies/kanda-supports-trapelo-on-the-journey-to-aws-cloud-ensuring-hipaa-compliance'
+                title: 'Bhisey supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance',
+                href: '/case-studies/Bhisey-supports-trapelo-on-the-journey-to-aws-cloud-ensuring-hipaa-compliance'
               },
               {
                 title: 'Astellas: Business-Critical Ethics and Compliance Platform Development',

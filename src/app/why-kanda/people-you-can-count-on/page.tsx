@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { ContactSection } from '../../../components/reusable';
 
 export const metadata = {
-  title: 'People You Can Count On | Kanda Software',
+  title: 'People You Can Count On | Bhisey Software',
   description: 'Global talent blend, accountable leadership, and reliable delivery teams you can trust.',
 };
 
@@ -221,12 +221,12 @@ function TestimonialsSection() {
               logo="/logo1.png"
               name="Andrew Duggan"
               title="CEO, medQue"
-              quote="Kanda proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The entire team treated our project like it was their own company, and the results showed that. Our customers were extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Kanda for any and all of your development needs." />
+              quote="Bhisey proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The entire team treated our project like it was their own company, and the results showed that. Our customers were extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Bhisey for any and all of your development needs." />
             <TestimonialCard
               logo="/logo2.png"
               name="John Hupalo"
               title="Co‑Founder, CEO, Invite Education"
-              quote="Kanda performed exactly as advertised and expected. We had a difficult set of issues to deal with that were mission critical and politically charged. The assigned managers and engineers were pleasant, competent and hard-working. When necessary, senior engagement managers stepped in to provide guidance and clarify roles so that we achieved a cost-effective solution. As planned, when it was time for our team to resume control of our processes, Kanda professionally stepped back while providing support to ensure we continued to achieve success. We felt like Kanda had our backs and put our interests first." />
+              quote="Bhisey performed exactly as advertised and expected. We had a difficult set of issues to deal with that were mission critical and politically charged. The assigned managers and engineers were pleasant, competent and hard-working. When necessary, senior engagement managers stepped in to provide guidance and clarify roles so that we achieved a cost-effective solution. As planned, when it was time for our team to resume control of our processes, Bhisey professionally stepped back while providing support to ensure we continued to achieve success. We felt like Bhisey had our backs and put our interests first." />
           </div>
         </div>
       </Container>

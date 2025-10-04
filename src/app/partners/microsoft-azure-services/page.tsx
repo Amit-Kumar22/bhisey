@@ -10,14 +10,14 @@ import Image from 'next/image';
 export default function MicrosoftAzureServicesPage() {
   const testimonials = [
     {
-      quote: "Kanda proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The entire team treated our project like it was their own company, and the results showed that. Our customers were extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Kanda for any and all of your development needs.",
+      quote: "Bhisey proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The entire team treated our project like it was their own company, and the results showed that. Our customers were extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Bhisey for any and all of your development needs.",
       author: "Andrew Duggan",
       title: "CEO, medQue",
       company: "",
       image: "/testimonials/andrew-duggan.jpg"
     },
     {
-      quote: "As a conservation nonprofit, Kanda has been critical to helping us revolutionize how we collect, manage, and store data. Their staff is incredibly passionate about the work we do and have been very flexible in finding solutions. Their tech staff is always available and incredibly quick to respond if there is ever an issue.",
+      quote: "As a conservation nonprofit, Bhisey has been critical to helping us revolutionize how we collect, manage, and store data. Their staff is incredibly passionate about the work we do and have been very flexible in finding solutions. Their tech staff is always available and incredibly quick to respond if there is ever an issue.",
       author: "Micah Jasny",
       title: "Botanical Coordinator, Native Plant Trust",
       company: "",
@@ -49,7 +49,7 @@ export default function MicrosoftAzureServicesPage() {
               </p>
               <div className="mb-8">
                 <p className="text-base leading-relaxed mb-4 opacity-90">
-                  Kanda is a certified Microsoft Azure partner specializing in application and platform engineering, optimization, and deployment. We leverage our extensive expertise to develop, manage, and deploy scalable and compliant cloud solutions on Microsoft&apos;s Azure platform.
+                  Bhisey is a certified Microsoft Azure partner specializing in application and platform engineering, optimization, and deployment. We leverage our extensive expertise to develop, manage, and deploy scalable and compliant cloud solutions on Microsoft&apos;s Azure platform.
                 </p>
                 <p className="text-base leading-relaxed opacity-90">
                   We empower Clients to accelerate the time-to-market of their critical software development projects by maximizing the advantages of Azure, regardless of their goals — migrating existing applications, modernizing legacy systems, or building cloud-native solutions.
@@ -156,12 +156,12 @@ export default function MicrosoftAzureServicesPage() {
         className="bg-white"
       />
 
-      {/* Why Kanda Section */}
+      {/* Why Bhisey Section */}
       <Section className="bg-accent-500 text-white py-20">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Kanda?
+              Why Bhisey?
             </h2>
           </div>
 
@@ -199,7 +199,7 @@ export default function MicrosoftAzureServicesPage() {
               Our clients choose Azure for its robust enterprise capabilities, seamless integration with Microsoft technologies, comprehensive set of hybrid cloud services and commitment to security and compliance. Azure is a great choice for global businesses due to its network of data centers worldwide, and those seeking to incorporate advanced analytics seamlessly into their applications with advanced AI and ML capabilities.
             </p>
             <p className="text-lg leading-relaxed text-white/90">
-              Let Kanda guide you on the journey to maximizing the full potential of Azure. With our track record of successful deployments, faster time-to-market, custom tailored flexible approach and diverse team of Azure experts, we are the right choice for your custom software development journey on Microsoft Azure.
+              Let Bhisey guide you on the journey to maximizing the full potential of Azure. With our track record of successful deployments, faster time-to-market, custom tailored flexible approach and diverse team of Azure experts, we are the right choice for your custom software development journey on Microsoft Azure.
             </p>
           </div>
         </Container>

@@ -7,7 +7,7 @@ import ContactCompact from '@/components/forms/ContactCompact';
 import { ContactSection } from '../../../components/reusable';
 
 export const metadata = {
-  title: 'Product Driven Engagement | Kanda Software',
+  title: 'Product Driven Engagement | Bhisey Software',
   description:
     'Your goals drive our engagement strategy. We align teams, processes, and delivery to your requirements.',
 };
@@ -68,7 +68,7 @@ function GoalsIntro() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-charcoal">Your Goals, Our Commitment</h2>
           <p className="mt-4 text-charcoal-light">
-            At Kanda, your product goals drive our engagement strategy. Whether launching a new product,
+            At Bhisey, your product goals drive our engagement strategy. Whether launching a new product,
             transitioning to a new platform, or upgrading an existing solution, we meticulously structure our
             teams and processes to align with your goals and requirements.
           </p>
@@ -163,14 +163,14 @@ function Testimonials() {
             name="Justin Bingham"
             title="CTO"
             company="Appex"
-            quote="On the product and technology side of our business, Kanda is our most valuable and trusted partner. Their team members have become invaluable, long‑term members of our Development, QA, and Product teams. At Appex, we’ve standardized on AWS, and Kanda has been instrumental in our buildout and ongoing AWS cloud operations across our portfolio."
+            quote="On the product and technology side of our business, Bhisey is our most valuable and trusted partner. Their team members have become invaluable, long‑term members of our Development, QA, and Product teams. At Appex, we’ve standardized on AWS, and Bhisey has been instrumental in our buildout and ongoing AWS cloud operations across our portfolio."
           />
           <TestimonialCard
             logo="/logo2.png"
             name="Matt Racki"
             title="CTO"
             company="Epion Health"
-            quote="Kanda Software acts as a core member of our team, and they have been involved in all of our major projects. They helped us build a mobile‑first website, as well as a lot of features and functions on several of our products. Kanda has performed really well. Their team has really helped to bring our numbers up."
+            quote="Bhisey Software acts as a core member of our team, and they have been involved in all of our major projects. They helped us build a mobile‑first website, as well as a lot of features and functions on several of our products. Bhisey has performed really well. Their team has really helped to bring our numbers up."
           />
         </div>
       </Container>
@@ -257,7 +257,7 @@ function ProductCard({ src, title }: { src: string; title: string }) {
 function ProductsShowcase() {
   const items = [
     { src: '/home1.png', title: 'Deployed Resources: Improving Logistical Support to Aid Responders in the Wake of Sho…' },
-    { src: '/home2.png', title: 'Kanda supports Trapelo on the journey to AWS Cloud ensuring HIPAA‑Compliance' },
+    { src: '/home2.png', title: 'Bhisey supports Trapelo on the journey to AWS Cloud ensuring HIPAA‑Compliance' },
     { src: '/home3.png', title: 'Helix eSports: Elevating the Gaming Experience With Data‑Powered Advancement' },
   ];
   return (
@@ -292,7 +292,7 @@ function ContactPanel() {
               <h3 className="text-lg font-semibold text-charcoal">Contact Us</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>📞</span> 617‑340‑3850</li>
-                <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>✉️</span> contact@kandasoft.com</li>
+                <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>✉️</span> contact@Bhiseysoft.com</li>
               </ul>
               <div className="mt-6">
                 <div className="text-sm font-semibold text-charcoal">Find Us on Social Media</div>

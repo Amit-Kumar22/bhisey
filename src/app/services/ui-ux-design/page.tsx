@@ -3,6 +3,7 @@
 import React from 'react';
 import Container from '@/components/layout/Container';
 import Section from '@/components/layout/Section';
+import Link from "next/link";
 import { ContactSection } from '@/components/reusable/ContactSection';
 import { ClientLogoMarquee } from '@/components/reusable/ClientLogoMarquee';
 import { LatestNewsAndInsights } from '@/components/reusable/LatestNewsAndInsights';
@@ -10,50 +11,65 @@ import { Search, Layout, MousePointer, Map, Smartphone, CreditCard, Network, Tar
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'UX & UI Design Services | Kanda',
-  description: 'Bring seamless user experience to the forefront of your digital products with Kanda\'s UX and UI design services.'
+  title: 'UX & UI Design Services | Bhisey',
+  description: 'Bring seamless user experience to the forefront of your digital products with Bhisey\'s UX and UI design services.'
 };
 
 // Hero Section Component
-const HeroSection = () => {
+function HeroSection() {
   return (
-    <Section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-24">
-      <Container>
-        <div className="max-w-4xl">
-          <nav className="flex items-center text-sm text-blue-100 mb-8">
-            <span>Home</span>
-            <span className="mx-2">›</span>
-            <span>Services</span>
-            <span className="mx-2">›</span>
-            <span className="text-white">UX & UI Design Services</span>
-          </nav>
-          
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            UX & UI Design Services
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
-            Bring seamless user experience to the forefront of your digital products
-          </p>
-          
-          <div className="mb-12">
-            <p className="text-lg text-blue-100 mb-6 leading-relaxed">
-              Kanda&apos;s UX and UI team builds beautiful interfaces that deliver results. We don&apos;t just design applications that look good, we design them to achieve your goals.
-            </p>
-            <p className="text-lg text-blue-100 leading-relaxed">
-              Our UX/UI process prioritizes user needs and aligns perfectly with your business objectives. Every element we create contributes to your success and resonates with your target audience. From the initial wireframes to the final polished interfaces, we ensure your users can effortlessly navigate and enjoy the digital experience you&apos;ve envisioned.
-            </p>
-          </div>
-          
-          <button className="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors duration-200">
-            Talk to an Expert
-            <span className="ml-2">→</span>
-          </button>
+    <section className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 px-4 overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <svg className="absolute right-0 top-0 w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none">
+          {[...Array(12)].map((_, i) => (
+            <path
+              key={i}
+              d={`M ${1200 + i * 20} ${100 + i * 10} Q ${600 + i * 30} ${200 + i * 15}, ${i * 20} ${150 + i * 10}`}
+              fill="none"
+              stroke="#ff6b35"
+              strokeWidth="2"
+              opacity={0.3 - i * 0.02}
+            />
+          ))}
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <span className="text-orange-500">UX & UI Design Services.</span>{" "}
+          <span className="text-gray-800">Delivered</span>
+        </h1>
+        <p className="text-2xl md:text-3xl text-gray-600 mb-12">
+          Bring seamless user experience to the forefront of your digital products.
+        </p>
+        <p className="text-2xl md:text-3xl text-gray-600 mb-12">
+          Kanda&apos;s UX and UI team builds beautiful interfaces that deliver results. We don&apos;t just design applications that look good, we design them to achieve your goals.
+        </p>
+        <p className="text-2xl md:text-3xl text-gray-600 mb-12">
+          Our UX/UI process prioritizes user needs and aligns perfectly with your business objectives. Every element we create contributes to your success and resonates with your target audience. From the initial wireframes to the final polished interfaces, we ensure your users can effortlessly navigate and enjoy the digital experience you&apos;ve envisioned.
+        </p>
+        <Link
+          href="/contact-us"
+          className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Talk to an Expert→
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </div>
+
+      {/* Client Logos Carousel */}
+      <div className="mt-16 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-12 md:gap-16 flex-wrap opacity-60">
+          <div className="text-gray-400 text-sm font-medium">NEO GENOMICS</div>
+          <div className="text-gray-400 text-sm font-medium">LIONBRIDGE</div>
+          <div className="text-gray-400 text-sm font-medium">JOHNSON & JOHNSON</div>
         </div>
-      </Container>
-    </Section>
+      </div>
+    </section>
   );
-};
+}
 
 // UI & UX Design Services Grid
 const ServicesGrid = () => {
@@ -116,14 +132,14 @@ const ServicesGrid = () => {
   );
 };
 
-// The Kanda Difference Section
-const KandaDifferenceSection = () => {
+// The Bhisey Difference Section
+const BhiseyDifferenceSection = () => {
   return (
     <Section className="py-20 bg-gray-50">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-teal-600 mb-4">
-            The Kanda Difference
+            The Bhisey Difference
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Unlocking Breakthrough UX with Renowned Expertise
@@ -283,7 +299,7 @@ const ClickablePrototypeSection = () => {
         
         <div className="max-w-4xl mx-auto">
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            Unique to Kanda is our &ldquo;Clickable Prototype&rdquo; — developing a sampling of the foreseen screens with transitions, but without any underlying technical implementation. In our experience, when clients see the user flow, interactions, and how pages are transformed, they are much more likely to understand and provide constructive feedback on the product. Alternatively, dry verbal descriptions, or even wireframes embedded in Word documents, have proven to be a less effective way to assess the solution&apos;s UX flow and application usability.
+            Unique to Bhisey is our &ldquo;Clickable Prototype&rdquo; — developing a sampling of the foreseen screens with transitions, but without any underlying technical implementation. In our experience, when clients see the user flow, interactions, and how pages are transformed, they are much more likely to understand and provide constructive feedback on the product. Alternatively, dry verbal descriptions, or even wireframes embedded in Word documents, have proven to be a less effective way to assess the solution&apos;s UX flow and application usability.
           </p>
           
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -429,7 +445,7 @@ export default function UIUXDesignPage() {
       />
       
       <ServicesGrid />
-      <KandaDifferenceSection />
+      <BhiseyDifferenceSection />
       <DesignProcessSection />
       <ClickablePrototypeSection />
       

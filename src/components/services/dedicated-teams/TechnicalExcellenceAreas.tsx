@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 interface Area { key: string; title: string; desc: string; body: string; href: string; }
 const areas: Area[] = [
-  { key: 'custom', title: 'Custom Software Development', desc: '30 years of experience engineering and maintaining mission-critical software solutions for both disruptive startups and large enterprises.', body: 'Kanda brings 30 years of experience engineering and maintaining mission-critical software solutions for both disruptive startups and large enterprises, and the accountability of a U.S. based company run by seasoned software product development managers. Our capabilities span across all phases of the software lifecycle – application design and technical analysis, architecture, UX/UI design, rapid prototyping and development, digital transformation, cloud migration, machine learning, and AI, application management and support, QA, and DevOps.', href: '/services/custom-software-development' },
+  { key: 'custom', title: 'Custom Software Development', desc: '30 years of experience engineering and maintaining mission-critical software solutions for both disruptive startups and large enterprises.', body: 'Bhisey brings 30 years of experience engineering and maintaining mission-critical software solutions for both disruptive startups and large enterprises, and the accountability of a U.S. based company run by seasoned software product development managers. Our capabilities span across all phases of the software lifecycle – application design and technical analysis, architecture, UX/UI design, rapid prototyping and development, digital transformation, cloud migration, machine learning, and AI, application management and support, QA, and DevOps.', href: '/services/custom-software-development' },
 ];
 
 const TechnicalExcellenceAreas: React.FC = () => {
@@ -17,7 +17,7 @@ const TechnicalExcellenceAreas: React.FC = () => {
       <Container size="xl">
         <div className="mx-auto mb-12 max-w-5xl text-center">
           <h2 className="text-3xl font-bold text-charcoal md:text-4xl">Our Core Areas of Technical Excellence</h2>
-          <p className="mt-4 text-base text-charcoal-light md:text-lg">At Kanda Software, we go beyond code – we architect, design, deliver, and support mission-critical software products that drive innovation and measurable business outcomes. Our interdisciplinary teams combine domain fluency with hands-on technical mastery to meet clients wherever they are in their digital journey.</p>
+          <p className="mt-4 text-base text-charcoal-light md:text-lg">At Bhisey Software, we go beyond code – we architect, design, deliver, and support mission-critical software products that drive innovation and measurable business outcomes. Our interdisciplinary teams combine domain fluency with hands-on technical mastery to meet clients wherever they are in their digital journey.</p>
         </div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="flex flex-row gap-4 md:flex-col md:w-36">

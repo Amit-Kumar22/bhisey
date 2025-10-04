@@ -1,11 +1,11 @@
 import React from 'react';
-import { HeroBanner, ClientLogoMarquee, KandaDifferenceGrid, TestimonialsVideoWall, CostSavingsTable, ServiceContactSection, AwardsRecognitionGrid } from '@/components/reusable';
+import { HeroBanner, ClientLogoMarquee, BhiseyDifferenceGrid, TestimonialsVideoWall, CostSavingsTable, ServiceContactSection, AwardsRecognitionGrid } from '@/components/reusable';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Custom Software Development | Kanda',
+  title: 'Custom Software Development | Bhisey',
   description: 'Custom software development services delivering innovation, speed, and measurable business value.'
 };
 
@@ -65,9 +65,9 @@ export default function CustomSoftwareDevelopmentPage() {
       <Hero />
      
 
-      {/* The Kanda Difference */}
-      <KandaDifferenceGrid
-        title="The Kanda Difference"
+      {/* The Bhisey Difference */}
+      <BhiseyDifferenceGrid
+        title="The Bhisey Difference"
         className="bg-white"
         items={[
           { title: 'Partner by Design', description: 'We embed seamlessly with your team ensuring transparency, velocity, and shared goals.' },
@@ -107,7 +107,7 @@ export default function CustomSoftwareDevelopmentPage() {
           <div className="rounded-lg border border-accent-100 p-8 shadow-sm">
             <h3 className="mb-3 text-lg font-semibold text-charcoal">Cloud Engineering</h3>
             <p className="text-sm leading-relaxed text-charcoal-light">
-              Whether you are already in the Cloud, considering Cloud Migration or looking to develop a Cloud-Native application, Kanda will back you up with our in-depth cloud engineering expertise and over 30+ years of experience modernizing legacy solutions and developing innovative applications for companies ranging from startups to large enterprises. We excel in private, hybrid and public cloud environments helping our clients build high-performance scalable and secure solutions to maximize return on cloud initiatives, increase business agility, reduce costs and lower risks.
+              Whether you are already in the Cloud, considering Cloud Migration or looking to develop a Cloud-Native application, Bhisey will back you up with our in-depth cloud engineering expertise and over 30+ years of experience modernizing legacy solutions and developing innovative applications for companies ranging from startups to large enterprises. We excel in private, hybrid and public cloud environments helping our clients build high-performance scalable and secure solutions to maximize return on cloud initiatives, increase business agility, reduce costs and lower risks.
             </p>
           </div>
         </Container>
@@ -118,7 +118,7 @@ export default function CustomSoftwareDevelopmentPage() {
 
       {/* Testimonials Video Wall */}
       <TestimonialsVideoWall
-        heading="See what people have to say about Kanda"
+        heading="See what people have to say about Bhisey"
         main={{ id: 'L9szwQd8z0w' }}
         side={[{ id: 'Xr1g6URZ7Hk' }, { id: 'tHcN1qQn7eE' }, { id: 'b4RJd9fWfWc' }]}
       />

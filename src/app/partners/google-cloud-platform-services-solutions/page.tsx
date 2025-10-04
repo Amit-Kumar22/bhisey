@@ -10,14 +10,14 @@ import Image from 'next/image';
 export default function GoogleCloudServicesPage() {
   const testimonials = [
     {
-      quote: "They listen to and understand our needs and execute timely on viable plans. They help us from a strategic perspective to plan and build for our future process. Kanda acts in the capacity of a consulting partner and understands our business. They are respectful of our budgets and proceed as such. The team produces high quality work and helps us iterate constantly to improve our product. Great people, have a great culture which translates to successful outcomes.",
+      quote: "They listen to and understand our needs and execute timely on viable plans. They help us from a strategic perspective to plan and build for our future process. Bhisey acts in the capacity of a consulting partner and understands our business. They are respectful of our budgets and proceed as such. The team produces high quality work and helps us iterate constantly to improve our product. Great people, have a great culture which translates to successful outcomes.",
       author: "Rob Feldman",
       title: "CEO, College Interactive",
       company: "",
       image: "/testimonials/rob-feldman.jpg"
     },
     {
-      quote: "Kanda put together an excellent team of business analysts, project managers, and technical resources who are seasoned, professional, and reliable with milestones. The team developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery's machine learning functionality for optimization, and dashboards in Data Studio for the reporting.",
+      quote: "Bhisey put together an excellent team of business analysts, project managers, and technical resources who are seasoned, professional, and reliable with milestones. The team developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery's machine learning functionality for optimization, and dashboards in Data Studio for the reporting.",
       author: "Krishna Boppana",
       title: "Head of Technology, Havas",
       company: "",
@@ -49,7 +49,7 @@ export default function GoogleCloudServicesPage() {
               </p>
               <div className="mb-8">
                 <p className="text-base leading-relaxed mb-4 opacity-90">
-                  One-size-fits-all software can&apos;t deliver the competitive advantage you need in today&apos;s digital landscape. But building custom solutions often means struggling to find the right talent, fast enough. Partner with Kanda to unlock full digital potential.
+                  One-size-fits-all software can&apos;t deliver the competitive advantage you need in today&apos;s digital landscape. But building custom solutions often means struggling to find the right talent, fast enough. Partner with Bhisey to unlock full digital potential.
                 </p>
                 <p className="text-base leading-relaxed opacity-90">
                   As a trusted GCP partner, we will help you leverage the latest cloud-native tools to get you up and running quickly, so you can focus on what matters most: winning in the digital marketplace.
@@ -100,7 +100,7 @@ export default function GoogleCloudServicesPage() {
               Achieve Operational Agility, Reduce Costs and Improve Software Performance with Google Cloud
             </h2>
             <p className="text-lg leading-relaxed max-w-4xl mx-auto opacity-90">
-              Unlock the potential of your business with Kanda and GCP, a dynamic catalyst for innovation that offers robust data analytics solutions, future-proof infrastructure, cutting-edge security capabilities and seamless orchestration through Kubernetes, ensuring efficient containerized application deployment and management.
+              Unlock the potential of your business with Bhisey and GCP, a dynamic catalyst for innovation that offers robust data analytics solutions, future-proof infrastructure, cutting-edge security capabilities and seamless orchestration through Kubernetes, ensuring efficient containerized application deployment and management.
             </p>
             <div className="mt-8">
               <p className="text-base leading-relaxed max-w-4xl mx-auto opacity-90">

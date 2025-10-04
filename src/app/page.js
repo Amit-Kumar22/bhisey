@@ -64,12 +64,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Kanda Difference Section */}
+      {/* The Bhisey Difference Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             <span className="text-gray-800">The </span>
-            <span className="text-orange-500">Kanda</span>
+            <span className="text-orange-500">Bhisey</span>
             <span className="text-gray-800"> Difference</span>
           </h2>
 
@@ -189,7 +189,7 @@ export default function Home() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-gray-700 leading-relaxed">
-                  I am very likely to recommend Kanda Software because of their strong commitment to make their customers successful. Examples that come to mind include: my ability to call directly into Kanda leadership when needed, adaptability to the changes in my business, access to top shelf engineering and technical talent.
+                  I am very likely to recommend Bhisey Software because of their strong commitment to make their customers successful. Examples that come to mind include: my ability to call directly into Bhisey leadership when needed, adaptability to the changes in my business, access to top shelf engineering and technical talent.
                 </p>
               </div>
             </div>
@@ -224,7 +224,7 @@ export default function Home() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-gray-700 leading-relaxed">
-                  I have had a very positive experience working with Kanda over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value.
+                  I have had a very positive experience working with Bhisey over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value.
                 </p>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
           <div className="bg-white rounded-2xl p-10 shadow-lg border border-gray-200">
             <h3 className="text-3xl font-bold text-gray-800 mb-6">Custom Software Development</h3>
             <p className="text-gray-600 leading-relaxed text-lg mb-8">
-              Kanda is a premier full-service Custom Software Development, Cloud Engineering, QA and DevOps company, specializing in the development of time-sensitive and innovative solutions. To every project, Kanda brings a combination of domain expertise, exceptional engineering talent, rigorous Agile development processes, commitment to protection of client&apos;s IP and accountability of a US company with over two decades of impeccable reputation.
+              Bhisey is a premier full-service Custom Software Development, Cloud Engineering, QA and DevOps company, specializing in the development of time-sensitive and innovative solutions. To every project, Bhisey brings a combination of domain expertise, exceptional engineering talent, rigorous Agile development processes, commitment to protection of client&apos;s IP and accountability of a US company with over two decades of impeccable reputation.
             </p>
             <Link
               href="#"
@@ -349,22 +349,22 @@ export default function Home() {
 
       {/* Testimonial Video Section */}
       <TestimonialsVideoWall
-        heading="See what people have to say about Kanda"
+        heading="See what people have to say about Bhisey"
         main={{
           id: "dQw4w9WgXcQ",
           title: "Testimonial of Rob Feldman, CEO of College Interactive. Mobile Application Development",
         }}
         side={[
           {
-            id: "dQw4w9WgXcQ",
+            id: "9bZkp7q19f0",
             thumbTitle: "Scott Blodgett, CIO, Lookout",
           },
           {
-            id: "dQw4w9WgXcQ",
+            id: "jNQXAC9IVRw",
             thumbTitle: "Goran Skorput, Chief Technology Officer",
           },
           {
-            id: "dQw4w9WgXcQ",
+            id: "yKNxeF4KMsY",
             thumbTitle: "Rob Feldman, Founder & CEO of College Interactive",
           },
         ]}
@@ -455,7 +455,7 @@ export default function Home() {
                 Healthcare Software Development
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-8">
-                While you build trust and credibility as a Digital Health company, Kanda will back you up with reliability and agility on the technical side, reducing time to market and associated risks. We will help you transform your product roadmap into a HIPAA compliant, interoperable and secure state-of-the-art solution without draining your budget yet preserving quality. We have the engineering talent that has helped dozens of Digital Health and Life Sciences companies solve their most complex technology puzzles, and are trusted by companies like Janssen, Imprivata, CTCA and industry disruptors like Intervention Insights, Lifepod, Epion Health and others to achieve their complex technical objectives and meet their development milestones.
+                While you build trust and credibility as a Digital Health company, Bhisey will back you up with reliability and agility on the technical side, reducing time to market and associated risks. We will help you transform your product roadmap into a HIPAA compliant, interoperable and secure state-of-the-art solution without draining your budget yet preserving quality. We have the engineering talent that has helped dozens of Digital Health and Life Sciences companies solve their most complex technology puzzles, and are trusted by companies like Janssen, Imprivata, CTCA and industry disruptors like Intervention Insights, Lifepod, Epion Health and others to achieve their complex technical objectives and meet their development milestones.
               </p>
               <Link
                 href="#"
@@ -512,7 +512,7 @@ export default function Home() {
                 SaaS Software Development
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-8">
-                Kanda is a premier custom software development and quality assurance company delivering complex world-class software solutions on a variety of technology platforms to clients ranging from Fortune 500 companies to dynamic startups. Our impeccable track record spans two decades and includes helping develop well over a thousand successful software initiatives that generated hundreds of millions of dollars for our clients
+                Bhisey is a premier custom software development and quality assurance company delivering complex world-class software solutions on a variety of technology platforms to clients ranging from Fortune 500 companies to dynamic startups. Our impeccable track record spans two decades and includes helping develop well over a thousand successful software initiatives that generated hundreds of millions of dollars for our clients
               </p>
               <Link
                 href="#"
@@ -545,10 +545,10 @@ export default function Home() {
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
-                  Kanda Upgrades to ISO/IEC 27001:2022 Certification for Enhanced Information Security
+                  Bhisey Upgrades to ISO/IEC 27001:2022 Certification for Enhanced Information Security
                 </h3>
                 <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
-                  Kanda Software is proud to announce that we have successfully obtained the ISO/IEC 27001:2022 certification for information security management systems. This achievement...
+                  Bhisey Software is proud to announce that we have successfully obtained the ISO/IEC 27001:2022 certification for information security management systems. This achievement...
                 </p>
                 <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
                   Learn More
@@ -566,10 +566,10 @@ export default function Home() {
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
-                  Kanda Software Named Among Top 100 Medical Software Development Companies of 2025
+                  Bhisey Software Named Among Top 100 Medical Software Development Companies of 2025
                 </h3>
                 <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
-                  We at Kanda Software are honored to announce our inclusion in the Top 100 Medical Software Development Companies for 2025, an achievement highlighted by the reputable...
+                  We at Bhisey Software are honored to announce our inclusion in the Top 100 Medical Software Development Companies for 2025, an achievement highlighted by the reputable...
                 </p>
                 <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
                   Learn More
@@ -587,10 +587,10 @@ export default function Home() {
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
-                  Kanda Software Achieves AWS Healthcare Services Competency
+                  Bhisey Software Achieves AWS Healthcare Services Competency
                 </h3>
                 <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3 flex-grow">
-                  Kanda Software has achieved the AWS Healthcare Services Competency designation. This accomplishment highlights more than a year of focused effort and teamwork. Awarded...
+                  Bhisey Software has achieved the AWS Healthcare Services Competency designation. This accomplishment highlights more than a year of focused effort and teamwork. Awarded...
                 </p>
                 <Link href="#" className="inline-flex items-center text-orange-500 font-semibold hover:text-orange-600 text-sm md:text-base mt-auto">
                   Learn More

@@ -12,14 +12,14 @@ interface DifferenceItem {
   image?: string;
 }
 
-interface KandaDifferenceGridProps {
+interface BhiseyDifferenceGridProps {
   title: string;
   subtitle?: string;
   items: DifferenceItem[];
   className?: string;
 }
 
-export const KandaDifferenceGrid: React.FC<KandaDifferenceGridProps> = ({
+export const BhiseyDifferenceGrid: React.FC<BhiseyDifferenceGridProps> = ({
   title,
   subtitle,
   items,
@@ -69,4 +69,4 @@ export const KandaDifferenceGrid: React.FC<KandaDifferenceGridProps> = ({
   );
 };
 
-export default KandaDifferenceGrid;
+export default BhiseyDifferenceGrid;

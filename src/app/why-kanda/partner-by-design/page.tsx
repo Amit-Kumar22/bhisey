@@ -8,7 +8,7 @@ import ContactCompact from '@/components/forms/ContactCompact';
 import { ContactSection } from '../../../components/reusable';
 
 export const metadata = {
-  title: 'Partner by Design | Kanda Software',
+  title: 'Partner by Design | Bhisey Software',
   description:
     'We adapt to your unique needs with transparency and control. Discover how our right-sized partnership model delivers results.',
 };
@@ -112,7 +112,7 @@ function RightSizePartner() {
     {
       title: 'Uncompromised IP Protection',
       body:
-        'With Kanda, your intellectual property is in safe hands. We boast a robust track record with zero cases of IP compromise over three decades, ensuring your innovative ideas stay where they belong.',
+        'With Bhisey, your intellectual property is in safe hands. We boast a robust track record with zero cases of IP compromise over three decades, ensuring your innovative ideas stay where they belong.',
       icon: <ShieldCheck className="h-7 w-7 text-accent-600" aria-hidden />,
     },
   ];
@@ -123,7 +123,7 @@ function RightSizePartner() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-charcoal">Your Right‑Size Partner</h2>
           <p className="mt-4 text-charcoal-light">
-            Kanda strikes the perfect balance for a company of any size: we are big enough to provide the essential skills,
+            Bhisey strikes the perfect balance for a company of any size: we are big enough to provide the essential skills,
             scale, and speed your projects demand. Yet we remain boutique enough to ensure you receive our top management
             attention, unparalleled flexibility, and transparency in every interaction.
           </p>
@@ -179,14 +179,14 @@ function Testimonials() {
             name="Clynt Taylor"
             title="CEO"
             company="Trapelo"
-            quote="I have had a very positive experience working with Kanda over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value."
+            quote="I have had a very positive experience working with Bhisey over the past eight years. They have partnered with us in designing and building very sophisticated applications in the use of precision medicine for cancer therapy selection. I highly recommend them for their expertise, professionalism and value."
           />
           <TestimonialCard
             logo="/logo2.png"
             name="Goran Skorput"
             title="CTO"
             company="HuddleUp"
-            quote="Kanda was HuddleUp’s software design and development partner for several years, helping to bring HuddleUp to the market. The team at Kanda Software is excellent to work with, responsive, strategic, and attentive. Their technical knowledge is excellent as well as attention to detail and quick response to arising needs and changing priorities. The well-managed team boasted transparency and strong organizational skills."
+            quote="Bhisey was HuddleUp’s software design and development partner for several years, helping to bring HuddleUp to the market. The team at Bhisey Software is excellent to work with, responsive, strategic, and attentive. Their technical knowledge is excellent as well as attention to detail and quick response to arising needs and changing priorities. The well-managed team boasted transparency and strong organizational skills."
           />
         </div>
       </Container>
@@ -213,7 +213,7 @@ function ContactPanel() {
               <h3 className="text-lg font-semibold text-charcoal">Contact Us</h3>
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>📞</span> 617‑340‑3850</li>
-                <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>✉️</span> contact@kandasoft.com</li>
+                <li className="flex items-center gap-2 text-charcoal"><span aria-hidden>✉️</span> contact@Bhiseysoft.com</li>
               </ul>
               <div className="mt-6">
                 <div className="text-sm font-semibold text-charcoal">Find Us on Social Media</div>

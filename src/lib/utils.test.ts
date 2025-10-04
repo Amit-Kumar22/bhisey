@@ -231,11 +231,11 @@ describe('Utils - animation', () => {
 
 describe('Utils - seo', () => {
   test('title should add brand suffix by default', () => {
-    expect(seo.title('About Us')).toBe('About Us | Kanda Software');
+    expect(seo.title('About Us')).toBe('About Us | Bhisey Software');
   });
 
   test('title should not add brand when includesBrand is false', () => {
-    expect(seo.title('Kanda Software', false)).toBe('Kanda Software');
+    expect(seo.title('Bhisey Software', false)).toBe('Bhisey Software');
   });
 
   test('description should truncate long descriptions', () => {
@@ -251,7 +251,7 @@ describe('Utils - seo', () => {
   });
 
   test('canonical should generate correct URLs', () => {
-    expect(seo.canonical('/about')).toBe('https://kanda.com/about');
+    expect(seo.canonical('/about')).toBe('https://Bhisey.com/about');
     expect(seo.canonical('/services', 'https://example.com')).toBe('https://example.com/services');
   });
 });

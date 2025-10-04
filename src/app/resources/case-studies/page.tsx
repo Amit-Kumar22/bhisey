@@ -16,7 +16,7 @@ const testimonials = [
     title: 'Lead Software Architect, Docurated',
     company: 'Quark Docurated',
     rating: 99,
-    quote: 'Thanks to Kanda\'s efforts, the client was acquired by another company, a major goal. Kanda\'s diligence, attention to detail, and systematic approach made for a successful partnership. Their willingness to work hard and solve problems as they stood out.'
+    quote: 'Thanks to Bhisey\'s efforts, the client was acquired by another company, a major goal. Bhisey\'s diligence, attention to detail, and systematic approach made for a successful partnership. Their willingness to work hard and solve problems as they stood out.'
   },
   {
     id: '2',
@@ -24,7 +24,7 @@ const testimonials = [
     title: 'Head of Technology, Havas',
     company: 'HAVAS',
     rating: 99,
-    quote: 'Kanda put together an excellent team of business analysts, project managers, and technical resources who are seasoned professionals and developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery\'s machine learning functionality for optimization, and dashboards in Data Studio for the reporting.'
+    quote: 'Bhisey put together an excellent team of business analysts, project managers, and technical resources who are seasoned professionals and developed new data pipelines processing terabytes of data in GCP leveraging BigQuery, Python, TensorFlow, BigQuery\'s machine learning functionality for optimization, and dashboards in Data Studio for the reporting.'
   },
   {
     id: '3',
@@ -32,7 +32,7 @@ const testimonials = [
     title: 'CEO, medque',
     company: 'MEDQUE',
     rating: 99,
-    quote: 'Kanda proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The more reliable than our in-house members of our development organization, and the results showed that. Our customers are extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Kanda for any and all of your development needs.'
+    quote: 'Bhisey proved to be an exceptional choice for our development needs. They were much more of a partner to our startup than a vendor. The more reliable than our in-house members of our development organization, and the results showed that. Our customers are extremely pleased with the desktop and mobile applications. I would definitely recommend hiring Bhisey for any and all of your development needs.'
   },
   {
     id: '4',
@@ -40,12 +40,12 @@ const testimonials = [
     title: 'Botanical Coordinator, Native Plant Trust',
     company: 'Native Plant Trust',
     rating: 99,
-    quote: 'As a conservation nonprofit, Kanda has been critical to helping us revolutionize how we collect, manage, and store data. Their user staff is incredibly passionate about the work we do and have been very flexible in finding solutions. Their tech staff is always available and incredibly quick to respond if there is ever an issue.'
+    quote: 'As a conservation nonprofit, Bhisey has been critical to helping us revolutionize how we collect, manage, and store data. Their user staff is incredibly passionate about the work we do and have been very flexible in finding solutions. Their tech staff is always available and incredibly quick to respond if there is ever an issue.'
   }
 ];
 
-// Why Kanda features data
-const whyKandaFeatures = [
+// Why Bhisey features data
+const whyBhiseyFeatures = [
   {
     number: '01',
     title: '30+ years of Best Practices in software product development and deployment'
@@ -143,7 +143,7 @@ export default function CaseStudiesPage() {
               Case Studies
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              350+ Clients trust Kanda Software with their business-critical software development initiatives
+              350+ Clients trust Bhisey Software with their business-critical software development initiatives
             </p>
           </div>
         </Container>
@@ -353,17 +353,17 @@ export default function CaseStudiesPage() {
         </Container>
       </Section>
 
-      {/* Why Kanda Section */}
+      {/* Why Bhisey Section */}
       <Section className="py-16 bg-white" spacing="none">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Kanda?
+              Why Bhisey?
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyKandaFeatures.map((feature) => (
+            {whyBhiseyFeatures.map((feature) => (
               <div key={feature.number} className="text-center">
                 <div className="text-6xl font-bold text-accent-600 mb-4">
                   {feature.number}

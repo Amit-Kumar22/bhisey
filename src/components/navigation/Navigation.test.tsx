@@ -44,8 +44,8 @@ describe('Navigation Components', () => {
 
       expect(screen.getByRole('navigation')).toBeInTheDocument();
       expect(screen.getByLabelText('Main navigation')).toBeInTheDocument();
-      expect(screen.getByLabelText('Kanda Software - Home')).toBeInTheDocument();
-      expect(screen.getByText('Why Kanda')).toBeInTheDocument();
+      expect(screen.getByLabelText('Bhisey Software - Home')).toBeInTheDocument();
+      expect(screen.getByText('Why Bhisey')).toBeInTheDocument();
       expect(screen.getByText('Services')).toBeInTheDocument();
       expect(screen.getByText('Contact Us')).toBeInTheDocument();
     });
@@ -80,9 +80,9 @@ describe('Navigation Components', () => {
     test('opens dropdown menu on hover for desktop', async () => {
       render(<Navigation />);
       
-      const whyKandaButton = screen.getByText('Why Kanda');
+      const whyBhiseyButton = screen.getByText('Why Bhisey');
       
-      fireEvent.mouseEnter(whyKandaButton);
+      fireEvent.mouseEnter(whyBhiseyButton);
       
       await waitFor(() => {
         expect(screen.getByText('Partner by Design')).toBeInTheDocument();
@@ -95,15 +95,15 @@ describe('Navigation Components', () => {
       
       render(<Navigation />);
       
-      const whyKandaButton = screen.getByText('Why Kanda');
+      const whyBhiseyButton = screen.getByText('Why Bhisey');
       
-      fireEvent.mouseEnter(whyKandaButton);
+      fireEvent.mouseEnter(whyBhiseyButton);
       
       await waitFor(() => {
         expect(screen.getByText('Partner by Design')).toBeInTheDocument();
       });
       
-      fireEvent.mouseLeave(whyKandaButton);
+      fireEvent.mouseLeave(whyBhiseyButton);
       
       // Should still be visible immediately
       expect(screen.getByText('Partner by Design')).toBeInTheDocument();
@@ -123,19 +123,19 @@ describe('Navigation Components', () => {
       
       render(<Navigation />);
       
-      const whyKandaButton = screen.getByText('Why Kanda');
+      const whyBhiseyButton = screen.getByText('Why Bhisey');
       
       // Focus and press Enter
-      whyKandaButton.focus();
+      whyBhiseyButton.focus();
       await user.keyboard('{Enter}');
       
-      expect(whyKandaButton).toHaveAttribute('aria-expanded', 'true');
+      expect(whyBhiseyButton).toHaveAttribute('aria-expanded', 'true');
       expect(screen.getByText('Partner by Design')).toBeInTheDocument();
       
       // Press Escape to close
       await user.keyboard('{Escape}');
       
-      expect(whyKandaButton).toHaveAttribute('aria-expanded', 'false');
+      expect(whyBhiseyButton).toHaveAttribute('aria-expanded', 'false');
     });
 
     test('applies transparent styles when transparent prop is true and not scrolled', () => {
@@ -261,8 +261,8 @@ describe('Navigation Components', () => {
       const linkedinLink = screen.getByLabelText('LinkedIn');
       
       expect(phoneLink).toHaveAttribute('href', 'tel:+1234567890');
-      expect(emailLink).toHaveAttribute('href', 'mailto:hello@kanda.com');
-      expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/company/kanda');
+      expect(emailLink).toHaveAttribute('href', 'mailto:hello@Bhisey.com');
+      expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/company/Bhisey');
       expect(linkedinLink).toHaveAttribute('target', '_blank');
       expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
     });
@@ -315,7 +315,7 @@ describe('Navigation Components', () => {
       
       render(<Navigation />);
       
-      const whyKandaButton = screen.getByText('Why Kanda');
+      const whyBhiseyButton = screen.getByText('Why Bhisey');
       
       await user.tab();
       await user.tab();

@@ -5,7 +5,7 @@ import Container from '@/components/layout/Container';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'DevOps Services and Solutions | Kanda',
+  title: 'DevOps Services and Solutions | Bhisey',
   description: 'Break the Silos, Unleash Agility: DevOps for the Modern Enterprise'
 };
 
@@ -37,13 +37,13 @@ export default function DevOpsServicesPage() {
               </h2>
               
               <p className="text-base md:text-lg leading-relaxed mb-8 text-white/90 max-w-3xl">
-                Are you tired of slow releases, siloed teams, and technical debt holding your business back? Kanda Software DevOps Services 
+                Are you tired of slow releases, siloed teams, and technical debt holding your business back? Bhisey Software DevOps Services 
                 bridge the gap between Dev and Ops, fostering collaboration, innovation, and unmatched agility.
               </p>
               
               <p className="text-base md:text-lg leading-relaxed mb-8 text-white/90 max-w-3xl">
                 Achieve greater business agility, shorten time to market, ensure regulatory compliance, boost analytical capabilities while 
-                reducing costs and decreasing technical debt. Kanda&apos;s DevOps Experts will help you integrate DevOps into your business, 
+                reducing costs and decreasing technical debt. Bhisey&apos;s DevOps Experts will help you integrate DevOps into your business, 
                 implement DevOps best practices including CI/CD, GitOps, DevSecOps, AI/ML, and containerization.
               </p>
               
@@ -121,12 +121,12 @@ export default function DevOpsServicesPage() {
         </Container>
       </Section>
 
-      {/* Experience the Kanda difference */}
+      {/* Experience the Bhisey difference */}
       <Section className="bg-white" spacing="xl">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-500 mb-4">
-              Experience the Kanda difference
+              Experience the Bhisey difference
             </h2>
             <h3 className="text-2xl md:text-3xl font-semibold text-charcoal">
               We will help you achieve:
@@ -176,12 +176,12 @@ export default function DevOpsServicesPage() {
         </Container>
       </Section>
 
-      {/* Why Kanda? */}
+      {/* Why Bhisey? */}
       <Section className="bg-white" spacing="xl">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-500 mb-8">
-              Why Kanda?
+              Why Bhisey?
             </h2>
           </div>
           
@@ -309,7 +309,7 @@ export default function DevOpsServicesPage() {
               {
                 icon: "📚",
                 title: "Continuous Learning",
-                description: "In the world of Cloud DevOps tools, platforms and best practices are complex and are rapidly evolving. Continuous learning keeps Kanda teams up-to-the-minute on the latest technologies, tools, automation and development methodologies."
+                description: "In the world of Cloud DevOps tools, platforms and best practices are complex and are rapidly evolving. Continuous learning keeps Bhisey teams up-to-the-minute on the latest technologies, tools, automation and development methodologies."
               },
               {
                 icon: "🔄",
@@ -343,7 +343,7 @@ export default function DevOpsServicesPage() {
               Struggling with manual infrastructure provisioning, inefficient monitoring, and unpredictable scaling?
             </p>
             <p className="text-base md:text-lg text-charcoal max-w-3xl mx-auto">
-              As a DevOps partner Kanda helps clients deliver:
+              As a DevOps partner Bhisey helps clients deliver:
             </p>
           </div>
           
@@ -375,12 +375,12 @@ export default function DevOpsServicesPage() {
         </Container>
       </Section>
 
-      {/* Kanda Approach */}
+      {/* Bhisey Approach */}
       <Section className="bg-white" spacing="xl">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-500 mb-8">
-              Kanda Approach
+              Bhisey Approach
             </h2>
           </div>
           
@@ -433,7 +433,7 @@ export default function DevOpsServicesPage() {
           <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed">
             <p>
               In today&apos;s threat-laden landscape, securing your software at every stage of development is no longer an option, it&apos;s a 
-              necessity. Kanda&apos;s DevSecOps offering seamlessly integrates security best practices within your DevOps pipeline, enabling 
+              necessity. Bhisey&apos;s DevSecOps offering seamlessly integrates security best practices within your DevOps pipeline, enabling 
               you to deliver high-quality, secure software at rapid velocity.
             </p>
             
@@ -511,12 +511,12 @@ export default function DevOpsServicesPage() {
         </Container>
       </Section>
 
-      {/* Kanda DevOps Practice gives you */}
+      {/* Bhisey DevOps Practice gives you */}
       <Section className="bg-white" spacing="xl">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-accent-500 mb-8">
-              Kanda DevOps Practice gives you
+              Bhisey DevOps Practice gives you
             </h2>
           </div>
           
@@ -557,13 +557,13 @@ export default function DevOpsServicesPage() {
       <TestimonialSlider
         testimonials={[
           {
-            quote: "Kanda have been a fantastic partner to Imprivata for many years now bringing extensive knowledge of AWS and its services. Some of their DevOps Engineers have worked on key cloud products for us for several years and have become trusted leaders in our extended DevOps team.",
+            quote: "Bhisey have been a fantastic partner to Imprivata for many years now bringing extensive knowledge of AWS and its services. Some of their DevOps Engineers have worked on key cloud products for us for several years and have become trusted leaders in our extended DevOps team.",
             author: "Fergal Sweeney",
             title: "Director of DevOps",
             company: "Imprivata"
           },
           {
-            quote: "I am very likely to recommend Kanda Software because of their strong commitment to make their customers successful. Examples that come to mind include: my ability to call directly into Kanda leadership when needed, adaptability to the changes in my business, access to top shelf engineering and technical talent.",
+            quote: "I am very likely to recommend Bhisey Software because of their strong commitment to make their customers successful. Examples that come to mind include: my ability to call directly into Bhisey leadership when needed, adaptability to the changes in my business, access to top shelf engineering and technical talent.",
             author: "John Scano", 
             title: "Chief Development Officer",
             company: "Lookout"

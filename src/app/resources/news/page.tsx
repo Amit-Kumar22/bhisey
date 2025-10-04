@@ -18,50 +18,50 @@ interface NewsItem {
 const newsItems: NewsItem[] = [
   {
     id: '1',
-    title: 'Kanda Upgrades to ISO/IEC 27001:2022 Certification for Enhanced Information Security',
+    title: 'Bhisey Upgrades to ISO/IEC 27001:2022 Certification for Enhanced Information Security',
     date: 'August 06, 2025',
     image: '/images/news/iso-certification.jpg',
     featured: true
   },
   {
     id: '2',
-    title: 'Kanda Software Named Among Top 100 Medical Software Development Companies of 2025 by Techreviewer.co',
+    title: 'Bhisey Software Named Among Top 100 Medical Software Development Companies of 2025 by Techreviewer.co',
     date: 'August 05, 2025',
     image: '/images/news/top-100-medical.jpg'
   },
   {
     id: '3',
-    title: 'Kanda Software Achieves AWS Healthcare Services Competency',
+    title: 'Bhisey Software Achieves AWS Healthcare Services Competency',
     date: 'May 28, 2025',
     image: '/images/news/aws-healthcare.jpg'
   },
   {
     id: '4',
-    title: 'Kanda Software Welcomes MediaPedia as New Client to Build Groundbreaking Media Bias Rating System',
+    title: 'Bhisey Software Welcomes MediaPedia as New Client to Build Groundbreaking Media Bias Rating System',
     date: 'March 05, 2025',
     image: '/images/news/mediapedia.jpg'
   },
   {
     id: '5',
-    title: 'Kanda Software Achieves Microsoft\'s Solutions Partner Designation for Data & AI',
+    title: 'Bhisey Software Achieves Microsoft\'s Solutions Partner Designation for Data & AI',
     date: 'November 25, 2024',
     image: '/images/news/microsoft-partner.jpg'
   },
   {
     id: '6',
-    title: 'Kanda Begins Initiative with Crafting Minds Group to Launch AI-Powered Platform for Students with Learning Disabilities',
+    title: 'Bhisey Begins Initiative with Crafting Minds Group to Launch AI-Powered Platform for Students with Learning Disabilities',
     date: 'November 25, 2024',
     image: '/images/news/crafting-minds.jpg'
   },
   {
     id: '7',
-    title: 'Kanda and Fraud Protection Network, Inc. Launch Database Optimization for Tenant Screening Platform',
+    title: 'Bhisey and Fraud Protection Network, Inc. Launch Database Optimization for Tenant Screening Platform',
     date: 'July 25, 2024',
     image: '/images/news/fraud-protection.jpg'
   },
   {
     id: '8',
-    title: 'Kanda Software Wins Gold and Silver in the 11th Annual 2024 Globee® Awards for Technology',
+    title: 'Bhisey Software Wins Gold and Silver in the 11th Annual 2024 Globee® Awards for Technology',
     date: 'July 16, 2024',
     image: '/images/news/globee-awards.jpg'
   }

@@ -2,7 +2,7 @@
 import React from 'react';
 import HeroDedicatedTeams from '../../../components/services/dedicated-teams/HeroDedicatedTeams';
 // Reusable components leveraged to align with existing design system
-import { KandaDifferenceGrid } from '@/components/reusable/KandaDifferenceGrid';
+import { BhiseyDifferenceGrid } from '@/components/reusable/BhiseyDifferenceGrid';
 import { CostSavingsTable } from '@/components/reusable/CostSavingsTable';
 import { AwardsRecognitionGrid } from '@/components/reusable/AwardsRecognitionGrid';
 import { ClientLogoMarquee } from '@/components/reusable/ClientLogoMarquee';
@@ -19,8 +19,8 @@ export default function DedicatedDevelopmentTeamsPage() {
 	return (
 		<main className="flex flex-col">
 			<HeroDedicatedTeams />
-					<KandaDifferenceGrid
-						title="The Kanda Difference"
+					<BhiseyDifferenceGrid
+						title="The Bhisey Difference"
 						subtitle="Our software development services are trusted by 450+ industry leaders and growth-stage innovators."
 						items={[
 							{ title: 'Partner by Design', description: 'Strategic collaboration that aligns with your business outcomes.' },
@@ -57,7 +57,7 @@ export default function DedicatedDevelopmentTeamsPage() {
 			<ServiceContactSection
 				id="contact-dedicated-teams"
 				title="Ready to Build Your Team?"
-				subtitle="Start a conversation to see how Kanda Software can help you build a high‑performing, cost‑effective, and truly dedicated development team – on your terms."
+				subtitle="Start a conversation to see how Bhisey Software can help you build a high‑performing, cost‑effective, and truly dedicated development team – on your terms."
 			/>
 		</main>
 	);

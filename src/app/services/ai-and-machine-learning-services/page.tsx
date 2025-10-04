@@ -7,21 +7,21 @@ import Image from 'next/image';
 import { Lightbulb, Users, TrendingUp, Zap, Sparkles, Eye, MessageCircle, Settings, ChevronRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'AI and Machine Learning Services | Kanda',
+  title: 'AI and Machine Learning Services | Bhisey',
   description: 'Tap into our proven track record of incorporating AI and Machine Learning technologies to deliver tangible business value – creating a competitive advantage, growing revenues, and increasing operational efficiency.'
 };
 
 export default function AIAndMachineLearningServicesPage() {
   const testimonials = [
     {
-      quote: "Kanda team showcased unparalleled expertise, delivering a software product that not only met but exceeded our expectations. The collaborative was seamless, with transparent communication and a commitment to excellence evident throughout. Kanda's work on our product not only functions flawlessly but has surpassed our performance projections. Their flexibility in incorporating feedback and dedication to customer satisfaction set them apart. I highly recommend Kanda Software to any organization seeking a reliable and proficient software development team.",
+      quote: "Bhisey team showcased unparalleled expertise, delivering a software product that not only met but exceeded our expectations. The collaborative was seamless, with transparent communication and a commitment to excellence evident throughout. Bhisey's work on our product not only functions flawlessly but has surpassed our performance projections. Their flexibility in incorporating feedback and dedication to customer satisfaction set them apart. I highly recommend Bhisey Software to any organization seeking a reliable and proficient software development team.",
       author: "John Eidukot",
       title: "CTO, Walters Golf Management",
       company: "WALTERS Golf Management",
       image: "/testimonial-john.jpg"
     },
     {
-      quote: "Kanda has been an attentive partner for us for the last five years, and has contributed to building a key piece of our software in a variety of ways. While this includes more obvious things like development and design, our Kanda team goes above and beyond to contribute meaningfully to business objectives and to provide a holistic perspective during development discussions.",
+      quote: "Bhisey has been an attentive partner for us for the last five years, and has contributed to building a key piece of our software in a variety of ways. While this includes more obvious things like development and design, our Bhisey team goes above and beyond to contribute meaningfully to business objectives and to provide a holistic perspective during development discussions.",
       author: "Olivia Channon",
       title: "Content Director, NEOLab",
       company: "NEOLab",

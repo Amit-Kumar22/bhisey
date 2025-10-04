@@ -7,16 +7,16 @@ This page replicates the exact design from the provided screenshots, implementin
 1. **Hero Section** - Orange gradient background with breadcrumb navigation
 2. **CTA Section** - "Would you like to" call-to-action strip
 3. **Client Spotlight** - Logo grid of client companies
-4. **Experience the Kanda Difference** - 6-card grid with benefits
-5. **Why Kanda?** - Numbered list (01-06) of key differentiators  
+4. **Experience the Bhisey Difference** - 6-card grid with benefits
+5. **Why Bhisey?** - Numbered list (01-06) of key differentiators  
 6. **Benefits of DevOps Implementation** - Text section
 7. **DevOps Solutions and Services** - Two-column layout on orange background
 8. **DevOps Management** - 3-card grid with icons
 9. **Infrastructure Management** - 3-card grid with description
-10. **Kanda Approach** - 3-card grid with CTA button
+10. **Bhisey Approach** - 3-card grid with CTA button
 11. **DevSecOps and Security Management** - Text section on orange background
 12. **DevOps Tools and Technologies** - Categorized tool listing
-13. **Kanda DevOps Practice** - 4-card grid with benefits
+13. **Bhisey DevOps Practice** - 4-card grid with benefits
 14. **Testimonials** - Using existing TestimonialSlider component
 15. **Contact Section** - Using existing ContactSection component
 

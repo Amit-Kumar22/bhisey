@@ -160,7 +160,7 @@ export const animation = {
 export const seo = {
   // Generate page title with brand
   title: (pageTitle: string, includesBrand: boolean = true): string => {
-    return includesBrand ? `${pageTitle} | Kanda Software` : pageTitle;
+    return includesBrand ? `${pageTitle} | Bhisey Software` : pageTitle;
   },
 
   // Truncate description to SEO limits
@@ -170,7 +170,7 @@ export const seo = {
   },
 
   // Generate canonical URL
-  canonical: (path: string, baseUrl: string = 'https://kanda.com'): string => {
+  canonical: (path: string, baseUrl: string = 'https://Bhisey.com'): string => {
     return `${baseUrl}${path}`;
   },
 };

@@ -1,11 +1,11 @@
 import React from 'react';
-import { HeroBanner, ClientLogoMarquee, KandaDifferenceGrid, AwardsRecognitionGrid, ContactSection } from '@/components/reusable';
+import { HeroBanner, ClientLogoMarquee, BhiseyDifferenceGrid, AwardsRecognitionGrid, ContactSection } from '@/components/reusable';
 import Section from '@/components/layout/Section';
 import Container from '@/components/layout/Container';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Data and Analytics Services | Kanda',
+  title: 'Data and Analytics Services | Bhisey',
   description: 'Transform your data into competitive advantage with our full-cycle data and analytics services. 30+ years of experience in data engineering, architecture, and machine learning.'
 };
 
@@ -18,7 +18,7 @@ export default function DataAndAnalyticsPage() {
         overlay="none"
         variant="compact"
         title="Data and Analytics Services"
-        subtitle="Imagine a constant flow of data-driven insights guiding you toward smarter decisions, greater business agility, and, ultimately, competitive advantage. With Kanda's full-cycle data and analytics services, you can monetize your data, break data silos and unlock the full potential of your data goldmine. Backed by deep domain understanding, a solid grasp of modern data technologies, and advanced analytics skills, we can help you take your data narrative to the next level."
+        subtitle="Imagine a constant flow of data-driven insights guiding you toward smarter decisions, greater business agility, and, ultimately, competitive advantage. With Bhisey's full-cycle data and analytics services, you can monetize your data, break data silos and unlock the full potential of your data goldmine. Backed by deep domain understanding, a solid grasp of modern data technologies, and advanced analytics skills, we can help you take your data narrative to the next level."
         primaryCta={{ href: '#contact', text: 'Talk to an Expert' }}
         className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-400 text-white"
       />
@@ -42,9 +42,9 @@ export default function DataAndAnalyticsPage() {
         </Container>
       </Section>
 
-      {/* The Kanda Difference */}
-      <KandaDifferenceGrid
-        title="The Kanda Difference"
+      {/* The Bhisey Difference */}
+      <BhiseyDifferenceGrid
+        title="The Bhisey Difference"
         className="bg-white"
         items={[
           { title: 'Partner by Design', description: 'Learn More' },
@@ -101,7 +101,7 @@ export default function DataAndAnalyticsPage() {
         <Container>
           <h2 className="mb-10 text-center text-3xl md:text-4xl font-bold text-orange-600">Expert Data Analytics Services for Your Scenario</h2>
           <p className="text-center text-base md:text-lg text-charcoal-light mb-12 max-w-4xl mx-auto">
-            At Kanda, we help turn data into industry success by leveraging the power of predictive and prescriptive analytics to uncover hidden patterns, mitigate risks, and seize new opportunities.
+            At Bhisey, we help turn data into industry success by leveraging the power of predictive and prescriptive analytics to uncover hidden patterns, mitigate risks, and seize new opportunities.
           </p>
           
           <div className="max-w-4xl mx-auto">
@@ -190,7 +190,7 @@ export default function DataAndAnalyticsPage() {
                 description: 'Learn More'
               },
               {
-                title: 'Kanda supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance',
+                title: 'Bhisey supports Trapelo on the journey to AWS Cloud ensuring HIPAA-Compliance',
                 description: 'Learn More'
               },
               {
@@ -363,7 +363,7 @@ export default function DataAndAnalyticsPage() {
                     ✉️
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-charcoal">contact@kandasoft.com</p>
+                    <p className="text-sm font-semibold text-charcoal">contact@Bhiseysoft.com</p>
                   </div>
                 </li>
               </ul>

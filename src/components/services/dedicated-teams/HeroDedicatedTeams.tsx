@@ -30,13 +30,13 @@ const HeroDedicatedTeams: React.FC = () => {
           <h1 className="mb-6 text-3xl font-bold leading-tight text-[#066B59] md:text-5xl lg:text-[3.25rem] lg:leading-[1.15]">Dedicated Development Teams</h1>
           <h2 className="mb-8 text-lg font-medium text-[#163748] md:text-2xl">On-Demand Engineering Firepower. Seamless Team Extension.</h2>
           <p className="mx-auto max-w-4xl text-sm leading-relaxed text-[#1E4F63] md:text-base lg:text-lg">
-            At Kanda Software, we understand the urgency and precision that modern software development demands. Whether
+            At Bhisey Software, we understand the urgency and precision that modern software development demands. Whether
             you&apos;re scaling your product roadmap, accelerating time-to-market, or tackling a specialized challenge – our Dedicated
             Development Teams provide the velocity, expertise, and flexibility to help you deliver at pace without compromising
             quality.
           </p>
           <p className="mx-auto mt-8 max-w-5xl text-sm leading-relaxed text-[#1E4F63] md:text-base">
-            For over 30 years, Kanda has been helping companies – from startups to Fortune 500 enterprises – build and
+            For over 30 years, Bhisey has been helping companies – from startups to Fortune 500 enterprises – build and
             expand high-performing engineering teams. We deliver expert talent across time zones, domains, and technologies
             with the oversight, structure, and reliability of a U.S.-based partner.
           </p>
