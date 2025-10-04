@@ -6,6 +6,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '../../lib/utils';
 import { navigation } from '../../lib/constants';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -153,14 +154,15 @@ export default function Navigation({
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 rounded-md"
               aria-label="Bhisey Software - Home"
             >
-              <span className={cn(
-                'text-xl font-bold',
-                transparent && !isScrolled && !isMobileMenuOpen
-                  ? 'text-white'
-                  : 'text-gray-900'
-              )}>
-                Bhisey
-              </span>
+              <Image
+                src="/bhisey.png"
+                alt="Bhisey Logo"
+                width={120}
+                height={40}
+                priority
+                className="h-8 w-auto"
+                unoptimized
+              />
             </Link>
           </div>
 

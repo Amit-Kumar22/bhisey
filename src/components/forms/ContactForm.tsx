@@ -263,8 +263,8 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-            Name *
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            Name*
           </label>
           <input
             type="text"
@@ -272,10 +272,10 @@ export function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+            className={`w-full px-4 py-2.5 border rounded-md text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
               fieldErrors.name ? 'border-red-300' : 'border-gray-300'
             }`}
-            placeholder="Your full name"
+            placeholder="Enter your name"
             required
           />
           {fieldErrors.name && (
@@ -285,8 +285,8 @@ export function ContactForm() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-            Email *
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            Email*
           </label>
           <input
             type="email"
@@ -294,10 +294,10 @@ export function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+            className={`w-full px-4 py-2.5 border rounded-md text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
               fieldErrors.email ? 'border-red-300' : 'border-gray-300'
             }`}
-            placeholder="your.email@company.com"
+            placeholder="Enter your email"
             required
           />
           {fieldErrors.email && (
@@ -309,8 +309,8 @@ export function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-            Phone Number
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            Phone number
           </label>
           <input
             type="tel"
@@ -318,14 +318,14 @@ export function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
-            placeholder="+1 (555) 123-4567"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-md text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
+            placeholder="Enter your phone number"
           />
         </div>
 
         {/* Company */}
         <div>
-          <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
+          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
             Company
           </label>
           <input
@@ -334,96 +334,66 @@ export function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
-            placeholder="Your company name"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-md text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500"
+            placeholder="Enter your company name"
           />
         </div>
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-          How can we help? *
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          How can we help?*
         </label>
         <textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleInputChange}
-          rows={6}
-          className={`w-full px-4 py-3 border rounded-lg text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 ${
+          rows={5}
+          className={`w-full px-4 py-2.5 border rounded-md text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 resize-none ${
             fieldErrors.message ? 'border-red-300' : 'border-gray-300'
           }`}
-          placeholder="Please describe your project, requirements, timeline, and any specific questions you have..."
+          placeholder="Tell us, how can we help you?"
           required
         />
         {fieldErrors.message && (
           <p className="text-red-500 text-sm mt-1">{fieldErrors.message}</p>
         )}
-        <p className="text-gray-500 text-sm mt-2">
-          Minimum 30 characters ({formData.message.length}/30)
-        </p>
       </div>
 
       {/* File Upload */}
       <div>
-        <label htmlFor="attachment" className="block text-sm font-semibold text-gray-900 mb-2">
-          Upload your RFP or other relevant files (Optional)
+        <input
+          type="file"
+          id="attachment"
+          name="attachment"
+          onChange={handleFileChange}
+          className="hidden"
+          accept=".pdf,.doc,.docx,.txt"
+        />
+        <label
+          htmlFor="attachment"
+          className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+          </svg>
+          Choose File
         </label>
-        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-accent-500 transition-colors">
-          <input
-            type="file"
-            id="attachment"
-            name="attachment"
-            onChange={handleFileChange}
-            className="hidden"
-            accept=".pdf,.doc,.docx,.txt"
-          />
-          <label
-            htmlFor="attachment"
-            className="cursor-pointer inline-flex items-center px-4 py-2 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clipRule="evenodd" />
-            </svg>
-            Choose File
-          </label>
-          {formData.attachment && (
-            <p className="text-sm text-gray-600 mt-2">
-              Selected: {formData.attachment.name}
-            </p>
-          )}
-          {formState.fileUploading && (
-            <p className="text-sm text-accent-500 mt-2">Uploading file...</p>
-          )}
-        </div>
+        <span className="ml-4 text-sm text-gray-500">
+          Upload your RFP or other relevant files (Optional)
+        </span>
+        {formData.attachment && (
+          <p className="text-sm text-gray-600 mt-2">
+            Selected: {formData.attachment.name}
+          </p>
+        )}
+        {formState.fileUploading && (
+          <p className="text-sm text-accent-500 mt-2">Uploading file...</p>
+        )}
         {fieldErrors.attachment && (
           <p className="text-red-500 text-sm mt-1">{fieldErrors.attachment}</p>
-        )}
-        <p className="text-gray-500 text-xs mt-2">
-          Accepted formats: PDF, Word documents, Text files. Maximum size: 15MB
-        </p>
-      </div>
-
-      {/* Consent Checkbox */}
-      <div>
-        <label className="flex items-start space-x-3">
-          <input
-            type="checkbox"
-            name="consent"
-            checked={formData.consent}
-            onChange={handleInputChange}
-            className={`mt-1 h-4 w-4 text-accent-500 focus:ring-accent-500 border-gray-300 rounded ${
-              fieldErrors.consent ? 'border-red-300' : ''
-            }`}
-            required
-          />
-          <span className="text-sm text-gray-600">
-            I agree to receive communications from Bhisey Software *
-          </span>
-        </label>
-        {fieldErrors.consent && (
-          <p className="text-red-500 text-sm mt-1">{fieldErrors.consent}</p>
         )}
       </div>
 
@@ -432,14 +402,14 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={formState.isSubmitting || formState.fileUploading}
-          className={`w-full md:w-auto px-8 py-4 rounded-lg font-semibold text-white transition-all ${
+          className={`w-full md:w-auto px-8 py-3 rounded-lg font-semibold text-white transition-all ${
             formState.isSubmitting || formState.fileUploading
               ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-accent-500 hover:bg-accent-600 hover:shadow-lg transform hover:-translate-y-0.5'
+              : 'bg-accent-500 hover:bg-accent-600 hover:shadow-lg'
           }`}
         >
           {formState.isSubmitting ? (
-            <span className="flex items-center">
+            <span className="flex items-center justify-center">
               <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -447,7 +417,7 @@ export function ContactForm() {
               Sending Message...
             </span>
           ) : formState.fileUploading ? (
-            <span className="flex items-center">
+            <span className="flex items-center justify-center">
               <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -458,17 +428,6 @@ export function ContactForm() {
             'Submit'
           )}
         </button>
-      </div>
-
-      {/* Form Help Text */}
-      <div className="text-sm text-charcoal-light bg-gray-50 p-4 rounded-lg">
-        <p className="font-semibold mb-2">What happens next?</p>
-        <ul className="space-y-1">
-          <li>• We&apos;ll review your message within 24 hours</li>
-          <li>• Our team will respond with relevant expertise</li>
-          <li>• We&apos;ll schedule a discovery call to discuss your project</li>
-          <li>• You&apos;ll receive a detailed proposal and timeline</li>
-        </ul>
       </div>
     </form>
   );

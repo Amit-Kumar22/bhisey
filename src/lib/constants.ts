@@ -209,10 +209,10 @@ export const navigation = {
     {
       label: 'Company',
       href: '/company',
-      hasDropdown: false,
+      hasDropdown: true,
       children: [
-        { label: 'Team', href: '/team' },
-        { label: 'Careers', href: '/careers' },
+        { label: 'Team', href: '/company/teams' },
+        { label: 'Contact', href: '/contact-us' },
       ],
     },
   ],

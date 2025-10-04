@@ -3,6 +3,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '../../lib/utils';
 import { navigation } from '../../lib/constants';
 import { UtilityNavigation } from '../navigation';
@@ -46,10 +47,17 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
             <div className="flex items-center space-x-4">
               <Link 
                 href="/" 
-                className="text-xl font-bold text-white hover:text-accent-300 transition-colors duration-200"
+                className="flex items-center hover:opacity-80 transition-opacity duration-200"
                 aria-label="Bhisey Software - Home"
               >
-                Bhisey
+                <Image
+                  src="/bhisey.png"
+                  alt="Bhisey Logo"
+                  width={100}
+                  height={33}
+                  className="h-7 w-auto"
+                  unoptimized
+                />
               </Link>
               <span className="text-gray-100 text-sm">
                 © {currentYear} Bhisey Software. All rights reserved.
@@ -77,10 +85,17 @@ export default function Footer({ className, variant = 'default' }: FooterProps) 
           <div className="lg:col-span-2">
             <Link 
               href="/" 
-              className="inline-block text-2xl font-bold text-white hover:text-accent-300 transition-colors duration-200 mb-3"
+              className="inline-block hover:opacity-80 transition-opacity duration-200 mb-3"
               aria-label="Bhisey Software - Home"
             >
-              Bhisey
+              <Image
+                src="/bhisey.png"
+                alt="Bhisey Logo"
+                unoptimized
+                width={140}
+                height={47}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-gray-100 mb-4 max-w-md text-sm leading-relaxed">
               Empowering businesses through innovative software solutions. 
