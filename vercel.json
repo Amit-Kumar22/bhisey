@@ -5,18 +5,6 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "JWT_ACCESS_SECRET": "@jwt_access_secret",
-    "JWT_REFRESH_SECRET": "@jwt_refresh_secret",
-    "ACCESS_TOKEN_TTL": "15m",
-    "REFRESH_TOKEN_TTL": "7d"
-  },
-  "build": {
-    "env": {
-      "DATABASE_URL": "@database_url"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/:path*",
