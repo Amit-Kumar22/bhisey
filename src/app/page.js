@@ -399,7 +399,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="h-48 bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/case-1.webp')"}}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   A HIPAA Compliant Cloud Strategy. Choosing a Cloud Service Provider
@@ -414,7 +414,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="h-48 bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/case-2.webp')"}}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   A leading exclusive invitation-only Online Retailer
@@ -429,7 +429,7 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-orange-100 to-orange-200"></div>
+              <div className="h-48 bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/case-3.webp')"}}></div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   Astellas: Business-Critical Ethics and Compliance Platform Development
@@ -477,7 +477,7 @@ export default function Home() {
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/11.png"
+                  src="/images/case-4.webp"
                   alt="Healthcare Software Development - HIPAA Compliant Solutions"
                   width={600}
                   height={600}
@@ -497,7 +497,7 @@ export default function Home() {
             <div className="relative order-2 md:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/12.png"
+                  src="/images/case5.webp"
                   alt="SaaS Software Development Solutions"
                   width={600}
                   height={600}
@@ -537,10 +537,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             {/* News Card 1 */}
-            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                  <div className="text-white text-center text-xs md:text-sm font-bold px-2">ISO/IEC 27001:2022</div>
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0 h-48 md:h-56 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: "url('/images/news-1.webp')"}}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto">
+                    <div className="text-white text-center text-xs md:text-sm font-bold px-2">ISO/IEC 27001:2022</div>
+                  </div>
                 </div>
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
@@ -560,9 +563,12 @@ export default function Home() {
             </div>
 
             {/* News Card 2 */}
-            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
-                <div className="text-white text-center font-bold text-xl md:text-2xl">TOP 100</div>
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0 h-48 md:h-56 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: "url('/images/news-2.webp')"}}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="text-white text-center font-bold text-xl md:text-2xl">TOP 100</div>
+                </div>
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
@@ -581,9 +587,12 @@ export default function Home() {
             </div>
 
             {/* News Card 3 */}
-            <div className="flex flex-col bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <div className="flex-shrink-0 h-48 md:h-56 flex items-center justify-center p-4">
-                <div className="text-white text-center font-bold text-lg md:text-xl">AWS Healthcare</div>
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-1">
+              <div className="flex-shrink-0 h-48 md:h-56 bg-cover bg-center bg-no-repeat relative" style={{backgroundImage: "url('/images/news-3.webp')"}}>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="text-white text-center font-bold text-lg md:text-xl">AWS Healthcare</div>
+                </div>
               </div>
               <div className="flex-grow bg-white p-4 md:p-6 flex flex-col">
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-3">
