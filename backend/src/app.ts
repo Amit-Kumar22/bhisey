@@ -28,7 +28,10 @@ const app = express();
 
 // CORS configuration for production deployment
 const corsOptions = {
-  origin: true, // Temporarily accept all origins for debugging
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    // Allow all origins for now
+    callback(null, true);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
