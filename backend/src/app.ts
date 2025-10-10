@@ -28,15 +28,7 @@ const app = express();
 
 // CORS configuration for production deployment
 const corsOptions = {
-  origin: [
-    "https://bhisey.com",
-    "https://www.bhisey.com",
-    "https://bhisey.vercel.app",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:3001",
-    "http://127.0.0.1:3001"
-  ],
+  origin: true, // Temporarily accept all origins for debugging
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
