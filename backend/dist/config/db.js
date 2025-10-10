@@ -50,6 +50,14 @@ catch (e) {
 }
 let _pool = null;
 function buildPool() {
+    // Set NODE_TLS_REJECT_UNAUTHORIZED if DB_ALLOW_SELF_SIGNED is enabled (DEV ONLY)
+    if (isAllowSelfSigned() && !caCert) {
+        if (!process.env.NODE_TLS_REJECT_UNAUTHORIZED) {
+            process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+            if (debugSsl)
+                console.warn('[DB][SSL] Set NODE_TLS_REJECT_UNAUTHORIZED=0 due to DB_ALLOW_SELF_SIGNED=true (DEV ONLY)');
+        }
+    }
     const sslConfig = (() => {
         var _a;
         const sslRequired = ((_a = env_1.env.DATABASE_URL) === null || _a === void 0 ? void 0 : _a.includes('sslmode=require')) || process.env.FORCE_DB_SSL === 'true';
@@ -58,7 +66,11 @@ function buildPool() {
         if (isAllowSelfSigned() && !caCert) {
             if (debugSsl)
                 console.warn('[DB][SSL] Using rejectUnauthorized=false due to DB_ALLOW_SELF_SIGNED=true (DEV ONLY)');
-            return { rejectUnauthorized: false }; // DEV convenience, not for prod
+            // For PostgreSQL with self-signed certs, we need to be more explicit
+            return {
+                rejectUnauthorized: false,
+                checkServerIdentity: () => undefined // Skip server identity check
+            };
         }
         if (caCert) {
             if (debugSsl)
@@ -72,11 +84,17 @@ function buildPool() {
     if (debugSsl) {
         console.log('[DB][SSL] Final ssl config:', sslConfig);
     }
+    // Remove sslmode from connection string if present, as we're setting ssl config explicitly
+    let dbUrl = env_1.env.DATABASE_URL;
+    if (dbUrl.includes('sslmode=')) {
+        dbUrl = dbUrl.replace(/[?&]sslmode=[^&]*/g, '');
+    }
     return new pg_1.Pool({
-        connectionString: env_1.env.DATABASE_URL,
+        connectionString: dbUrl,
         max: 10,
         idleTimeoutMillis: 30000,
-        statement_timeout: 30000,
+        connectionTimeoutMillis: 30000, // Increased from 10s to 30s
+        statement_timeout: 60000, // Increased from 30s to 60s
         ssl: sslConfig
     });
 }

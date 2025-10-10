@@ -32,7 +32,7 @@ function loadCa() {
         process.exit(1);
     }
     const sslRequired = conn.includes('sslmode=require') || process.env.FORCE_DB_SSL === 'true';
-    const ssl = sslRequired ? (ca ? { rejectUnauthorized: true, ca } : allowSelfSigned ? { rejectUnauthorized: false } : { rejectUnauthorized: true }) : undefined;
+    const ssl = sslRequired ? (ca ? { rejectUnauthorized: true, ca } : allowSelfSigned ? { rejectUnauthorized: false, checkServerIdentity: () => undefined } : { rejectUnauthorized: true }) : undefined;
     console.log('--- DB Connectivity Test ---');
     console.log('DATABASE_URL host:', conn.replace(/:[^:@/]*@/, ':****@'));
     console.log('sslRequired:', sslRequired);

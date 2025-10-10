@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.authenticate = void 0;
 exports.requireAuth = requireAuth;
 const jwt_1 = require("../utils/jwt");
 const errorHandler_1 = require("./errorHandler");
@@ -19,4 +20,6 @@ function requireAuth(req, _res, next) {
         return next((0, errorHandler_1.createError)(401, 'Invalid or expired token', 'unauthorized'));
     }
 }
+// Export as authenticate for compatibility
+exports.authenticate = requireAuth;
 //# sourceMappingURL=auth.js.map

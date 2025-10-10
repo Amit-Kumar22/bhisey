@@ -31,13 +31,43 @@ railway add postgresql
 railway deploy
 ```
 
-### Option B: Render
-```bash
-# 1. Connect GitHub repo
-# 2. Create Web Service
-# 3. Build: cd backend && npm install
-# 4. Start: npm start
-```
+### Option B: Render (Detailed Instructions)
+
+**Step-by-Step Render Deployment:**
+
+1. **Connect Your GitHub Repository**
+   - Go to [render.com](https://render.com)
+   - Click "New +" → "Web Service"
+   - Connect your GitHub account
+   - Select your entire `bhisey` repository ✅
+
+2. **Configure Build Settings**
+   ```yaml
+   Name: bhisey-backend
+   Root Directory: backend
+   Environment: Node
+   Build Command: npm install && npm run build
+   Start Command: npm start
+   ```
+
+3. **Set Environment Variables** (in Render dashboard)
+   ```bash
+   DATABASE_URL=<your-postgres-url>
+   JWT_ACCESS_SECRET=<your-secret>
+   JWT_REFRESH_SECRET=<your-refresh-secret>
+   NODE_ENV=production
+   PORT=4000
+   ```
+
+4. **Add PostgreSQL Database**
+   - In Render dashboard: "New +" → "PostgreSQL"
+   - Copy the Internal Database URL
+   - Paste it as `DATABASE_URL` in your web service
+
+5. **Deploy**
+   - Click "Create Web Service"
+   - Render automatically builds from `/backend` folder
+   - Your API will be live at: `https://your-service.onrender.com`
 
 ### Option C: DigitalOcean App Platform
 ```bash

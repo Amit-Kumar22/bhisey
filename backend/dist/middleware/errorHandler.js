@@ -20,7 +20,7 @@ function errorHandler(err, _req, res, _next) {
         error: {
             code: err.code || 'internal_error',
             message: err.message || 'Internal Server Error',
-            details: err.details,
+            ...(err.details && { details: err.details })
         }
     });
 }
