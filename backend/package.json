@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node dist/server.js",
     "build": "prisma generate && tsc -p tsconfig.backend.json",
-    "dev": "ts-node src/server.ts",
-    "watch": "nodemon --watch src -e ts,js --exec ts-node src/server.ts",
+    "dev": "ts-node --project tsconfig.backend.json src/server.ts",
+    "watch": "nodemon --watch src -e ts,js --exec ts-node --project tsconfig.backend.json src/server.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

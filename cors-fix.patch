@@ -1,0 +1,28 @@
+--- backend/src/app.ts.orig
++++ backend/src/app.ts
+@@ -27,18 +27,13 @@ const writeLimiter = rateLimit({
+ const app = express();
+ 
+ // CORS configuration for production deployment
++// Temporarily allow all origins for debugging
+ const corsOptions = {
+-  origin: env.NODE_ENV === 'production' 
+-    ? [
+-        'https://bhisey.com',
+-        'https://www.bhisey.com',
+-        'https://bhisey.vercel.app',
+-        'http://localhost:3001',  // Admin portal (local)
+-        'http://127.0.0.1:3001'   // Admin portal (local)
+-      ]
+-    : [
+-        'http://localhost:3000',
+-        'http://127.0.0.1:3000',
++  origin: [
++    'https://bhisey.com',
++    'https://www.bhisey.com',
++    'https://bhisey.vercel.app',
++    'http://localhost:3000',
++    'http://127.0.0.1:3000',
+         'http://localhost:3001',  // Admin portal (local)
+         'http://127.0.0.1:3001'
+       ],
