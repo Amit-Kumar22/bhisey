@@ -227,14 +227,14 @@ export default function Navigation({
             ))}
 
             {/* Auth Links (Desktop) */}
-            {!user && (
+            {/* {!user && (
               <Link
                 href="/admin/login"
                 className={getLinkClasses(false)}
               >
                 Login
               </Link>
-            )}
+            )} */}
             {user && (
               <>
                 <Link
@@ -353,7 +353,7 @@ export default function Navigation({
                 ))}
 
                 {/* Auth Links (Mobile) */}
-                {!user && (
+                {/* {!user && (
                   <Link
                     href="/admin/login"
                     className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-accent-500"
@@ -364,7 +364,7 @@ export default function Navigation({
                   >
                     Login
                   </Link>
-                )}
+                )} */}
                 {user && (
                   <>
                     <Link

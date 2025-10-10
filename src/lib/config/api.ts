@@ -1,22 +1,15 @@
 /**
- * Central API base URL resolution (no assumptions hidden in axios creation).
- * Order of precedence:
- * 1. Explicit NEXT_PUBLIC_API_BASE_URL (absolute or relative)
- * 2. If running in browser & window.__API_BASE__ injected (future server inject)
- * 3. Development heuristic: if window.location.port === '3000' assume backend 4000 -> http://localhost:4000/api
- * 4. Fallback to '/api' (not '/api/v1') to match Express mounting unless versioning added.
+ * Central API base URL resolution for production deployment
+ * Supports separate frontend/backend domains
  */
 
 export function resolveApiBase(): string {
-  // 1. Environment explicit
-  if (process.env.NEXT_PUBLIC_API_BASE_URL && process.env.NEXT_PUBLIC_API_BASE_URL.trim()) {
+  // 1. Production: Use environment variable for separate backend domain
+  if (process.env.NEXT_PUBLIC_API_BASE_URL) {
     return stripTrailingSlash(process.env.NEXT_PUBLIC_API_BASE_URL.trim());
   }
-  // 2. Runtime injected global (optional future pattern)
-  if (typeof window !== 'undefined' && (window as any).__API_BASE__) {
-    return stripTrailingSlash((window as any).__API_BASE__);
-  }
-  // 3. Dev heuristic (Next dev default port 3000 + backend typical 4000)
+  
+  // 2. Development: Auto-detect local backend
   if (typeof window !== 'undefined') {
     const loc = window.location;
     if (loc.hostname === 'localhost' || loc.hostname === '127.0.0.1') {
@@ -25,7 +18,8 @@ export function resolveApiBase(): string {
       }
     }
   }
-  // 4. Fallback (relative) – expects reverse proxy or Next route forwarding
+  
+  // 3. Fallback for SSR or edge cases
   return '/api';
 }
 

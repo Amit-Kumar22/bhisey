@@ -7,6 +7,7 @@ import blogRoutes from './routes/blogRoutes';
 import caseStudyRoutes from './routes/caseStudyRoutes';
 import { notFound, errorHandler } from './middleware/errorHandler';
 import rateLimit from 'express-rate-limit';
+import { env } from './config/env';
 
 // Rate limiters
 const authLimiter = rateLimit({
@@ -25,8 +26,22 @@ const writeLimiter = rateLimit({
 
 const app = express();
 
+// CORS configuration for production deployment
+const corsOptions = {
+  origin: env.NODE_ENV === 'production' 
+    ? [
+        'https://bhisey.com',
+        'https://www.bhisey.com',
+        'https://bhisey.vercel.app'
+      ]
+    : ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 app.use(helmet());
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 app.use(morgan('dev'));
 
