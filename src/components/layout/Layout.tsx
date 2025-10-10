@@ -54,7 +54,7 @@ export default function Layout({
   };
 
   const pathname = usePathname();
-  const showFooter = useMemo(() => !pathname.startsWith('/admin'), [pathname]);
+  const showFooter = true; // Always show footer on public website
 
   return (
     <div className={cn('min-h-screen flex flex-col', className)} {...props}>
